@@ -5,7 +5,7 @@ TFRNS_Tunisia_2020_crisis = {
 	default = {
 		name = DEFAULT
 		text = "RULE_OPTION_DEFAULT"
-		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+		desc = "TFRNS_Tunisia_2020_crisis_DEFAULT_DESC"
 	}
 	option = {
 		name = TFRNS_Tunisia_2020_crisis_1

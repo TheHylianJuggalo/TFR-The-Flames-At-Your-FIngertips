@@ -5,7 +5,7 @@ TFRNS_Maghreb_Mauritania_Pressure = {
 	default = {
 		name = DEFAULT
 		text = "RULE_OPTION_DEFAULT"
-		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+		desc = "TFRNS_Maghreb_Mauritania_Pressure_DEFAULT_DESC"
 	}
 	option = {
 		name = TFRNS_Maghreb_Mauritania_Pressure_Yes
