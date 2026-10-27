@@ -247,7 +247,7 @@ country_event = {
 				}
 				create_country_leader = {
 					name = TUN_kais_saied_char
-					picture = "gfx/leaders/TUN/Kais Saied.png"
+					picture = "gfx/leaders/TUN/Kais_Saied_Tunisia.png"
 					expire = "1.1.1.1"
 					ideology = hybrid_regime
 				}
