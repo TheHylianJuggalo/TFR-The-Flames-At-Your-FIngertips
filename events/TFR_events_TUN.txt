@@ -169,6 +169,21 @@ country_event = {
 			days = 148
 		}
 	}
+	option = { #Outcome forced by game rule
+		name = TFRNS_Tunisia_2020_crisis_forced
+		trigger = {
+			OR = {
+				has_game_rule = {
+					rule = TFRNS_Tunisia_2020_crisis
+					option = TFRNS_Tunisia_2020_crisis_1
+				}
+				has_game_rule = {
+					rule = TFRNS_Tunisia_2020_crisis
+					option = TFRNS_Tunisia_2020_crisis_2
+				}
+			}
+		}
+	}
 }
 
 #New Elections
@@ -348,5 +363,24 @@ country_event = {
 			}
 		}
 		set_global_flag = TUN_pro_algeria_flag
+	}
+	option = { #Outcome forced by game rule
+		name = TFRNS_Tunisia_2020_elections_forced
+		trigger = {
+			OR = {
+				has_game_rule = {
+					rule = TFRNS_Tunisia_2020_elections
+					option = TFRNS_Tunisia_2020_elections_1
+				}
+				has_game_rule = {
+					rule = TFRNS_Tunisia_2020_elections
+					option = TFRNS_Tunisia_2020_elections_2
+				}
+				has_game_rule = {
+					rule = TFRNS_Tunisia_2020_elections
+					option = TFRNS_Tunisia_2020_elections_3
+				}
+			}
+		}
 	}
 }
