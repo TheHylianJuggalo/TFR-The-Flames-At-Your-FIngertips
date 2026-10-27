@@ -6,17 +6,18 @@ TFRNS_Maghreb_Mauritania_Pressure = {
 		name = DEFAULT
 		text = "RULE_OPTION_DEFAULT"
 		desc = "TFRNS_Maghreb_Mauritania_Pressure_DEFAULT_DESC"
+		allow_achievements = yes
 	}
 	option = {
 		name = TFRNS_Maghreb_Mauritania_Pressure_Yes
 		text = "TFRNS_Maghreb_Mauritania_Pressure_Yes_TXT"
 		desc = "TFRNS_Maghreb_Mauritania_Pressure_Yes_TXT_DESC"
-		allow_achievements = no
+		allow_achievements = yes
 	}
 	option = {
 		name = TFRNS_Maghreb_Mauritania_Pressure_No
 		text = "TFRNS_Maghreb_Mauritania_Pressure_No_TXT"
 		desc = "TFRNS_Maghreb_Mauritania_Pressure_No_TXT_DESC"
-		allow_achievements = no
+		allow_achievements = yes
 	}
 }

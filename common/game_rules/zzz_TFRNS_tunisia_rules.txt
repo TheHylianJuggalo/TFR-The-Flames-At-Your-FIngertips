@@ -6,17 +6,18 @@ TFRNS_Tunisia_2020_crisis = {
 		name = DEFAULT
 		text = "RULE_OPTION_DEFAULT"
 		desc = "TFRNS_Tunisia_2020_crisis_DEFAULT_DESC"
+		allow_achievements = yes
 	}
 	option = {
 		name = TFRNS_Tunisia_2020_crisis_1
 		text = "TFRNS_Tunisia_2020_crisis_1_TXT"
 		desc = "TFRNS_Tunisia_2020_crisis_1_TXT_DESC"
-		allow_achievements = no
+		allow_achievements = yes
 	}
 	option = {
 		name = TFRNS_Tunisia_2020_crisis_2
 		text = "TFRNS_Tunisia_2020_crisis_2_TXT"
 		desc = "TFRNS_Tunisia_2020_crisis_2_TXT_DESC"
-		allow_achievements = no
+		allow_achievements = yes
 	}
 }
