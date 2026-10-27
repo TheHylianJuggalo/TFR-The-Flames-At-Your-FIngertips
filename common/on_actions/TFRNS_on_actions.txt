@@ -1,0 +1,21 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			every_possible_country = {
+				add_ideas = TFRNS_no_surrender
+			}
+		}
+	}
+	on_weekly = {
+		effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_idea = TFRNS_no_surrender
+					}
+				}
+				add_ideas = TFRNS_no_surrender
+			}
+		}
+	}
+}

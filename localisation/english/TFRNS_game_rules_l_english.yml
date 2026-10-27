@@ -1,0 +1,10 @@
+l_english:
+ TFRNS_Tunisia_2020_crisis: "The Tunisian Crisis"
+ TFRNS_Tunisia_2020_crisis_1_TXT: "Democracy Prevails"
+ TFRNS_Tunisia_2020_crisis_1_TXT_DESC: "The no-confidence vote succeeds, leading to new elections."
+ TFRNS_Tunisia_2020_crisis_2_TXT: "Democracy Dies in Darkness"
+ TFRNS_Tunisia_2020_crisis_2_TXT_DESC: "The government falls, leading to President Saied's consolidation of power." TFRNS_Maghreb_Mauritania_Pressure: "Mauritania Takes A Stand"
+ TFRNS_Maghreb_Mauritania_Pressure_Yes_TXT: "Defend Sarhrawi Self-Determination"
+ TFRNS_Maghreb_Mauritania_Pressure_Yes_TXT_DESC: "Mauritania is pressured to join Algeria in the Maghreb War."
+ TFRNS_Maghreb_Mauritania_Pressure_No_TXT: "Don't Rock The Boat"
+ TFRNS_Maghreb_Mauritania_Pressure_No_TXT_DESC: "Mauritania is not pressured to join Algeria in the Maghreb War."

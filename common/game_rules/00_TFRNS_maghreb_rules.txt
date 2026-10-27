@@ -1,0 +1,22 @@
+TFRNS_Maghreb_Mauritania_Pressure = {
+	name = "TFRNS_Maghreb_Mauritania_Pressure"
+	group = "RULE_GROUP_North_Africa"
+	icon = GFX_decision_generic_political_discussion
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = TFRNS_Maghreb_Mauritania_Pressure_Yes
+		text = "TFRNS_Maghreb_Mauritania_Pressure_Yes_TXT"
+		desc = "TFRNS_Maghreb_Mauritania_Pressure_Yes_TXT_DESC"
+		allow_achievements = no
+	}
+	option = {
+		name = TFRNS_Maghreb_Mauritania_Pressure_No
+		text = "TFRNS_Maghreb_Mauritania_Pressure_No_TXT"
+		desc = "TFRNS_Maghreb_Mauritania_Pressure_No_TXT_DESC"
+		allow_achievements = no
+	}
+}
