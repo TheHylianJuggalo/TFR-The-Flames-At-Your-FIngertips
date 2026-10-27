@@ -187,11 +187,96 @@ country_event = {
 
 	immediate = {
 		hidden_effect = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = TFRNS_Tunisia_2020_elections
+						option = TFRNS_Tunisia_2020_elections_1
+					}
+				}
+				set_global_flag = TUN_pro_morocco_flag
+				set_politics = {
+					ruling_party = social_liberal
+					elections_allowed = yes
+				}
+				create_country_leader = {
+					name = TUN_nabil_karoui
+					picture = "gfx/leaders/TUN/TUN_nabil_karoui.png"
+					expire = "1.1.1.1"
+					ideology = neoliberalism
+				}
+			}
+			else_if = {
+				limit = {
+					has_game_rule = {
+						rule = TFRNS_Tunisia_2020_elections
+						option = TFRNS_Tunisia_2020_elections_2
+					}
+				}
+				set_politics = {
+					ruling_party = authoritarian_democrat
+					elections_allowed = yes
+				}
+				create_country_leader = {
+					name = TUN_youssef_chahed
+					picture = "gfx/leaders/TUN/TUN_youssef_chahed.png"
+					expire = "1.1.1.1"
+					ideology = state_liberalism
+				}
+			}
+			else_if = {
+				limit = {
+					has_game_rule = {
+						rule = TFRNS_Tunisia_2020_elections
+						option = TFRNS_Tunisia_2020_elections_3
+					}
+				}
+				set_global_flag = TUN_pro_algeria_flag
+				set_politics = {
+					ruling_party = authoritarian_democrat
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = authoritarian_democrat
+					popularity = 0.5
+				}
+				set_party_name = {
+					ideology = authoritarian_democrat
+					name = TUN_july25_party
+					long_name = TUN_july25_party
+				}
+				create_country_leader = {
+					name = TUN_kais_saied_char
+					picture = "gfx/leaders/TUN/Kais Saied.png"
+					expire = "1.1.1.1"
+					ideology = hybrid_regime
+				}
+			}
 		}
 	}
 	
 	option = { 
 		name = tunisia.3.a
+		trigger = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Tunisia_2020_elections
+					option = TFRNS_Tunisia_2020_elections_1
+				}
+			}
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Tunisia_2020_elections
+					option = TFRNS_Tunisia_2020_elections_2
+				}
+			}
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Tunisia_2020_elections
+					option = TFRNS_Tunisia_2020_elections_3
+				}
+			}
+		}
 		ai_chance = {
 		    base = 80
 		}
@@ -209,6 +294,26 @@ country_event = {
 	}
 	option = { 
 		name = tunisia.3.b
+		trigger = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Tunisia_2020_elections
+					option = TFRNS_Tunisia_2020_elections_1
+				}
+			}
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Tunisia_2020_elections
+					option = TFRNS_Tunisia_2020_elections_2
+				}
+			}
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Tunisia_2020_elections
+					option = TFRNS_Tunisia_2020_elections_3
+				}
+			}
+		}
 		set_politics = {
 			ruling_party = authoritarian_democrat
 			elections_allowed = yes
@@ -222,6 +327,26 @@ country_event = {
 	}
 	option = { 
 		name = tunisia.3.c
+		trigger = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Tunisia_2020_elections
+					option = TFRNS_Tunisia_2020_elections_1
+				}
+			}
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Tunisia_2020_elections
+					option = TFRNS_Tunisia_2020_elections_2
+				}
+			}
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Tunisia_2020_elections
+					option = TFRNS_Tunisia_2020_elections_3
+				}
+			}
+		}
 		set_global_flag = TUN_pro_algeria_flag
 	}
 }
