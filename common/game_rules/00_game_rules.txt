@@ -1631,12 +1631,6 @@ The_RAJ_PAK_war = {#Indo-Pakistani War Winner 印巴战争赢家
 		desc = "The_RAJ_PAK_war_PAK_win_TXT_DESC"
 		allow_achievements = yes
 	}
-	option = {
-		name = The_RAJ_PAK_war_STALEMATE
-		text = "TFRNS_Stalemate_TXT"
-		desc = "The_RAJ_PAK_war_STALEMATE_DESC"
-		allow_achievements = yes
-	}
 }
 
 The_Pakistan_Turmoil = {#Pakistan Turmoil 巴基斯坦乱局
@@ -1902,84 +1896,6 @@ The_SAU_civil_war = {#Saudi Civil War Winner 沙特内战
 		name = JAH_win
 		text = "JAH_win_TXT"
 		desc = "JAH_win_TXT_DESC"
-		allow_achievements = yes
-	}
-}
-
-TFRNS_Saudi_Russian_Support = {#Russian Support - Saudi Civil War
-	name = "TFRNS_Saudi_Russian_Support"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_Western_Asia"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "TFRNS_Saudi_Russian_Support_DEFAULT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = TFRNS_Saudi_Russian_Support_GOV
-		text = "TFRNS_Saudi_Russian_Support_GOV_TXT"
-		desc = "TFRNS_Saudi_Russian_Support_GOV_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = TFRNS_Saudi_Russian_Support_HEZ
-		text = "TFRNS_Saudi_Russian_Support_HEZ_TXT"
-		desc = "TFRNS_Saudi_Russian_Support_HEZ_DESC"
-		allow_achievements = yes
-	}
-}
-
-TFRNS_Saudi_French_Support = {#French Support - Saudi Civil War
-	name = "TFRNS_Saudi_French_Support"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_Western_Asia"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "TFRNS_Saudi_French_Support_DEFAULT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = TFRNS_Saudi_French_Support_ARR
-		text = "TFRNS_Saudi_French_Support_ARR_TXT"
-		desc = "TFRNS_Saudi_French_Support_ARR_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = TFRNS_Saudi_French_Support_SAU
-		text = "TFRNS_Saudi_French_Support_SAU_TXT"
-		desc = "TFRNS_Saudi_French_Support_SAU_DESC"
-		allow_achievements = yes
-	}
-}
-
-TFRNS_Saudi_Chinese_Support = {#Chinese Support - Saudi Civil War
-	name = "TFRNS_Saudi_Chinese_Support"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_Western_Asia"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "TFRNS_Saudi_Chinese_Support_DEFAULT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = TFRNS_Saudi_Chinese_Support_SAU
-		text = "TFRNS_Saudi_Chinese_Support_SAU_TXT"
-		desc = "TFRNS_Saudi_Chinese_Support_SAU_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = TFRNS_Saudi_Chinese_Support_ROC
-		text = "TFRNS_Saudi_Chinese_Support_ROC_TXT"
-		desc = "TFRNS_Saudi_Chinese_Support_ROC_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = TFRNS_Saudi_Chinese_Support_ARR
-		text = "TFRNS_Saudi_Chinese_Support_ARR_TXT"
-		desc = "TFRNS_Saudi_Chinese_Support_ARR_DESC"
 		allow_achievements = yes
 	}
 }
@@ -3252,12 +3168,6 @@ BLR_20_election = {#Belarus 2020 Election 白俄罗斯2020年大选
 		desc = "BLR_20_election_2_TXT_DESC"
 		allow_achievements = yes
 	}
-	option = {
-		name = BLR_20_election_3
-		text = "BLR_20_election_3_TXT"
-		desc = "BLR_20_election_3_TXT_DESC"
-		allow_achievements = yes
-	}
 }
 
 UKR_election_24 = {#Ukraine 2024 Election 乌克兰2024年大选
@@ -3279,6 +3189,28 @@ UKR_election_24 = {#Ukraine 2024 Election 乌克兰2024年大选
 		name = UKR_election_RUS_24
 		text = "UKR_election_RUS_24_TXT"
 		desc = "UKR_election_RUS_24_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+
+UKR_govt_collapse = {
+	name = "UKR_govt_collapse"
+	group = "RULE_GROUP_EUROPE"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "UKR_Collapse_DESC"
+	}
+	option = {
+		name = UKR_Collapse_guaranteed
+		text = "UKR_Collapse_guaranteed_TXT"
+		desc = "UKR_Collapse_guaranteed_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = UKR_Collapse_disabled
+		text = "UKR_Collapse_disabled_TXT"
+		desc = "UKR_Collapse_disabled_DESC"
 		allow_achievements = yes
 	}
 }
@@ -3380,51 +3312,6 @@ Second_European_War_Outcome = {#Second European War Outcome 第二次欧陆战�
 		name = Second_European_War_Outcome_CSTO
 		text = "Second_European_War_Outcome_CSTO_TXT"
 		desc = "Second_European_War_Outcome_CSTO_TXT_DESC"
-		allow_achievements = yes
-	}
-}
-
-TFRNS_Cobasna_Depot_Explosion = {
-	name = "TFRNS_Cobasna_Depot_Explosion"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "TFRNS_Cobasna_Depot_Explosion_DEFAULT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = TFRNS_Cobasna_Depot_Explosion_YES
-		text = "TFRNS_Cobasna_Depot_Explosion_YES_TXT"
-		desc = "TFRNS_Cobasna_Depot_Explosion_YES_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = TFRNS_Cobasna_Depot_Explosion_NO
-		text = "TFRNS_Cobasna_Depot_Explosion_NO_TXT"
-		desc = "TFRNS_Cobasna_Depot_Explosion_NO_DESC"
-		allow_achievements = yes
-	}
-}
-
-# TFRNS dummy section header - no script references this rule or its option.
-# It exists only to visually separate the pre-emergency-election Russia rules.
-TFRNS_Dummy_Russia_Pre_Emergency_Election = {
-	name = "TFRNS_Dummy_Russia_Pre_Emergency_Election"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE_SOV"
-	icon = GFX_decision_generic_flag
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "TFRNS_Dummy_Russia_Pre_Emergency_Election_DEFAULT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = TFRNS_Dummy_Russia_Pre_Emergency_Election_HEADER
-		text = "TFRNS_Dummy_Russia_Pre_Emergency_Election_HEADER_TXT"
-		desc = "TFRNS_Dummy_Russia_Pre_Emergency_Election_HEADER_DESC"
 		allow_achievements = yes
 	}
 }
@@ -3738,6 +3625,190 @@ The_Red_Navalny = {#Red Navalny 红色纳瓦利内
 	}
 }
 
+UR_Duality = {
+	name = "UR_Duality"
+	group = "RULE_GROUP_EUROPE_SOV"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "UR_Duality_TXT"
+	}
+	option = {
+		name = UR_Duality_Reform
+		text = "UR_Duality_Reform_TXT"
+		desc = "UR_Duality_Reform_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = UR_Duality_Hardliner
+		text = "UR_Duality_Hardliner_TXT"
+		desc = "UR_Duality_Hardliner_DESC"
+		allow_achievements = yes
+	}
+}
+
+Reformist_UR_Elections = {
+	name = "Reformist_UR_Elections"
+	group = "RULE_GROUP_EUROPE_SOV"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "Reformist_UR_Elections_TXT"
+	}
+	option = {
+		name = Lukashenko_UR
+		text = "Lukashenko_UR_TXT"
+		desc = "Lukashenko_UR_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Platoshkin
+		text = "Platoshkin_TXT"
+		desc = "Platoshkin_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Prilepin
+		text = "Prilepin_TXT"
+		desc = "Platoshkin_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Konovalov
+		text = "Konovalov_TXT"
+		desc = "Konovalov_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Grudinin
+		text = "Grudinin_TXT"
+		desc = "Grudinin_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Delyagin
+		text = "Delyagin_TXT"
+		desc = "Delyagin_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Davankov
+		text = "Davankov_TXT"
+		desc = "Davankov_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Patrushev
+		text = "Patrushev_TXT"
+		desc = "Patrushev_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Sobyanin
+		text = "Sobyanin_TXT"
+		desc = "Sobyanin_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Mishustin
+		text = "Mishustin_TXT"
+		desc = "Mishustin_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Belousov
+		text = "Belousov_TXT"
+		desc = "Belousov_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Volodin
+		text = "Volodin_TXT"
+		desc = "Volodin_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Shoygu
+		text = "Shoygu_TXT"
+		desc = "Shoygu_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Naryshkin
+		text = "Naryshkin_TXT"
+		desc = "Naryshkin_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Alikhanov
+		text = "Alikhanov_TXT"
+		desc = "Alikhanov_DESC"
+		allow_achievements = yes
+	}
+}
+
+Medvedev_Successor = {
+	name = "Medvedev_Successor"
+	group = "RULE_GROUP_EUROPE_SOV"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "Medvedev_Successor_TXT"
+	}
+	option = {
+		name = Medvedev_Stays
+		text = "Medvedev_Stays_TXT"
+		desc = "Medvedev_Stays_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Lukashenko_Successor
+		text = "Lukashenko_Successor_TXT"
+		desc = "Lukashenko_Successor_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Surkov
+		text = "Surkov_TXT"
+		desc = "Surkov_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Nadezhdin
+		text = "Nadezhdin_TXT"
+		desc = "Nadezhdin_DESC"
+		allow_achievements = yes
+	}
+}
+
+Operation_Heir = {
+	name = "Operation_Heir"
+	group = "RULE_GROUP_EUROPE_SOV"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "Operation_Heir_TXT"
+	}
+	option = {
+		name = Besedina
+		text = "Besedina_TXT"
+		desc = "Besedina_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Kisiev
+		text = "Kisiev_TXT"
+		desc = "Kisiev_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Katz
+		text = "Katz_TXT"
+		desc = "Katz_DESC"
+		allow_achievements = yes
+	}
+}
+
 The_LDPR_Path_Before_War = {#Liberal Democratic Party of Russia Path 俄罗斯自由民主党路线
 	name = "The_LDPR_Path_Before_War"
 	required_dlc = "Waking the Tiger"
@@ -3826,6 +3897,108 @@ The_LDPR_Path = {#Liberal Democratic Party of Russia Path 俄罗斯自由民主�
 	}
 }
 
+Tsar_Choice = {
+	name = "Tsar_Choice"
+	group = "RULE_GROUP_EUROPE_SOV"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "Tsar_Choice_TXT"
+	}
+	option = {
+		name = Rostislav
+		text = "Rostislav_TXT"
+		desc = "Rostislav_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Georgiy
+		text = "Georgiy_TXT"
+		desc = "Georgiy_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Gavril
+		text = "Gavril_TXT"
+		desc = "Georgiy_DESC"
+		allow_achievements = yes
+	}
+}
+
+Tsar_PM_Election = {
+	name = "Tsar_PM_Election"
+	group = "RULE_GROUP_EUROPE_SOV"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "Tsar_PM_Election_TXT"
+	}
+	option = {
+		name = Burkov
+		text = "Burkov_TXT"
+		desc = "Burkov_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Zatulin
+		text = "Zaturin_TXT"
+		desc = "Zaturin_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Bakov
+		text = "Bakov_TXT"
+		desc = "Bakov_DESC"
+		allow_achievements = yes
+	}
+}
+
+Council_LDPR_Elections = {
+	name = "Council_LDPR_Elections"
+	group = "RULE_GROUP_EUROPE_SOV"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "Council_LDPR_Elections_TXT"
+	}
+	option = {
+		name = Slutsky
+		text = "Slutsky_TXT"
+		desc = "Slutsky_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Pushilin
+		text = "Pushilin_TXT"
+		desc = "Pushilin_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Yuneman
+		text = "Yuneman_TXT"
+		desc = "Yuneman_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Girkin
+		text = "Girkin_TXT"
+		desc = "Girkin_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Rogozin
+		text = "Rogozin_TXT"
+		desc = "Rogozin_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Shevchenko
+		text = "Shevchenko_TXT"
+		desc = "Shevchenko_DESC"
+		allow_achievements = yes
+	}
+}
+
 The_Dugin_or_Navalny = {#Dugin or Navalny 杜金或纳瓦利内
 	name = "The_Dugin_or_Navalny"
 	required_dlc = "Waking the Tiger"
@@ -3903,6 +4076,40 @@ The_Navalny_against_Navalny = {#Navalny against Navalny 纳瓦利内反对纳瓦
 		name = The_Navalny_against_Navalny_We_People
 		text = "The_Navalny_against_Navalny_We_People_TXT"
 		desc = "The_Navalny_against_Navalny_We_People_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+
+NATO_Mandate_Post_War_Elections = {
+	name = "NATO_Mandate_Post_War_Elections"
+	group = "RULE_GROUP_EUROPE_SOV"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "NATO_Mandate_Post_War_Elections_TXT_DESC"
+	}
+	option = {
+		name = Mandate_Stays
+		text = "Mandate_Stays_TXT"
+		desc = "Mandate_Stays_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Mikhail_Svetov
+		text = "Mikhail_Svetov_TXT"
+		desc = "Mikhail_Svetov_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Leonid_Volkov
+		text = "Leonid_Volkov_TXT"
+		desc = "Leonid_Volkov_DESC"
+		allow_achievements = yes
+	}
+	option ={
+		name = Nikolay_Rybakov
+		text = "Nikolay_Rybakov_TXT"
+		desc = "Nikolay_Rybakov_DESC"
 		allow_achievements = yes
 	}
 }
@@ -4203,25 +4410,6 @@ The_Canada_Elections = {#Canada Elections 加拿大大选
 		name = The_Biden_Resign_Caligula
 		text = "The_Biden_Resign_Caligula_TXT"
 		desc = "The_Biden_Resign_Caligula_TXT_DESC"
-		allow_achievements = yes
-	}
-}
-
- TFRNS_Eyes_Wide_Shut = {
-	name = "TFRNS_Eyes_Wide_Shut"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_North_America"
-	icon = GFX_decision_generic_civil_war
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "TFRNS_Eyes_Wide_Shut_DEFAULT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = TFRNS_Eyes_Wide_Shut_GLOW
-		text = "TFRNS_Eyes_Wide_Shut_GLOW_TXT"
-		desc = "TFRNS_Eyes_Wide_Shut_GLOW_DESC"
 		allow_achievements = yes
 	}
 }
@@ -4864,12 +5052,6 @@ LBA_HRL_civil_war = {#利比亚内战
 		desc = "HRL_war_TXT_DESC"
 		allow_achievements = yes
 	}
-	option = {
-		name = TFRNS_LBA_HRL_civil_war_STALEMATE
-		text = "TFRNS_Stalemate_TXT"
-		desc = "TFRNS_LBA_HRL_civil_war_STALEMATE_DESC"
-		allow_achievements = yes
-	}
 }
 
 SUD_civil_war = {#苏丹内战
@@ -4976,9 +5158,27 @@ SUD_civil_war = {#苏丹内战
  		desc = "RULE_OPTION_DEFAULT_AI_DESC"
  	}
  	option = {
- 		name = The_IAI_Terrorism_QUASHED
- 		text = "The_IAI_Terrorism_QUASHED_TXT"
- 		desc = "The_IAI_Terrorism_QUASHED_TXT_DESC"
+ 		name = The_IAI_Terrorism_MLI_win
+ 		text = "The_IAI_Terrorism_MLI_win_TXT"
+ 		desc = "The_IAI_Terrorism_MLI_win_TXT_DESC"
+ 		allow_achievements = yes
+ 	}
+ 	option = {
+ 		name = The_IAI_Terrorism_VOL_win
+ 		text = "The_IAI_Terrorism_VOL_win_TXT"
+ 		desc = "The_IAI_Terrorism_VOL_win_TXT_DESC"
+ 		allow_achievements = yes
+ 	}
+ 	option = {
+ 		name = The_IAI_Terrorism_NGR_win
+ 		text = "The_IAI_Terrorism_NGR_win_TXT"
+ 		desc = "The_IAI_Terrorism_NGR_win_TXT_DESC"
+ 		allow_achievements = yes
+ 	}
+ 	option = {
+ 		name = The_IAI_Terrorism_IVO_win
+ 		text = "The_IAI_Terrorism_IVO_win_TXT"
+ 		desc = "The_IAI_Terrorism_IVO_win_TXT_DESC"
  		allow_achievements = yes
  	}
  	option = {

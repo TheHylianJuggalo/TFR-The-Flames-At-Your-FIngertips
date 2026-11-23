@@ -797,16 +797,6 @@ country_event = {
 
     option = {
         name = russia.40.a
-        ai_chance = {
-            base = 100
-            modifier = {
-                factor = 1000
-                has_game_rule = {
-                    rule = BLR_20_election
-                    option = BLR_20_election_3
-                }
-            }
-        }
         army_experience = 10
         puppet = BLR
         hidden_effect = {
@@ -847,16 +837,6 @@ country_event = {
 
     option = {
         name = russia.40.b
-        ai_chance = {
-            base = 100
-            modifier = {
-                factor = 0
-                has_game_rule = {
-                    rule = BLR_20_election
-                    option = BLR_20_election_3
-                }
-            }
-        }
     }
 }
 country_event = {
@@ -2355,20 +2335,6 @@ country_event = {
                 add = 60
                 has_country_flag = SOV_second_attempt_flag
             }
-            modifier = {
-                add = 100
-                has_game_rule = {
-                    rule = TFRNS_Getting_the_Gang_Back_Together
-                    option = TFRNS_Getting_the_Gang_Back_Together_YES
-                }
-            }
-            modifier = {
-                factor = 0
-                has_game_rule = {
-                    rule = TFRNS_Getting_the_Gang_Back_Together
-                    option = TFRNS_Getting_the_Gang_Back_Together_NO
-                }
-            }
         }
     }
 
@@ -2431,26 +2397,6 @@ country_event = {
                     NOT = {
                         has_government = social_democrat
                     }
-                    NOT = {
-                        has_game_rule = {
-                            rule = TFRNS_Getting_the_Gang_Back_Together
-                            option = TFRNS_Getting_the_Gang_Back_Together_NO
-                        }
-                    }
-                }
-            }
-            modifier = {
-                factor = 0
-                has_game_rule = {
-                    rule = TFRNS_Getting_the_Gang_Back_Together
-                    option = TFRNS_Getting_the_Gang_Back_Together_YES
-                }
-            }
-            modifier = {
-                add = 100
-                has_game_rule = {
-                    rule = TFRNS_Getting_the_Gang_Back_Together
-                    option = TFRNS_Getting_the_Gang_Back_Together_NO
                 }
             }
         }
@@ -6902,6 +6848,20 @@ country_event = {
             ideology = right_anarchism
             traits = {  }
         }
+        ai_chance = {
+            factor = 1
+            modifier = {
+                factor = 0
+                OR = {
+                    has_game_rule = {
+                        rule = NATO_Mandate_Post_War_Elections
+                        option = Mandate_Stays
+                        option = Leonid_Volkov
+                        option = Nikolay_Rybakov
+                    }
+                }
+            }
+        }
     }
     option = {
         name = russia.143.b
@@ -6914,6 +6874,20 @@ country_event = {
             picture = "gfx/leaders/SOV/leonid_volkov.png"
             ideology = neoliberalism
             traits = {  }
+        }
+        ai_chance = {
+            factor = 1
+            modifier = {
+                factor = 0
+                OR = {
+                    has_game_rule = {
+                        rule = NATO_Mandate_Post_War_Elections
+                        option = Mandate_Stays
+                        option = Mikhail_Svetov
+                        option = Nikolay_Rybakov
+                    }
+                }
+            }
         }
     }
     option = {
@@ -6942,11 +6916,39 @@ country_event = {
             ideology = social_democrat
             popularity = 0.3
         }
+        ai_chance = {
+            factor = 1
+            modifier = {
+                factor = 0
+                OR = {
+                    has_game_rule = {
+                        rule = NATO_Mandate_Post_War_Elections
+                        option = Mandate_Stays
+                        option = Mikhail_Svetov
+                        option = Leonid_Volkov
+                    }
+                }
+            }
+        }
     }
     option = {
         name = russia.143.c
         add_stability = -0.3
     }
+    ai_chance = {
+            factor = 1
+            modifier = {
+                factor = 0
+                OR = {
+                    has_game_rule = {
+                        rule = NATO_Mandate_Post_War_Elections
+                        option = Mikhail_Svetov
+                        option = Leonid_Volkov
+                        option = Nikolay_Rybakov
+                    }
+                }
+            }
+        }
 }
 
 #Anti Terrorist operation successful
@@ -14146,6 +14148,19 @@ country_event = { #Choose Tsar
             id = russia.795
             days = 10
         }
+        ai_chance = {
+            factor = 1
+            modifier = {
+                factor = 0
+                OR = {
+                    has_game_rule = {
+                        rule = Tsar_Choice
+                        option = Rostislav
+                        option = Gavril
+                    }
+                }
+            }
+        }
         add_political_power = -15
         add_country_leader_role = {
             character = SOV_Grigory_Romanov
@@ -14194,6 +14209,19 @@ country_event = { #Choose Tsar
         country_event = {
             id = russia.795
             days = 10
+        }
+        ai_chance = {
+            factor = 1
+            modifier = {
+                factor = 0
+                OR = {
+                    has_game_rule = {
+                        rule = Tsar_Choice
+                        option = Georgiy
+                        option = Gavril
+                    }
+                }
+            }
         }
         add_political_power = -25
         add_country_leader_role = {
@@ -14290,6 +14318,19 @@ country_event = { #Choose Tsar
         country_event = {
             id = russia.795
             days = 10
+        }
+        ai_chance = {
+            factor = 1
+            modifier = {
+                factor = 0
+                OR = {
+                    has_game_rule = {
+                        rule = Tsar_Choice
+                        option = Rostislav
+                        option = Georgiy
+                    }
+                }
+            }
         }
         add_political_power = -50
         add_country_leader_role = {
@@ -17352,6 +17393,18 @@ country_event = {
             id = SOV_LDPR_balance
             value = -0.05
         }
+        ai_chance = {
+            factor = 1
+            modifier = {
+                factor = 0
+                OR = {
+                    has_game_rule = {
+                        rule = Tsar_Choice
+                        option = Gavril
+                    }
+                }
+            }
+        }
     }
 }
 #Final-debolshevization
@@ -19384,10 +19437,45 @@ country_event = {
     option = {
         name = russia.417.a
         set_country_flag = SOV_chosen_united
+        ai_chance = {
+            factor = 1
+            modifier = {
+                factor = 0
+                OR = {
+                    has_game_rule = {
+                        rule = Reformist_UR_Elections
+                        option = Lukashenko_UR
+                        option = Platoshkin
+                        option = Prilepin
+                        option = Konovalov
+                        option = Grudinin
+                        option = Delyagin
+                    }
+                }
+            }
+        }
     }
     option = {
         name = russia.417.b
         set_country_flag = SOV_chosen_people
+        ai_chance = {
+            factor = 1
+            modifier = {
+                factor = 0
+                OR = {
+                    has_game_rule = {
+                        rule = Reformist_UR_Elections
+                        option = Patrushev
+                        option = Sobyanin
+                        option = Mishustin
+                        option = Belousov
+                        option = Volodin
+                        option = Shoygu
+                        option = Naryshkin
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -25308,13 +25396,6 @@ country_event = {
                 has_government = communist
                 factor = 10
             }
-            modifier = {
-                factor = 0
-                has_game_rule = {
-                    rule = TFRNS_SAF_Russian_Support
-                    option = TFRNS_SAF_Russian_Support_EFF
-                }
-            }
         }
         set_country_flag = SOV_supported_SWZ
         add_opinion_modifier = {
@@ -25350,13 +25431,6 @@ country_event = {
             modifier = {
                 has_government = libertarian_socialist
                 factor = 10
-            }
-            modifier = {
-                factor = 0
-                has_game_rule = {
-                    rule = TFRNS_SAF_Russian_Support
-                    option = TFRNS_SAF_Russian_Support_SWZ
-                }
             }
         }
         set_country_flag = SOV_supported_EFF
@@ -32191,6 +32265,18 @@ country_event = {
             ideology = social_democrat
             popularity = 0.15
         }
+        ai_chance = {
+            factor = 1
+            modifier = {
+                factor = 0
+                OR = {
+                    has_game_rule = {
+                        rule = Tsar_PM_Election
+                        option = Bakov
+                    }
+                }
+            }
+        }
         add_timed_idea = {
             idea = SOV_rise_of_pink_red_tsarists_idea
             days = 150
@@ -32223,6 +32309,18 @@ country_event = {
         add_popularity = {
             ideology = conservative
             popularity = 0.17
+        }
+        ai_chance = {
+            factor = 1
+            modifier = {
+                factor = 0
+                OR = {
+                    has_game_rule = {
+                        rule = Tsar_PM_Election
+                        option = Burkov
+                    }
+                }
+            }
         }
         set_country_flag = SOV_tsarist_second_party_con_flag
         hidden_effect = {
@@ -32351,6 +32449,19 @@ country_event = {
             ideology = authoritarian_democrat
             popularity = 0.03
         }
+        ai_chance = {
+            factor = 1
+            modifier = {
+                factor = 0
+                OR = {
+                    has_game_rule = {
+                        rule = Tsar_PM_Election
+                        option = Burkov
+                        option = Bakov
+                    }
+                }
+            }
+        }
         hidden_effect = {
             if = {
                 limit = {
@@ -32380,6 +32491,19 @@ country_event = {
         set_politics = {
             ruling_party = conservative
         }
+        ai_chance = {
+            factor = 1
+            modifier = {
+                factor = 0
+                OR = {
+                    has_game_rule = {
+                        rule = Tsar_PM_Election
+                        option = Zatulin
+                        option = Burkov
+                    }
+                }
+            }
+        }
         add_popularity = {
             ideology = conservative
             popularity = 0.03
@@ -32390,6 +32514,19 @@ country_event = {
         name = russia.751.h
         trigger = {
             has_country_flag = SOV_tsarist_second_party_socdem_flag
+        }
+        ai_chance = {
+            factor = 1
+            modifier = {
+                factor = 0
+                OR = {
+                    has_game_rule = {
+                        rule = Tsar_PM_Election
+                        option = Zatulin
+                        option = Bakov
+                    }
+                }
+            }
         }
         set_country_flag = head_of_gov_ui_enabled
         set_country_flag = SOV_burkov_chancellor
