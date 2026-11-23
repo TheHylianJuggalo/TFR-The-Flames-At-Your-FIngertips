@@ -1044,22 +1044,62 @@ focus_tree = {
 				country_event = { id = russia.93 hours = 8 }
 			}
 			hidden_effect = {
-				random_list = {
-					seed = random
-					60 = {
-						country_event = { id = russia.715 days = 7 }
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = TFRNS_Russian_Operation_Ultimatums
+							option = TFRNS_Russian_Operation_Ultimatums_FOLD
+						}
 					}
-					30 = {
-						country_event = { id = russia.716 days = 7 }
+					country_event = { id = russia.715 days = 7 }
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = TFRNS_Russian_Operation_Ultimatums
+							option = TFRNS_Russian_Operation_Ultimatums_STAND_FIRM
+						}
+					}
+					country_event = { id = russia.716 days = 7 }
+				}
+				else = {
+					random_list = {
+						seed = random
+						60 = {
+							country_event = { id = russia.715 days = 7 }
+						}
+						30 = {
+							country_event = { id = russia.716 days = 7 }
+						}
 					}
 				}
-				random_list = {
-					seed = random
-					50 = {
-						country_event = { id = russia.718 days = 10 }
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = TFRNS_Russian_Operation_Ultimatums
+							option = TFRNS_Russian_Operation_Ultimatums_FOLD
+						}
 					}
-					60 = {
-						country_event = { id = russia.717 days = 10 }
+					country_event = { id = russia.717 days = 10 }
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = TFRNS_Russian_Operation_Ultimatums
+							option = TFRNS_Russian_Operation_Ultimatums_STAND_FIRM
+						}
+					}
+					country_event = { id = russia.718 days = 10 }
+				}
+				else = {
+					random_list = {
+						seed = random
+						50 = {
+							country_event = { id = russia.718 days = 10 }
+						}
+						60 = {
+							country_event = { id = russia.717 days = 10 }
+						}
 					}
 				}
 				if = {
@@ -1184,22 +1224,62 @@ focus_tree = {
 					limit = { NOT = { has_completed_focus = SOV_central_asian_military_operation } }
 					news_event = { id = news.295 days = 1 }
 				}
-				random_list = {
-					seed = random
-					50 = {
-						country_event = { id = russia.532 days = 11 }
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = TFRNS_Russian_Operation_Ultimatums
+							option = TFRNS_Russian_Operation_Ultimatums_FOLD
+						}
 					}
-					50 = {
-						country_event = { id = russia.94 days = 11 }
+					country_event = { id = russia.532 days = 11 }
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = TFRNS_Russian_Operation_Ultimatums
+							option = TFRNS_Russian_Operation_Ultimatums_STAND_FIRM
+						}
 					}
-				}		
-				random_list = {
-					seed = random
-					40 = {
-						country_event = { id = russia.563 days = 7 }
+					country_event = { id = russia.94 days = 11 }
+				}
+				else = {
+					random_list = {
+						seed = random
+						50 = {
+							country_event = { id = russia.532 days = 11 }
+						}
+						50 = {
+							country_event = { id = russia.94 days = 11 }
+						}
 					}
-					50 = {
-						country_event = { id = russia.566 days = 7 }
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = TFRNS_Russian_Operation_Ultimatums
+							option = TFRNS_Russian_Operation_Ultimatums_FOLD
+						}
+					}
+					country_event = { id = russia.563 days = 7 }
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = TFRNS_Russian_Operation_Ultimatums
+							option = TFRNS_Russian_Operation_Ultimatums_STAND_FIRM
+						}
+					}
+					country_event = { id = russia.566 days = 7 }
+				}
+				else = {
+					random_list = {
+						seed = random
+						40 = {
+							country_event = { id = russia.563 days = 7 }
+						}
+						50 = {
+							country_event = { id = russia.566 days = 7 }
+						}
 					}
 				}
 				NGK = {

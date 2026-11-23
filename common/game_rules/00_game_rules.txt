@@ -1631,6 +1631,12 @@ The_RAJ_PAK_war = {#Indo-Pakistani War Winner 印巴战争赢家
 		desc = "The_RAJ_PAK_war_PAK_win_TXT_DESC"
 		allow_achievements = yes
 	}
+	option = {
+		name = The_RAJ_PAK_war_STALEMATE
+		text = "TFRNS_Stalemate_TXT"
+		desc = "The_RAJ_PAK_war_STALEMATE_DESC"
+		allow_achievements = yes
+	}
 }
 
 The_Pakistan_Turmoil = {#Pakistan Turmoil 巴基斯坦乱局
@@ -1928,6 +1934,83 @@ The_YEM_civil_war = {#也门内战
 		allow_achievements = yes
 	}
 }
+TFRNS_Saudi_Russian_Support = {#Russian Support - Saudi Civil War
+	name = "TFRNS_Saudi_Russian_Support"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_Western_Asia"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Saudi_Russian_Support_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Saudi_Russian_Support_GOV
+		text = "TFRNS_Saudi_Russian_Support_GOV_TXT"
+		desc = "TFRNS_Saudi_Russian_Support_GOV_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Saudi_Russian_Support_HEZ
+		text = "TFRNS_Saudi_Russian_Support_HEZ_TXT"
+		desc = "TFRNS_Saudi_Russian_Support_HEZ_DESC"
+		allow_achievements = yes
+	}
+}
+
+TFRNS_Saudi_French_Support = {#French Support - Saudi Civil War
+	name = "TFRNS_Saudi_French_Support"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_Western_Asia"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Saudi_French_Support_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Saudi_French_Support_ARR
+		text = "TFRNS_Saudi_French_Support_ARR_TXT"
+		desc = "TFRNS_Saudi_French_Support_ARR_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Saudi_French_Support_SAU
+		text = "TFRNS_Saudi_French_Support_SAU_TXT"
+		desc = "TFRNS_Saudi_French_Support_SAU_DESC"
+		allow_achievements = yes
+	}
+}
+
+TFRNS_Saudi_Chinese_Support = {#Chinese Support - Saudi Civil War
+	name = "TFRNS_Saudi_Chinese_Support"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_Western_Asia"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Saudi_Chinese_Support_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Saudi_Chinese_Support_SAU
+		text = "TFRNS_Saudi_Chinese_Support_SAU_TXT"
+		desc = "TFRNS_Saudi_Chinese_Support_SAU_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Saudi_Chinese_Support_ROC
+		text = "TFRNS_Saudi_Chinese_Support_ROC_TXT"
+		desc = "TFRNS_Saudi_Chinese_Support_ROC_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Saudi_Chinese_Support_ARR
+		text = "TFRNS_Saudi_Chinese_Support_ARR_TXT"
+		desc = "TFRNS_Saudi_Chinese_Support_ARR_DESC"
+		allow_achievements = yes
+	}
+}
 
 
 #Oceania 大洋洲
@@ -2082,6 +2165,97 @@ The_New_Zealand_Upheaval = {#New Zealand Upheaval 新西兰震荡
 }
 
 #Europe 欧洲
+TFRNS_Dummy_Europe_Pre_First_War = {
+	name = "TFRNS_Dummy_Europe_Pre_First_War"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	icon = GFX_decision_generic_flag
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Dummy_Europe_Pre_First_War_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Dummy_Europe_Pre_First_War_HEADER
+		text = "TFRNS_Dummy_Europe_Pre_First_War_HEADER_TXT"
+		desc = "TFRNS_Dummy_Europe_Pre_First_War_HEADER_DESC"
+		allow_achievements = yes
+	}
+}
+TFRNS_Dummy_Europe_Post_First_War_Victory = {
+	name = "TFRNS_Dummy_Europe_Post_First_War_Victory"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	icon = GFX_decision_generic_flag
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Dummy_Europe_Post_First_War_Victory_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Dummy_Europe_Post_First_War_Victory_HEADER
+		text = "TFRNS_Dummy_Europe_Post_First_War_Victory_HEADER_TXT"
+		desc = "TFRNS_Dummy_Europe_Post_First_War_Victory_HEADER_DESC"
+		allow_achievements = yes
+	}
+}
+TFRNS_Dummy_Europe_Post_First_War_Defeat_Medvedv = {
+	name = "TFRNS_Dummy_Europe_Post_First_War_Defeat_Medvedv"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	icon = GFX_decision_generic_flag
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Dummy_Europe_Post_First_War_Defeat_Medvedv_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Dummy_Europe_Post_First_War_Defeat_Medvedv_HEADER
+		text = "TFRNS_Dummy_Europe_Post_First_War_Defeat_Medvedv_HEADER_TXT"
+		desc = "TFRNS_Dummy_Europe_Post_First_War_Defeat_Medvedv_HEADER_DESC"
+		allow_achievements = yes
+	}
+}
+TFRNS_Dummy_Europe_Post_First_War_Defeat_CPRF = {
+	name = "TFRNS_Dummy_Europe_Post_First_War_Defeat_CPRF"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	icon = GFX_decision_generic_flag
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Dummy_Europe_Post_First_War_Defeat_CPRF_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Dummy_Europe_Post_First_War_Defeat_CPRF_HEADER
+		text = "TFRNS_Dummy_Europe_Post_First_War_Defeat_CPRF_HEADER_TXT"
+		desc = "TFRNS_Dummy_Europe_Post_First_War_Defeat_CPRF_HEADER_DESC"
+		allow_achievements = yes
+	}
+}
+TFRNS_Dummy_Europe_Post_First_War_Defeat_LDPR = {
+	name = "TFRNS_Dummy_Europe_Post_First_War_Defeat_LDPR"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	icon = GFX_decision_generic_flag
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Dummy_Europe_Post_First_War_Defeat_LDPR_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Dummy_Europe_Post_First_War_Defeat_LDPR_HEADER
+		text = "TFRNS_Dummy_Europe_Post_First_War_Defeat_LDPR_HEADER_TXT"
+		desc = "TFRNS_Dummy_Europe_Post_First_War_Defeat_LDPR_HEADER_DESC"
+		allow_achievements = yes
+	}
+}
+
 The_NATO_Leader = {#NATO Leadership 北约话事人
 	name = "The_NATO_Leader"
 	required_dlc = "Waking the Tiger"
@@ -3168,6 +3342,12 @@ BLR_20_election = {#Belarus 2020 Election 白俄罗斯2020年大选
 		desc = "BLR_20_election_2_TXT_DESC"
 		allow_achievements = yes
 	}
+	option = {
+		name = BLR_20_election_3
+		text = "BLR_20_election_3_TXT"
+		desc = "BLR_20_election_3_TXT_DESC"
+		allow_achievements = yes
+	}
 }
 
 UKR_election_24 = {#Ukraine 2024 Election 乌克兰2024年大选
@@ -3316,7 +3496,158 @@ Second_European_War_Outcome = {#Second European War Outcome 第二次欧陆战�
 	}
 }
 
+TFRNS_Cobasna_Depot_Explosion = {
+	name = "TFRNS_Cobasna_Depot_Explosion"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Cobasna_Depot_Explosion_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Cobasna_Depot_Explosion_YES
+		text = "TFRNS_Cobasna_Depot_Explosion_YES_TXT"
+		desc = "TFRNS_Cobasna_Depot_Explosion_YES_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Cobasna_Depot_Explosion_NO
+		text = "TFRNS_Cobasna_Depot_Explosion_NO_TXT"
+		desc = "TFRNS_Cobasna_Depot_Explosion_NO_DESC"
+		allow_achievements = yes
+	}
+}
+
 #Europe - Russia 欧洲 - 俄罗斯
+TFRNS_Dummy_Russia_Pre_Emergency_Election = {
+	name = "TFRNS_Dummy_Russia_Pre_Emergency_Election"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE_SOV"
+	icon = GFX_decision_generic_flag
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Dummy_Russia_Pre_Emergency_Election_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Dummy_Russia_Pre_Emergency_Election_HEADER
+		text = "TFRNS_Dummy_Russia_Pre_Emergency_Election_HEADER_TXT"
+		desc = "TFRNS_Dummy_Russia_Pre_Emergency_Election_HEADER_DESC"
+		allow_achievements = yes
+	}
+}
+TFRNS_Dummy_Russia_Post_First_War_Victory_Medvedv = {
+	name = "TFRNS_Dummy_Russia_Post_First_War_Victory_Medvedv"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE_SOV"
+	icon = GFX_decision_generic_flag
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Dummy_Russia_Post_First_War_Victory_Medvedv_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Dummy_Russia_Post_First_War_Victory_Medvedv_HEADER
+		text = "TFRNS_Dummy_Russia_Post_First_War_Victory_Medvedv_HEADER_TXT"
+		desc = "TFRNS_Dummy_Russia_Post_First_War_Victory_Medvedv_HEADER_DESC"
+		allow_achievements = yes
+	}
+}
+TFRNS_Dummy_Russia_Post_First_War_Victory_CPRF = {
+	name = "TFRNS_Dummy_Russia_Post_First_War_Victory_CPRF"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE_SOV"
+	icon = GFX_decision_generic_flag
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Dummy_Russia_Post_First_War_Victory_CPRF_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Dummy_Russia_Post_First_War_Victory_CPRF_HEADER
+		text = "TFRNS_Dummy_Russia_Post_First_War_Victory_CPRF_HEADER_TXT"
+		desc = "TFRNS_Dummy_Russia_Post_First_War_Victory_CPRF_HEADER_DESC"
+		allow_achievements = yes
+	}
+}
+TFRNS_Dummy_Russia_Post_First_War_Victory_LDPR = {
+	name = "TFRNS_Dummy_Russia_Post_First_War_Victory_LDPR"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE_SOV"
+	icon = GFX_decision_generic_flag
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Dummy_Russia_Post_First_War_Victory_LDPR_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Dummy_Russia_Post_First_War_Victory_LDPR_HEADER
+		text = "TFRNS_Dummy_Russia_Post_First_War_Victory_LDPR_HEADER_TXT"
+		desc = "TFRNS_Dummy_Russia_Post_First_War_Victory_LDPR_HEADER_DESC"
+		allow_achievements = yes
+	}
+}
+TFRNS_Dummy_Russia_Post_First_War_Defeat_Navalny = {
+	name = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Navalny"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE_SOV"
+	icon = GFX_decision_generic_flag
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Navalny_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Dummy_Russia_Post_First_War_Defeat_Navalny_HEADER
+		text = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Navalny_HEADER_TXT"
+		desc = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Navalny_HEADER_DESC"
+		allow_achievements = yes
+	}
+}
+TFRNS_Dummy_Russia_Post_First_War_Defeat_Dugin = {
+	name = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Dugin"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE_SOV"
+	icon = GFX_decision_generic_flag
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Dugin_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Dummy_Russia_Post_First_War_Defeat_Dugin_HEADER
+		text = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Dugin_HEADER_TXT"
+		desc = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Dugin_HEADER_DESC"
+		allow_achievements = yes
+	}
+}
+TFRNS_Dummy_Russia_Post_First_War_Defeat_Wagner = {
+	name = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Wagner"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE_SOV"
+	icon = GFX_decision_generic_flag
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Wagner_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Dummy_Russia_Post_First_War_Defeat_Wagner_HEADER
+		text = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Wagner_HEADER_TXT"
+		desc = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Wagner_HEADER_DESC"
+		allow_achievements = yes
+	}
+}
+
 The_Move_Against_the_Fifth_Column = {#Move Against the Fifth Column 清洗第五纵队
 	name = "The_Move_Against_the_Fifth_Column"
 	required_dlc = "Waking the Tiger"
@@ -4413,6 +4744,24 @@ The_Canada_Elections = {#Canada Elections 加拿大大选
 		allow_achievements = yes
 	}
 }
+ TFRNS_Eyes_Wide_Shut = {
+	name = "TFRNS_Eyes_Wide_Shut"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_North_America"
+	icon = GFX_decision_generic_civil_war
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Eyes_Wide_Shut_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Eyes_Wide_Shut_GLOW
+		text = "TFRNS_Eyes_Wide_Shut_GLOW_TXT"
+		desc = "TFRNS_Eyes_Wide_Shut_GLOW_DESC"
+		allow_achievements = yes
+	}
+}
 
  The_Biden_Union_Elections = {#Biden Union Elections 美利坚联邦选举
 	name = "The_Biden_Union_Elections"
@@ -5052,6 +5401,12 @@ LBA_HRL_civil_war = {#利比亚内战
 		desc = "HRL_war_TXT_DESC"
 		allow_achievements = yes
 	}
+	option = {
+		name = TFRNS_LBA_HRL_civil_war_STALEMATE
+		text = "TFRNS_Stalemate_TXT"
+		desc = "TFRNS_LBA_HRL_civil_war_STALEMATE_DESC"
+		allow_achievements = yes
+	}
 }
 
 SUD_civil_war = {#苏丹内战
@@ -5156,6 +5511,12 @@ SUD_civil_war = {#苏丹内战
  		name = DEFAULT
  		text = "RULE_OPTION_DEFAULT"
  		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+ 	}
+ 	option = {
+ 		name = The_IAI_Terrorism_QUASHED
+ 		text = "The_IAI_Terrorism_QUASHED_TXT"
+ 		desc = "The_IAI_Terrorism_QUASHED_TXT_DESC"
+ 		allow_achievements = yes
  	}
  	option = {
  		name = The_IAI_Terrorism_MLI_win
