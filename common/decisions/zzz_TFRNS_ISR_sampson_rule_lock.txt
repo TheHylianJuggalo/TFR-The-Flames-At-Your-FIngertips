@@ -1,0 +1,49 @@
+samson_ISR = {
+	deploy_nukes = {
+		visible = {
+			tag = ISR
+			NOT = {
+				OR = {
+					has_game_rule = { rule = TFRNS_Arab_Israeli_War_Outcome option = TFRNS_Arab_Israeli_War_Outcome_ISR }
+					has_game_rule = { rule = TFRNS_Arab_Israeli_War_Outcome option = TFRNS_Arab_Israeli_War_Outcome_ARAB }
+					has_game_rule = { rule = TFRNS_Arab_Israeli_War_Outcome option = TFRNS_Arab_Israeli_War_Outcome_STALEMATE }
+				}
+			}
+		}
+		available = {
+			has_war_with = SYR
+			surrender_progress > 0.8
+			num_of_nukes > 5
+			NOT = {
+				OR = {
+					has_game_rule = { rule = TFRNS_Arab_Israeli_War_Outcome option = TFRNS_Arab_Israeli_War_Outcome_ISR }
+					has_game_rule = { rule = TFRNS_Arab_Israeli_War_Outcome option = TFRNS_Arab_Israeli_War_Outcome_ARAB }
+					has_game_rule = { rule = TFRNS_Arab_Israeli_War_Outcome option = TFRNS_Arab_Israeli_War_Outcome_STALEMATE }
+				}
+			}
+		}
+		complete_effect = {
+			every_country = { goto_province = 4111 }
+			news_event = { id = news.211 }
+			launch_nuke = { state = 1032 controller = SYR use_nuke = yes }
+			launch_nuke = { state = 1034 controller = SYR use_nuke = yes }
+			launch_nuke = { province = 7011 controller = EGY use_nuke = yes }
+			launch_nuke = { province = 2097 controller = IRQ use_nuke = yes }
+			launch_nuke = { province = 792 controller = LEB use_nuke = yes }
+			launch_nuke = { province = 4206 controller = ISR use_nuke = yes }
+			sound_effect = siren_sound_effect
+			set_variable = { disband_fraction = 1 }
+			disband_units_fraction = yes
+			clear_variable = disband_fraction
+			add_ideas = ai_disabled_production
+			SYR = { country_event = { id = syria.29 days = 100 } add_ideas = ai_disabled_production }
+			HEZ = { add_ideas = ai_disabled_production }
+			LEB = { add_ideas = ai_disabled_production }
+			JOR = { add_ideas = ai_disabled_production }
+		}
+		icon = GFX_decision_Deploy_Nukes
+		fire_only_once = yes
+		cost = 10
+		ai_will_do = { factor = 1000 }
+	}
+}

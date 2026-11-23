@@ -1,0 +1,37 @@
+# TFR No Surrender - Myanmar Civil War Winner
+#
+# Changes bur.2, the 2021 coup/civil-war setup event.
+# DEFAULT leaves TFR's People's War stalemate untouched. The PRC option is a
+# code-blank presentation option: it leaves the same setup untouched. BRM and
+# PDF strip the People's War state modifier and receive the Mushroom Army war
+# buff; the PDF option gives the buff to every anti-junta faction that rises in
+# bur.2.
+TFRNS_Myanmar_Civil_War_Winner = {
+	name = "TFRNS_Myanmar_Civil_War_Winner"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_Southeast_Asia"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Myanmar_Civil_War_Winner_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Myanmar_Civil_War_Winner_PRC
+		text = "TFRNS_Myanmar_Civil_War_Winner_PRC_TXT"
+		desc = "TFRNS_Myanmar_Civil_War_Winner_PRC_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Myanmar_Civil_War_Winner_BRM
+		text = "TFRNS_Myanmar_Civil_War_Winner_BRM_TXT"
+		desc = "TFRNS_Myanmar_Civil_War_Winner_BRM_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Myanmar_Civil_War_Winner_PDF
+		text = "TFRNS_Myanmar_Civil_War_Winner_PDF_TXT"
+		desc = "TFRNS_Myanmar_Civil_War_Winner_PDF_DESC"
+		allow_achievements = yes
+	}
+}

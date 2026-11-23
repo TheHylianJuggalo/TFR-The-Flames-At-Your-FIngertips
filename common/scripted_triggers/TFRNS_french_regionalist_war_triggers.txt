@@ -1,0 +1,22 @@
+# TFR No Surrender - French regionalist war "still the first phase" check.
+#
+# True only while Lambart's France is alive and still fighting at least one of
+# the eight Volt-era regional breakaways. The global flag is set by the submod's
+# on_capitulation hook the moment a breakaway kills France, which is also the
+# moment Germany annexes France and declares war on all eight. After that the
+# reconciliation effect strips the buff from every regionalist.
+
+TFRNS_french_regionalist_war_ongoing = {
+	NOT = { has_global_flag = TFRNS_French_Regionalist_War_Germany_Intervened }
+	country_exists = FRA
+	OR = {
+		AND = { country_exists = NMD FRA = { has_war_with = NMD } }
+		AND = { country_exists = SAX FRA = { has_war_with = SAX } }
+		AND = { country_exists = BRI FRA = { has_war_with = BRI } }
+		AND = { country_exists = FCM FRA = { has_war_with = FCM } }
+		AND = { country_exists = PIC FRA = { has_war_with = PIC } }
+		AND = { country_exists = OCT FRA = { has_war_with = OCT } }
+		AND = { country_exists = LIM FRA = { has_war_with = LIM } }
+		AND = { country_exists = PRV FRA = { has_war_with = PRV } }
+	}
+}

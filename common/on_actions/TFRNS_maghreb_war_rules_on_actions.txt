@@ -1,0 +1,137 @@
+on_actions = {
+	on_declare_war = {
+		effect = {
+			# =====================================================================
+			# Maghreb War - winner buffs
+			# =====================================================================
+			# The Maghreb War begins when Algeria (or its puppet Western Sahara)
+			# declares war on Morocco (algeria.1). Only fire on that specific
+			# declaration so unrelated wars never hand out these buffs.
+			if = {
+				limit = {
+					has_global_flag = ALG_maghreb_war_global
+					OR = {
+						AND = { ROOT = { tag = ALG } FROM = { tag = MOR } }
+						AND = { ROOT = { tag = WES } FROM = { tag = MOR } }
+					}
+				}
+				# Winner: Kingdom of Morocco. Morocco and any of its own faction
+				# members keep the buff. Western Sahara fights for Algeria and is
+				# excluded, as are Mauritania and the Libyan tags.
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = TFRNS_Maghreb_War_Winner
+							option = TFRNS_Maghreb_War_Winner_MOR
+						}
+						NOT = { has_global_flag = MAGHREB_WAR_MOR_BUFF_APPLIED }
+					}
+					set_global_flag = MAGHREB_WAR_MOR_BUFF_APPLIED
+					every_country = {
+						limit = {
+							OR = {
+								tag = MOR
+								AND = { tag = TUN is_in_faction_with = MOR }
+							}
+						}
+						set_country_flag = TFRNS_Source_Maghreb
+						TFRNS_apply_attack_mushroom_buff_if_missing = yes
+					}
+				}
+				# Winner: Islamic Republic of Algeria. Algeria, its puppet Western
+				# Sahara, and the faction members it has pulled in (Mauritania
+				# and/or Tunisia) keep the buff. The Libyan tags are excluded.
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = TFRNS_Maghreb_War_Winner
+							option = TFRNS_Maghreb_War_Winner_ALG
+						}
+						NOT = { has_global_flag = MAGHREB_WAR_ALG_BUFF_APPLIED }
+					}
+					set_global_flag = MAGHREB_WAR_ALG_BUFF_APPLIED
+					every_country = {
+						limit = {
+							OR = {
+								tag = ALG
+								tag = WES
+								AND = { OR = { tag = TUN tag = MRT } is_in_faction_with = ALG }
+							}
+						}
+						set_country_flag = TFRNS_Source_Maghreb
+						TFRNS_apply_attack_mushroom_buff_if_missing = yes
+					}
+				}
+			}
+			# =====================================================================
+			# Algerian Civil War - winner buff
+			# =====================================================================
+			# Only the rule-selected winner ever receives the buff and army. With
+			# the rule left on DEFAULT nobody gets one. algeria.2 sets
+			# Algerian_Civil_War_Flag immediately before the war declarations.
+			if = {
+				limit = {
+					has_global_flag = Algerian_Civil_War_Flag
+					OR = {
+						ROOT = { OR = { tag = ALG tag = AG1 tag = AG2 tag = AG3 tag = TAU } }
+						FROM = { OR = { tag = ALG tag = AG1 tag = AG2 tag = AG3 tag = TAU } }
+					}
+					country_exists = ALG
+					NOT = { has_global_flag = ALG_CW_ALG_BUFF_APPLIED }
+					NOT = { has_global_flag = TFRNS_HRL_Algerian_CW_Buff_Suppressed }
+					has_game_rule = {
+						rule = TFRNS_Algeria_Civil_War_Winner
+						option = TFRNS_Algeria_Civil_War_Winner_ALG
+					}
+				}
+				set_global_flag = ALG_CW_ALG_BUFF_APPLIED
+				ALG = {
+					set_country_flag = TFRNS_Source_Algerian_CW
+					TFRNS_apply_attack_mushroom_buff_if_missing = yes
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = Algerian_Civil_War_Flag
+					OR = {
+						ROOT = { OR = { tag = ALG tag = AG1 tag = AG2 tag = AG3 tag = TAU } }
+						FROM = { OR = { tag = ALG tag = AG1 tag = AG2 tag = AG3 tag = TAU } }
+					}
+					country_exists = AG1
+					NOT = { has_global_flag = ALG_CW_AG1_BUFF_APPLIED }
+					NOT = { has_global_flag = TFRNS_HRL_Algerian_CW_Buff_Suppressed }
+					has_game_rule = {
+						rule = TFRNS_Algeria_Civil_War_Winner
+						option = TFRNS_Algeria_Civil_War_Winner_AG1
+					}
+				}
+				set_global_flag = ALG_CW_AG1_BUFF_APPLIED
+				AG1 = {
+					set_country_flag = TFRNS_Source_Algerian_CW
+					TFRNS_apply_attack_mushroom_buff_if_missing = yes
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = Algerian_Civil_War_Flag
+					OR = {
+						ROOT = { OR = { tag = ALG tag = AG1 tag = AG2 tag = AG3 tag = TAU } }
+						FROM = { OR = { tag = ALG tag = AG1 tag = AG2 tag = AG3 tag = TAU } }
+					}
+					country_exists = AG2
+					NOT = { has_global_flag = ALG_CW_AG2_BUFF_APPLIED }
+					NOT = { has_global_flag = TFRNS_HRL_Algerian_CW_Buff_Suppressed }
+					has_game_rule = {
+						rule = TFRNS_Algeria_Civil_War_Winner
+						option = TFRNS_Algeria_Civil_War_Winner_AG2
+					}
+				}
+				set_global_flag = ALG_CW_AG2_BUFF_APPLIED
+				AG2 = {
+					set_country_flag = TFRNS_Source_Algerian_CW
+					TFRNS_apply_attack_mushroom_buff_if_missing = yes
+				}
+			}
+		}
+	}
+}

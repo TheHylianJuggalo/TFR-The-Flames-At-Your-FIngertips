@@ -1,0 +1,46 @@
+on_actions = {
+	on_declare_war = {
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							ROOT = { tag = RAJ }
+							FROM = { tag = PAK }
+						}
+						AND = {
+							ROOT = { tag = PAK }
+							FROM = { tag = RAJ }
+						}
+					}
+					has_game_rule = {
+						rule = TFRNS_Indo_Pakistan_Nuclear_Agreement
+						option = TFRNS_Indo_Pakistan_Nuclear_Agreement_SUCCEEDS
+					}
+				}
+				set_global_flag = PRC_india_no_nukes
+				set_global_flag = PRC_pakistan_no_nukes
+			}
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							ROOT = { tag = RAJ }
+							FROM = { tag = PAK }
+						}
+						AND = {
+							ROOT = { tag = PAK }
+							FROM = { tag = RAJ }
+						}
+					}
+					has_game_rule = {
+						rule = TFRNS_Indo_Pakistan_Nuclear_Agreement
+						option = TFRNS_Indo_Pakistan_Nuclear_Agreement_FAILS
+					}
+				}
+				clr_global_flag = PRC_india_no_nukes
+				clr_global_flag = PRC_pakistan_no_nukes
+			}
+		}
+	}
+}

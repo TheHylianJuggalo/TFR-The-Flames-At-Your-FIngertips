@@ -1,0 +1,36 @@
+# TFR No Surrender - Medvedev-path ultimatum rules
+#
+# On the Medvedev path Russia's "Central Asian Military Operation" and
+# "Caucasus Military Operation" focuses each fire an ultimatum at two
+# neighbours. TFR then rolls a weighted random_list per target to decide
+# whether it folds (becomes a Russian puppet) or stands firm (Russia declares
+# war). This single blanket rule replaces only those four rolls - the focuses,
+# the ultimatum events and everything else are untouched. DEFAULT leaves TFR
+# exactly as it is.
+#
+#   Fold       - all four targets (@TMS, @UZB, @AZR, @GEO) always cave and are
+#                puppeted by Russia.
+#   Stand Firm - all four targets always refuse and Russia declares war.
+TFRNS_Russian_Operation_Ultimatums = {
+	name = "TFRNS_Russian_Operation_Ultimatums"
+	group = "RULE_GROUP_EUROPE_SOV"
+	icon = GFX_decision_generic_political_discussion
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Russian_Operation_Ultimatums_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Russian_Operation_Ultimatums_FOLD
+		text = "TFRNS_Russian_Operation_Ultimatums_FOLD_TXT"
+		desc = "TFRNS_Russian_Operation_Ultimatums_FOLD_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Russian_Operation_Ultimatums_STAND_FIRM
+		text = "TFRNS_Russian_Operation_Ultimatums_STAND_FIRM_TXT"
+		desc = "TFRNS_Russian_Operation_Ultimatums_STAND_FIRM_DESC"
+		allow_achievements = yes
+	}
+}

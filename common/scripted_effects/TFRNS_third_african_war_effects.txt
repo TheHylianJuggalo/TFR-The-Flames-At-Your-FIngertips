@@ -1,0 +1,73 @@
+TFRNS_apply_third_african_war_peoples_war_to_owned_states = {
+	every_owned_state = {
+		limit = { NOT = { has_state_flag = TFRNS_Third_African_War_Stalemate_State } }
+		set_state_flag = TFRNS_Third_African_War_Stalemate_State
+		add_dynamic_modifier = { modifier = TFRNS_Third_African_War_Peoples_War }
+	}
+}
+
+TFRNS_remove_third_african_war_peoples_war_states = {
+	every_state = {
+		limit = { has_state_flag = TFRNS_Third_African_War_Stalemate_State }
+		remove_dynamic_modifier = { modifier = TFRNS_Third_African_War_Peoples_War }
+		clr_state_flag = TFRNS_Third_African_War_Stalemate_State
+	}
+}
+
+TFRNS_remove_third_african_war_conflicting_buffs = {
+	# Clear any still-active civil-war Mushroom buff before assigning the Third African War outcome.
+	ETH = { TFRNS_remove_mushroom_buff_if_present = yes }
+	TDF = { TFRNS_remove_mushroom_buff_if_present = yes }
+	SOM = { TFRNS_remove_mushroom_buff_if_present = yes }
+	SHB = { TFRNS_remove_mushroom_buff_if_present = yes }
+	SUD = { TFRNS_remove_mushroom_buff_if_present = yes }
+	RSF = { TFRNS_remove_mushroom_buff_if_present = yes }
+}
+
+TFRNS_apply_third_african_war_eap_buffs = {
+	every_country = {
+		limit = {
+			OR = {
+				tag = ETH
+				is_in_faction_with = ETH
+			}
+		}
+		set_country_flag = TFRNS_Source_Third_African_War
+		TFRNS_apply_attack_mushroom_buff_if_missing = yes
+	}
+}
+
+TFRNS_apply_third_african_war_nrc_buffs = {
+	every_country = {
+		limit = {
+			OR = {
+				tag = EGY
+				is_in_faction_with = EGY
+			}
+		}
+		set_country_flag = TFRNS_Source_Third_African_War
+		TFRNS_apply_attack_mushroom_buff_if_missing = yes
+	}
+}
+
+TFRNS_apply_third_african_war_stalemate_states = {
+	every_country = {
+		limit = {
+			OR = {
+				tag = ETH
+				tag = EGY
+				is_in_faction_with = ETH
+				is_in_faction_with = EGY
+			}
+		}
+		TFRNS_apply_third_african_war_peoples_war_to_owned_states = yes
+	}
+}
+
+TFRNS_cleanup_third_african_war_buffs = {
+	every_country = {
+		limit = { has_country_flag = TFRNS_Source_Third_African_War }
+		clr_country_flag = TFRNS_Source_Third_African_War
+		TFRNS_remove_mushroom_buff_if_no_other_campaign_owns_it = yes
+	}
+}

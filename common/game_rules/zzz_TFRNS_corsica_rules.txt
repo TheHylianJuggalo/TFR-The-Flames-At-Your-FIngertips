@@ -1,0 +1,31 @@
+# TFR No Surrender - Corsican Riots rule
+#
+# TFR's france.1991 event ("Riots continue in Corsica") re-fires itself every
+# 37 days while Corsica (state 1) is not a French core. Each firing rolls a
+# 1/100 chance to escalate the unrest into a French annexation war on Corsica
+# (state 1 is handed to COR, then France declares war with annex_everything).
+# This rule changes only that single roll - the unrest, its length and its
+# other outcomes are untouched. DEFAULT leaves TFR exactly as it is.
+TFRNS_Corsican_Riots = {
+	name = "TFRNS_Corsican_Riots"
+	group = "RULE_GROUP_EUROPE"
+	icon = GFX_decision_generic_civil_war
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Corsican_Riots_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Corsican_Riots_ALWAYS
+		text = "TFRNS_Corsican_Riots_ALWAYS_TXT"
+		desc = "TFRNS_Corsican_Riots_ALWAYS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Corsican_Riots_NEVER
+		text = "TFRNS_Corsican_Riots_NEVER_TXT"
+		desc = "TFRNS_Corsican_Riots_NEVER_DESC"
+		allow_achievements = yes
+	}
+}

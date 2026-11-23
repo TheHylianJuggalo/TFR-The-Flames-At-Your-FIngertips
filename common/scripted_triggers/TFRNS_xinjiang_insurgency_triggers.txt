@@ -1,0 +1,18 @@
+# TFR No Surrender - Xinjiang Insurgency "war ongoing" check
+#
+# True only while the Xinjiang Insurgency is actually being fought. TFR's
+# china.41 event makes XIN declare war (annex_everything) on SIK, HUT and ETL,
+# and the war is resolved purely by capitulation, so the insurgency counts as
+# ongoing while XIN still exists and is at war with at least one rebel tag.
+# Once XIN is annexed - or the rebels are - the check fails and the buff is
+# released.
+
+# Xinjiang Insurgency: XIN (Construction Corps) vs SIK, HUT and ETL.
+TFRNS_xinjiang_insurgency_ongoing = {
+	country_exists = XIN
+	OR = {
+		AND = { country_exists = SIK SIK = { has_war_with = XIN } }
+		AND = { country_exists = HUT HUT = { has_war_with = XIN } }
+		AND = { country_exists = ETL ETL = { has_war_with = XIN } }
+	}
+}

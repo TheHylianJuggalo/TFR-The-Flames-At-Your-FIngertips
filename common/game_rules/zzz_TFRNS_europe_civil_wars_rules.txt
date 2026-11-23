@@ -1,0 +1,127 @@
+# TFR No Surrender - European civil war winner rules
+#
+# Four "winner" rules for the civil wars that only break out on the Soviet
+# victory paths. TFR itself decides these wars by normal combat and
+# capitulation; these rules do not invent any new logic - they simply give the
+# chosen side the same Mushroom Army attack buff the other submod winner rules
+# hand out, for as long as the war is actually being fought. DEFAULT leaves TFR
+# exactly as it is.
+TFRNS_British_Civil_War_Winner = {
+	name = "TFRNS_British_Civil_War_Winner"
+	group = "RULE_GROUP_EUROPE"
+	icon = GFX_decision_generic_civil_war
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_British_Civil_War_Winner_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_British_Civil_War_Winner_ENG
+		text = "TFRNS_British_Civil_War_Winner_ENG_TXT"
+		desc = "TFRNS_British_Civil_War_Winner_ENG_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_British_Civil_War_Winner_UK2
+		text = "TFRNS_British_Civil_War_Winner_UK2_TXT"
+		desc = "TFRNS_British_Civil_War_Winner_UK2_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_British_Civil_War_Winner_SCO
+		text = "TFRNS_British_Civil_War_Winner_SCO_TXT"
+		desc = "TFRNS_British_Civil_War_Winner_SCO_DESC"
+		allow_achievements = yes
+	}
+}
+
+TFRNS_Troubles_Winner = {
+	name = "TFRNS_Troubles_Winner"
+	group = "RULE_GROUP_EUROPE"
+	icon = GFX_decision_generic_civil_war
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Troubles_Winner_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Troubles_Winner_NIR
+		text = "TFRNS_Troubles_Winner_NIR_TXT"
+		desc = "TFRNS_Troubles_Winner_NIR_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Troubles_Winner_IRA
+		text = "TFRNS_Troubles_Winner_IRA_TXT"
+		desc = "TFRNS_Troubles_Winner_IRA_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Troubles_Winner_IRE
+		text = "TFRNS_Troubles_Winner_IRE_TXT"
+		desc = "TFRNS_Troubles_Winner_IRE_DESC"
+		allow_achievements = yes
+	}
+}
+
+TFRNS_Spanish_Civil_War_Winner = {
+	name = "TFRNS_Spanish_Civil_War_Winner"
+	group = "RULE_GROUP_EUROPE"
+	icon = GFX_decision_generic_civil_war
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Spanish_Civil_War_Winner_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Spanish_Civil_War_Winner_SPR
+		text = "TFRNS_Spanish_Civil_War_Winner_SPR_TXT"
+		desc = "TFRNS_Spanish_Civil_War_Winner_SPR_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Spanish_Civil_War_Winner_RSR
+		text = "TFRNS_Spanish_Civil_War_Winner_RSR_TXT"
+		desc = "TFRNS_Spanish_Civil_War_Winner_RSR_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Spanish_Civil_War_Winner_SNS
+		text = "TFRNS_Spanish_Civil_War_Winner_SNS_TXT"
+		desc = "TFRNS_Spanish_Civil_War_Winner_SNS_DESC"
+		allow_achievements = yes
+	}
+}
+
+TFRNS_Portuguese_Civil_War_Winner = {
+	name = "TFRNS_Portuguese_Civil_War_Winner"
+	group = "RULE_GROUP_EUROPE"
+	icon = GFX_decision_generic_civil_war
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Portuguese_Civil_War_Winner_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Portuguese_Civil_War_Winner_POR
+		text = "TFRNS_Portuguese_Civil_War_Winner_POR_TXT"
+		desc = "TFRNS_Portuguese_Civil_War_Winner_POR_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Portuguese_Civil_War_Winner_PRP
+		text = "TFRNS_Portuguese_Civil_War_Winner_PRP_TXT"
+		desc = "TFRNS_Portuguese_Civil_War_Winner_PRP_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Portuguese_Civil_War_Winner_GOD
+		text = "TFRNS_Portuguese_Civil_War_Winner_GOD_TXT"
+		desc = "TFRNS_Portuguese_Civil_War_Winner_GOD_DESC"
+		allow_achievements = yes
+	}
+}

@@ -1,0 +1,193 @@
+# TFR No Surrender - Sahel War side enforcement
+#
+# These effects mirror what TFR already does when a West African nation picks a
+# side in the Sahel War:
+#   * pro-Russian -> the immediate block of russia.724: sets SOV_WA_Coup, drops
+#     French influence, and joins the Mali-led West African Security Pact.
+#   * pro-French  -> the immediate block of france.28: sets FRA_WA_Coup, drops
+#     Russian influence, and joins the Ivory Coast-led ECOMOG faction.
+# Neither event changes the ruling party, so neither do these effects - only the
+# war alignment (flag + faction membership) is forced.
+
+# --- helpers (current scope = the joining nation) ------------------------
+
+TFRNS_join_sahel_security_pact = {
+	set_country_flag = SOV_WA_Coup
+	remove_ideas = {
+		FRA_French_Military_Influence_idea
+		FRA_French_Economic_Influence_idea
+	}
+	if = {
+		limit = {
+			country_exists = MLI
+			MLI = { is_in_faction = yes }
+			NOT = { is_in_faction_with = MLI }
+		}
+		if = {
+			limit = { is_in_faction = yes }
+			leave_faction = yes
+		}
+		MLI = { add_to_faction = PREV }
+	}
+}
+
+TFRNS_join_ecomog = {
+	set_country_flag = FRA_WA_Coup
+	remove_ideas = {
+		SOV_russian_african_corps_idea
+		SOV_russian_african_corps_2_idea
+		SOV_russo_african_economic_partnership_idea
+	}
+	if = {
+		limit = {
+			country_exists = IVO
+			IVO = { is_in_faction = yes }
+			NOT = { is_in_faction_with = IVO }
+		}
+		if = {
+			limit = { is_in_faction = yes }
+			leave_faction = yes
+		}
+		IVO = { add_to_faction = PREV }
+	}
+}
+
+# --- dispatcher (current scope = a country) ------------------------------
+
+TFRNS_enforce_sahel_side_choices = {
+	if = {
+		limit = {
+			OR = {
+				original_tag = GNA
+				original_tag = TOG
+				original_tag = DAH
+				original_tag = GHA
+				original_tag = SIE
+				original_tag = LIB
+			}
+		}
+		if = {
+			limit = { original_tag = GNA }
+			if = {
+				limit = { has_game_rule = { rule = TFRNS_GNA_Sahel_Side option = TFRNS_GNA_Sahel_Side_SOV } }
+				TFRNS_join_sahel_security_pact = yes
+			}
+			else_if = {
+				limit = { has_game_rule = { rule = TFRNS_GNA_Sahel_Side option = TFRNS_GNA_Sahel_Side_FRA } }
+				TFRNS_join_ecomog = yes
+			}
+		}
+		if = {
+			limit = { original_tag = TOG }
+			if = {
+				limit = { has_game_rule = { rule = TFRNS_TOG_Sahel_Side option = TFRNS_TOG_Sahel_Side_SOV } }
+				TFRNS_join_sahel_security_pact = yes
+			}
+			else_if = {
+				limit = { has_game_rule = { rule = TFRNS_TOG_Sahel_Side option = TFRNS_TOG_Sahel_Side_FRA } }
+				TFRNS_join_ecomog = yes
+			}
+		}
+		if = {
+			limit = { original_tag = DAH }
+			if = {
+				limit = { has_game_rule = { rule = TFRNS_DAH_Sahel_Side option = TFRNS_DAH_Sahel_Side_SOV } }
+				TFRNS_join_sahel_security_pact = yes
+			}
+			else_if = {
+				limit = { has_game_rule = { rule = TFRNS_DAH_Sahel_Side option = TFRNS_DAH_Sahel_Side_FRA } }
+				TFRNS_join_ecomog = yes
+			}
+		}
+		if = {
+			limit = { original_tag = GHA }
+			if = {
+				limit = { has_game_rule = { rule = TFRNS_GHA_Sahel_Side option = TFRNS_GHA_Sahel_Side_SOV } }
+				TFRNS_join_sahel_security_pact = yes
+			}
+			else_if = {
+				limit = { has_game_rule = { rule = TFRNS_GHA_Sahel_Side option = TFRNS_GHA_Sahel_Side_FRA } }
+				TFRNS_join_ecomog = yes
+			}
+		}
+		if = {
+			limit = { original_tag = SIE }
+			if = {
+				limit = { has_game_rule = { rule = TFRNS_SIE_Sahel_Side option = TFRNS_SIE_Sahel_Side_SOV } }
+				TFRNS_join_sahel_security_pact = yes
+			}
+			else_if = {
+				limit = { has_game_rule = { rule = TFRNS_SIE_Sahel_Side option = TFRNS_SIE_Sahel_Side_FRA } }
+				TFRNS_join_ecomog = yes
+			}
+		}
+		if = {
+			limit = { original_tag = LIB }
+			if = {
+				limit = { has_game_rule = { rule = TFRNS_LIB_Sahel_Side option = TFRNS_LIB_Sahel_Side_SOV } }
+				TFRNS_join_sahel_security_pact = yes
+			}
+			else_if = {
+				limit = { has_game_rule = { rule = TFRNS_LIB_Sahel_Side option = TFRNS_LIB_Sahel_Side_FRA } }
+				TFRNS_join_ecomog = yes
+			}
+		}
+	}
+}
+
+# --- pressure-flag enforcement (Chad / Mauritania) -----------------------
+# TFR decides whether Chad joins the Mali-led pact and whether Mauritania joins
+# ECOMOG purely from a country flag set by the FRA/SOV pressure decisions:
+#   * CHA <- SOV_chad_pressured        (set by SOV_pressure_chad)
+#   * MRT <- FRA_mauritania_pressured  (set by FRA_pressure_mauritania)
+# At Sahel-war start TFR's own mali.17 / mali.13 then fire if the flag is set.
+# Forcing the flag makes those events do the join exactly as designed; clearing
+# it keeps the country neutral. Both source decisions are fire_only_once, so a
+# NEUTRAL rule has to keep clearing the flag (hence the on_monthly hook).
+TFRNS_enforce_sahel_pressure_flags = {
+	# Chad - Soviet pressure -> join the Mali-led West African Security Pact.
+	if = {
+		limit = {
+			has_game_rule = { rule = TFRNS_CHA_Sahel_Side option = TFRNS_CHA_Sahel_Side_SOV }
+		}
+		if = {
+			limit = { country_exists = SOV }
+			SOV = { set_country_flag = SOV_chad_pressured }
+		}
+	}
+	else_if = {
+		limit = {
+			has_game_rule = { rule = TFRNS_CHA_Sahel_Side option = TFRNS_CHA_Sahel_Side_NEUTRAL }
+		}
+		if = {
+			limit = { country_exists = SOV }
+			SOV = { clr_country_flag = SOV_chad_pressured }
+		}
+	}
+	# Mauritania - French pressure -> join the Ivory Coast-led ECOMOG.
+	# Force TFR's pressure flag only while Mauritania is independent. If it is
+	# already a subject (e.g. a Moroccan puppet after the Maghreb War), leave
+	# the vanilla flag state untouched: TFR decides whether mali.13 fires.
+	if = {
+		limit = {
+			has_game_rule = { rule = TFRNS_MRT_Sahel_Side option = TFRNS_MRT_Sahel_Side_FRA }
+		}
+		if = {
+			limit = {
+				country_exists = MRT
+				country_exists = FRA
+				MRT = { NOT = { is_subject = yes } }
+			}
+			FRA = { set_country_flag = FRA_mauritania_pressured }
+		}
+	}
+	else_if = {
+		limit = {
+			has_game_rule = { rule = TFRNS_MRT_Sahel_Side option = TFRNS_MRT_Sahel_Side_NEUTRAL }
+		}
+		if = {
+			limit = { country_exists = FRA }
+			FRA = { clr_country_flag = FRA_mauritania_pressured }
+		}
+	}
+}

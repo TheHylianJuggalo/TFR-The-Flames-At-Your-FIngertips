@@ -1,0 +1,260 @@
+﻿
+			if = {
+				limit = {
+					# Maghreb War Winner - Kingdom of Morocco
+					has_global_flag = ALG_maghreb_war_global
+					has_game_rule = {
+						rule = TFRNS_Maghreb_War_Winner
+						option = TFRNS_Maghreb_War_Winner_MOR
+					}
+					NOT = {
+						has_global_flag = MAGHREB_WAR_MOR_BUFF_APPLIED
+					}
+				}
+				set_global_flag = MAGHREB_WAR_MOR_BUFF_APPLIED
+				every_country = {
+					limit = {
+						OR = {
+							tag = MOR
+							tag = WES
+							AND = {
+								OR = {
+									tag = TUN
+									tag = MRT
+									tag = HRL
+									tag = LBA
+								}
+								is_in_faction_with = MOR
+							}
+						}
+						NOT = {
+							has_idea = Custom_TFR_war_buff
+						}
+					}
+					apply_war_buff_with_20_divisions = yes
+				}
+			}
+			if = {
+				limit = {
+					# Maghreb War Winner - Islamic Republic of Algeria
+					has_global_flag = ALG_maghreb_war_global
+					has_game_rule = {
+						rule = TFRNS_Maghreb_War_Winner
+						option = TFRNS_Maghreb_War_Winner_ALG
+					}
+					NOT = {
+						has_global_flag = MAGHREB_WAR_ALG_BUFF_APPLIED
+					}
+				}
+				set_global_flag = MAGHREB_WAR_ALG_BUFF_APPLIED
+				every_country = {
+					limit = {
+						OR = {
+							tag = ALG
+							tag = WES
+							AND = {
+								OR = {
+									tag = TUN
+									tag = MRT
+									tag = HRL
+									tag = LBA
+								}
+								is_in_faction_with = ALG
+							}
+						}
+						NOT = {
+							has_idea = Custom_TFR_war_buff
+						}
+					}
+					apply_war_buff_with_20_divisions = yes
+				}
+			}
+			if = {
+				limit = {
+					# Algerian Civil War Winner - Algerian Interim Government
+					OR = {
+						AND = {
+							country_exists = ALG
+							country_exists = AG1
+							ALG = { has_war_with = AG1 }
+						}
+						AND = {
+							country_exists = ALG
+							country_exists = AG2
+							ALG = { has_war_with = AG2 }
+						}
+						AND = {
+							country_exists = ALG
+							country_exists = AG1
+							country_exists = AG2
+							OR = {
+								ALG = { has_war_with = AG1 }
+								ALG = { has_war_with = AG2 }
+							}
+						}
+					}
+					has_game_rule = {
+						rule = TFRNS_Algeria_Civil_War_Winner
+						option = TFRNS_Algeria_Civil_War_Winner_ALG
+					}
+					NOT = {
+						has_global_flag = ALG_CW_ALG_BUFF_APPLIED
+					}
+				}
+				set_global_flag = ALG_CW_ALG_BUFF_APPLIED
+				ALG = {
+					apply_war_buff_with_20_divisions = yes
+				}
+			}
+			if = {
+				limit = {
+					# Algerian Civil War Winner - Republic of Algeria
+					OR = {
+						AND = {
+							country_exists = AG1
+							country_exists = ALG
+							AG1 = { has_war_with = ALG }
+						}
+						AND = {
+							country_exists = AG1
+							country_exists = AG2
+							AG1 = { has_war_with = AG2 }
+						}
+						AND = {
+							country_exists = ALG
+							country_exists = AG1
+							country_exists = AG2
+							OR = {
+								AG1 = { has_war_with = ALG }
+								AG1 = { has_war_with = AG2 }
+							}
+						}
+					}
+					has_game_rule = {
+						rule = TFRNS_Algeria_Civil_War_Winner
+						option = TFRNS_Algeria_Civil_War_Winner_AG1
+					}
+					NOT = {
+						has_global_flag = ALG_CW_AG1_BUFF_APPLIED
+					}
+				}
+				set_global_flag = ALG_CW_AG1_BUFF_APPLIED
+				AG1 = {
+					apply_war_buff_with_20_divisions = yes
+				}
+			}
+			if = {
+				limit = {
+					# Algerian Civil War Winner - Islamic Republic of Algeria
+					OR = {
+						AND = {
+							country_exists = AG2
+							country_exists = ALG
+							AG2 = { has_war_with = ALG }
+						}
+						AND = {
+							country_exists = AG2
+							country_exists = AG1
+							AG2 = { has_war_with = AG1 }
+						}
+						AND = {
+							country_exists = ALG
+							country_exists = AG1
+							country_exists = AG2
+							OR = {
+								AG2 = { has_war_with = ALG }
+								AG2 = { has_war_with = AG1 }
+							}
+						}
+					}
+					has_game_rule = {
+						rule = TFRNS_Algeria_Civil_War_Winner
+						option = TFRNS_Algeria_Civil_War_Winner_AG2
+					}
+					NOT = {
+						has_global_flag = ALG_CW_AG2_BUFF_APPLIED
+					}
+				}
+				set_global_flag = ALG_CW_AG2_BUFF_APPLIED
+				AG2 = {
+					apply_war_buff_with_20_divisions = yes
+				}
+			}
+			if = {
+				limit = {
+					# Algerian Civil War Winner Cleanup
+					ROOT = {
+						OR = {
+							tag = ALG
+							tag = AG1
+							tag = AG2
+						}
+					}
+					FROM = {
+						OR = {
+							tag = ALG
+							tag = AG1
+							tag = AG2
+						}
+					}
+					NOT = {
+						count_triggers = {
+							amount = 2
+							country_exists = ALG
+							country_exists = AG1
+							country_exists = AG2
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = TFRNS_Algeria_Civil_War_Winner
+							option = TFRNS_Algeria_Civil_War_Winner_ALG
+						}
+						has_global_flag = ALG_CW_ALG_BUFF_APPLIED
+						ALG = {
+							exists = yes
+							has_idea = Custom_TFR_war_buff
+						}
+					}
+					ALG = {
+						remove_war_buff = yes
+					}
+					clr_global_flag = ALG_CW_ALG_BUFF_APPLIED
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = TFRNS_Algeria_Civil_War_Winner
+							option = TFRNS_Algeria_Civil_War_Winner_AG1
+						}
+						has_global_flag = ALG_CW_AG1_BUFF_APPLIED
+						AG1 = {
+							exists = yes
+							has_idea = Custom_TFR_war_buff
+						}
+					}
+					AG1 = {
+						remove_war_buff = yes
+					}
+					clr_global_flag = ALG_CW_AG1_BUFF_APPLIED
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = TFRNS_Algeria_Civil_War_Winner
+							option = TFRNS_Algeria_Civil_War_Winner_AG2
+						}
+						has_global_flag = ALG_CW_AG2_BUFF_APPLIED
+						AG2 = {
+							exists = yes
+							has_idea = Custom_TFR_war_buff
+						}
+					}
+					AG2 = {
+						remove_war_buff = yes
+					}
+					clr_global_flag = ALG_CW_AG2_BUFF_APPLIED
+				}
+			}

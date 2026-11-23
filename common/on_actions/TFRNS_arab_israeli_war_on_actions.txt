@@ -1,0 +1,73 @@
+on_actions = {
+	on_weekly = {
+		effect = {
+			if = {
+				limit = { tag = ISR has_war_with = SYR }
+				set_global_flag = TFRNS_Arab_Israeli_War_Active
+				if = {
+					limit = { has_game_rule = { rule = TFRNS_Arab_Israeli_War_Outcome option = TFRNS_Arab_Israeli_War_Outcome_ISR } }
+					every_country = {
+						limit = { OR = { tag = ISR is_in_faction_with = ISR } }
+						TFRNS_apply_arab_israeli_defense_to_country = yes
+					}
+				}
+				if = {
+					limit = { has_game_rule = { rule = TFRNS_Arab_Israeli_War_Outcome option = TFRNS_Arab_Israeli_War_Outcome_ARAB } }
+					every_country = {
+						limit = {
+							OR = {
+								has_war_with = ISR
+								tag = SYR
+								is_in_faction_with = SYR
+								is_in_faction_with = HEZ
+							}
+						}
+						TFRNS_apply_arab_israeli_attack_to_country = yes
+					}
+				}
+				if = {
+					limit = { has_game_rule = { rule = TFRNS_Arab_Israeli_War_Outcome option = TFRNS_Arab_Israeli_War_Outcome_SAMPSON } }
+					ISR = {
+						if = {
+							limit = { NOT = { has_country_flag = TFRNS_Arab_Israeli_Nukes_Granted } }
+							TFRNS_give_israel_six_nukes_if_needed = yes
+							set_country_flag = TFRNS_Arab_Israeli_Nukes_Granted
+						}
+					}
+					every_country = {
+						limit = {
+							OR = {
+								has_war_with = ISR
+								tag = SYR
+								is_in_faction_with = SYR
+								is_in_faction_with = HEZ
+							}
+						}
+						TFRNS_apply_arab_israeli_attack_to_country = yes
+					}
+				}
+				if = {
+					limit = { has_game_rule = { rule = TFRNS_Arab_Israeli_War_Outcome option = TFRNS_Arab_Israeli_War_Outcome_STALEMATE } }
+					every_country = {
+						limit = { OR = { tag = ISR is_in_faction_with = ISR has_war_with = ISR } }
+						TFRNS_apply_arab_israeli_stalemate_to_owned_states = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					tag = ISR
+					has_global_flag = TFRNS_Arab_Israeli_War_Active
+					NOT = { OR = { has_war_with = SYR has_war_with = EGY has_war_with = IRQ has_war_with = LEB has_war_with = JOR has_war_with = PAL has_war_with = HEZ } }
+				}
+				every_country = {
+					limit = { has_country_flag = TFRNS_Source_Arab_Israeli }
+					clr_country_flag = TFRNS_Source_Arab_Israeli
+					TFRNS_remove_mushroom_buff_if_no_other_campaign_owns_it = yes
+				}
+				TFRNS_remove_arab_israeli_stalemate_states = yes
+				clr_global_flag = TFRNS_Arab_Israeli_War_Active
+			}
+		}
+	}
+}

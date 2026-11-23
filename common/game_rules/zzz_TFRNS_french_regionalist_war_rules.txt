@@ -1,0 +1,34 @@
+# TFR No Surrender - French regionalist war rules
+#
+# The Volt / regionalist branch is France versus all eight regional breakaways.
+# If a breakaway kills Lambart's France, TFR hands France to Germany and Germany
+# declares civil war on all eight. This rule does not change that script; it only
+# hands the Mushroom Army attack buff to either France or every regionalist while
+# that first phase is being fought. The buff is stripped from all eight the moment
+# France capitulates, so the Germany-versus-everyone phase starts clean.
+# DEFAULT leaves TFR untouched.
+
+TFRNS_French_Regionalist_War_Winner = {
+	name = "TFRNS_French_Regionalist_War_Winner"
+	group = "RULE_GROUP_EUROPE"
+	icon = GFX_decision_generic_civil_war
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_French_Regionalist_War_Winner_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_French_Regionalist_War_Winner_FRA
+		text = "TFRNS_French_Regionalist_War_Winner_FRA_TXT"
+		desc = "TFRNS_French_Regionalist_War_Winner_FRA_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_French_Regionalist_War_Winner_REGIONS
+		text = "TFRNS_French_Regionalist_War_Winner_REGIONS_TXT"
+		desc = "TFRNS_French_Regionalist_War_Winner_REGIONS_DESC"
+		allow_achievements = yes
+	}
+}
+

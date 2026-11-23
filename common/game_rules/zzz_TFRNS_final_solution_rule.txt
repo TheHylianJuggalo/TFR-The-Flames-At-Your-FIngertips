@@ -1,0 +1,23 @@
+TFRNS_Final_Solution_War_Outcome = {
+	name = "TFRNS_Final_Solution_War_Outcome"
+	group = "RULE_GROUP_North_America"
+	icon = GFX_decision_generic_civil_war
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Final_Solution_War_Outcome_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Final_Solution_War_Outcome_ATW
+		text = "TFRNS_Final_Solution_War_Outcome_ATW_TXT"
+		desc = "TFRNS_Final_Solution_War_Outcome_ATW_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Final_Solution_War_Outcome_CAN
+		text = "TFRNS_Final_Solution_War_Outcome_CAN_TXT"
+		desc = "TFRNS_Final_Solution_War_Outcome_CAN_DESC"
+		allow_achievements = yes
+	}
+}

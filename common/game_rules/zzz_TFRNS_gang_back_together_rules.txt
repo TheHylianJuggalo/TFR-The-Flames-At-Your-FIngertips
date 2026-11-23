@@ -1,0 +1,30 @@
+# TFR No Surrender - Getting the gang back together
+#
+# Controls the AI response of every invitee in the communist Soviet Union's
+# "Invitation to join USSR" event (russia.59): BLR, GEO, ARM, AZR, KAZ, KYR,
+# TAJ, UZB and TMS. YES makes all AI invitees accept. NO makes all AI invitees
+# decline. DEFAULT keeps the current behaviour, including the existing Belarus
+# non-social-democrat preference.
+TFRNS_Getting_the_Gang_Back_Together = {
+	name = "TFRNS_Getting_the_Gang_Back_Together"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Getting_the_Gang_Back_Together_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Getting_the_Gang_Back_Together_YES
+		text = "TFRNS_Getting_the_Gang_Back_Together_YES_TXT"
+		desc = "TFRNS_Getting_the_Gang_Back_Together_YES_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Getting_the_Gang_Back_Together_NO
+		text = "TFRNS_Getting_the_Gang_Back_Together_NO_TXT"
+		desc = "TFRNS_Getting_the_Gang_Back_Together_NO_DESC"
+		allow_achievements = yes
+	}
+}

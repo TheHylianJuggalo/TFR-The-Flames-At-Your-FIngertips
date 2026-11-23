@@ -1,0 +1,88 @@
+# TFR No Surrender - South African Civil War support and postwar rules
+#
+# These rules only steer choices that already exist in TFR:
+#   * china.117 lets the PRC support EFF, SWZ, or SAF.
+#   * russia.529 lets the USSR support SWZ or EFF.
+#   * saf.5 lets a victorious SAF choose a market-liberal or social-liberal government.
+# The gates are ai_chance-only, so a human PRC/USSR/SAF still sees every vanilla option.
+
+TFRNS_SAF_Chinese_Support = {
+	name = "TFRNS_SAF_Chinese_Support"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_Southern_Africa"
+	icon = GFX_decision_generic_political_discussion
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_SAF_Chinese_Support_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_SAF_Chinese_Support_EFF
+		text = "TFRNS_SAF_Chinese_Support_EFF_TXT"
+		desc = "TFRNS_SAF_Chinese_Support_EFF_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_SAF_Chinese_Support_SWZ
+		text = "TFRNS_SAF_Chinese_Support_SWZ_TXT"
+		desc = "TFRNS_SAF_Chinese_Support_SWZ_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_SAF_Chinese_Support_SAF
+		text = "TFRNS_SAF_Chinese_Support_SAF_TXT"
+		desc = "TFRNS_SAF_Chinese_Support_SAF_DESC"
+		allow_achievements = yes
+	}
+}
+
+TFRNS_SAF_Russian_Support = {
+	name = "TFRNS_SAF_Russian_Support"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_Southern_Africa"
+	icon = GFX_decision_generic_political_discussion
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_SAF_Russian_Support_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_SAF_Russian_Support_SWZ
+		text = "TFRNS_SAF_Russian_Support_SWZ_TXT"
+		desc = "TFRNS_SAF_Russian_Support_SWZ_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_SAF_Russian_Support_EFF
+		text = "TFRNS_SAF_Russian_Support_EFF_TXT"
+		desc = "TFRNS_SAF_Russian_Support_EFF_DESC"
+		allow_achievements = yes
+	}
+}
+
+TFRNS_SAF_Postwar_Election = {
+	name = "TFRNS_SAF_Postwar_Election"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_Southern_Africa"
+	icon = GFX_decision_generic_political_discussion
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_SAF_Postwar_Election_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_SAF_Postwar_Election_MARKET
+		text = "TFRNS_SAF_Postwar_Election_MARKET_TXT"
+		desc = "TFRNS_SAF_Postwar_Election_MARKET_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_SAF_Postwar_Election_SOCIAL
+		text = "TFRNS_SAF_Postwar_Election_SOCIAL_TXT"
+		desc = "TFRNS_SAF_Postwar_Election_SOCIAL_DESC"
+		allow_achievements = yes
+	}
+}

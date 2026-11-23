@@ -1,0 +1,49 @@
+add_namespace = TFRNS_nuclear
+
+country_event = {
+	id = TFRNS_nuclear.1
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				original_tag = GER
+				has_game_rule = {
+					rule = TFRNS_European_Nuclear_Launches
+					option = TFRNS_European_Nuclear_Launches_LAUNCH
+				}
+				has_global_flag = second_nato_war_flag
+				has_global_flag = SOV_cprf_won
+				is_capitulated = yes
+				has_country_flag = GER_day_x_tree_flag
+				NOT = { has_global_flag = TFRNS_GER_Day_X_Nuclear_Launched }
+			}
+			set_global_flag = TFRNS_GER_Day_X_Nuclear_Launched
+			set_country_flag = show_defense_tree
+			complete_national_focus = GER_der_brand
+			complete_national_focus = GER_hunker_down
+			complete_national_focus = GER_desperate_measures
+			complete_national_focus = GER_defend_the_cities
+			complete_national_focus = GER_der_krieg
+			complete_national_focus = GER_every_man_to_the_front
+			complete_national_focus = GER_service_everything
+			complete_national_focus = GER_der_tod
+			complete_national_focus = GER_the_old
+			complete_national_focus = GER_the_young
+			complete_national_focus = GER_the_weak
+			complete_national_focus = GER_the_final_option
+			set_country_flag = GER_nuclearized
+			set_country_flag = activated_nuke_arsenal
+			country_event = nato.10
+			launch_nuke = { province = 1339 controller = SOV use_nuke = yes }
+			launch_nuke = { province = 3151 controller = SOV use_nuke = yes }
+			launch_nuke = { province = 3529 controller = SOV use_nuke = yes }
+			launch_nuke = { province = 3151 controller = SOV use_nuke = yes }
+			launch_nuke = { province = 3686 controller = SOV use_nuke = yes }
+			launch_nuke = { province = 525 controller = SOV use_nuke = yes }
+			launch_nuke = { province = 3544 controller = SOV use_nuke = yes }
+			launch_nuke = { province = 11542 controller = SOV use_nuke = yes }
+		}
+	}
+	option = { name = GER_nuclear_hell }
+}

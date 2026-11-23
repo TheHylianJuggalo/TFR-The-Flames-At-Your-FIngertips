@@ -1,0 +1,26 @@
+on_actions = {
+	on_daily = {
+		effect = {
+			if = {
+				limit = {
+					has_global_flag = second_nato_war_flag
+					has_game_rule = {
+						rule = TFRNS_European_Nuclear_Launches
+						option = TFRNS_European_Nuclear_Launches_LAUNCH
+					}
+					GER = {
+						exists = yes
+						is_capitulated = yes
+						has_country_flag = GER_day_x_tree_flag
+					}
+					has_global_flag = SOV_cprf_won
+					NOT = { has_global_flag = TFRNS_GER_Day_X_Nuclear_Queued }
+				}
+				set_global_flag = TFRNS_GER_Day_X_Nuclear_Queued
+				GER = {
+					country_event = { id = TFRNS_nuclear.1 days = 1 }
+				}
+			}
+		}
+	}
+}

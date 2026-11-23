@@ -1,0 +1,70 @@
+on_actions = {
+	on_declare_war = {
+		effect = {
+			if = {
+				limit = {
+					has_global_flag = ATW_aryan_liberation_war_global
+					has_game_rule = {
+						rule = TFRNS_Final_Solution_War_Outcome
+						option = TFRNS_Final_Solution_War_Outcome_ATW
+					}
+					OR = {
+						ROOT = { tag = ATW }
+						FROM = { tag = ATW }
+					}
+				}
+				set_global_flag = TFRNS_Final_Solution_Active
+				ATW = {
+					set_country_flag = TFRNS_Source_Final_Solution
+					TFRNS_apply_attack_mushroom_buff_if_missing = yes
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = ATW_aryan_liberation_war_global
+					has_game_rule = {
+						rule = TFRNS_Final_Solution_War_Outcome
+						option = TFRNS_Final_Solution_War_Outcome_CAN
+					}
+					ROOT = { tag = ATW }
+				}
+				set_global_flag = TFRNS_Final_Solution_Active
+				FROM = {
+					set_country_flag = TFRNS_Source_Final_Solution
+					TFRNS_apply_attack_mushroom_buff_if_missing = yes
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = ATW_aryan_liberation_war_global
+					has_game_rule = {
+						rule = TFRNS_Final_Solution_War_Outcome
+						option = TFRNS_Final_Solution_War_Outcome_CAN
+					}
+					FROM = { tag = ATW }
+				}
+				set_global_flag = TFRNS_Final_Solution_Active
+				ROOT = {
+					set_country_flag = TFRNS_Source_Final_Solution
+					TFRNS_apply_attack_mushroom_buff_if_missing = yes
+				}
+			}
+		}
+	}
+	on_weekly = {
+		effect = {
+			if = {
+				limit = {
+					has_global_flag = TFRNS_Final_Solution_Active
+					ATW = { NOT = { is_at_war = yes } }
+				}
+				every_country = {
+					limit = { has_country_flag = TFRNS_Source_Final_Solution }
+					clr_country_flag = TFRNS_Source_Final_Solution
+					TFRNS_remove_mushroom_buff_if_no_other_campaign_owns_it = yes
+				}
+				clr_global_flag = TFRNS_Final_Solution_Active
+			}
+		}
+	}
+}

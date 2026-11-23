@@ -1,0 +1,13 @@
+TFRNS_schedule_congo_mushroom_army_retry = {
+	if = {
+		limit = {
+			NOT = { has_country_flag = TFRNS_Congo_Mushroom_Army_Retry_Pending }
+			NOT = { has_country_flag = TFRNS_Congo_Mushroom_Army_Retry_Done }
+		}
+		set_country_flag = TFRNS_Congo_Mushroom_Army_Retry_Pending
+		country_event = {
+			id = tfrns_congo.1
+			days = 1
+		}
+	}
+}

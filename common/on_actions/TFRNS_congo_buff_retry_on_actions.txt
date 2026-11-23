@@ -1,0 +1,34 @@
+on_actions = {
+	on_declare_war = {
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						ROOT = { OR = { tag = BDK tag = NDC tag = M23 tag = MMK tag = RCO } }
+					FROM = { OR = { tag = BDK tag = NDC tag = M23 tag = MMK tag = RCO } }
+					}
+				}
+				if = {
+					limit = { has_game_rule = { rule = The_COG_civil_war option = BDK_civil_war } }
+					BDK = { TFRNS_schedule_congo_mushroom_army_retry = yes }
+				}
+				if = {
+					limit = { has_game_rule = { rule = The_COG_civil_war option = NDC_civil_war } }
+					NDC = { TFRNS_schedule_congo_mushroom_army_retry = yes }
+				}
+				if = {
+					limit = { has_game_rule = { rule = The_COG_civil_war option = M23_civil_war } }
+					M23 = { TFRNS_schedule_congo_mushroom_army_retry = yes }
+				}
+				if = {
+					limit = { has_game_rule = { rule = The_COG_civil_war option = MMK_civil_war } }
+					MMK = { TFRNS_schedule_congo_mushroom_army_retry = yes }
+				}
+				if = {
+					limit = { has_game_rule = { rule = The_COG_civil_war option = RCO_civil_war } }
+					RCO = { TFRNS_schedule_congo_mushroom_army_retry = yes }
+				}
+			}
+		}
+	}
+}

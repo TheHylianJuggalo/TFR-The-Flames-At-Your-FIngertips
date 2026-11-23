@@ -1,0 +1,10 @@
+# True once the scripted US-Taliban deal (usa.123, fired from USA history at
+# +60 days = 1 March 2020) has had its chance to run AND Afghanistan and the
+# Taliban are at war again. The deal white-peaces AFG and TAL, so the very first
+# war - the one running at game start - deliberately does not qualify.
+TFRNS_afg_tal_war_active = {
+	country_exists = AFG
+	country_exists = TAL
+	date > 2020.3.1
+	AFG = { has_war_with = TAL }
+}

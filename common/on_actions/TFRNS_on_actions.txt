@@ -1,8 +1,16 @@
 on_actions = {
 	on_startup = {
 		effect = {
-			every_possible_country = {
-				add_ideas = TFRNS_no_surrender
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = TFRNS_Total_War
+						option = TFRNS_Total_War_ON
+					}
+				}
+				every_possible_country = {
+					add_ideas = TFRNS_no_surrender
+				}
 			}
 		}
 	}
@@ -10,6 +18,10 @@ on_actions = {
 		effect = {
 			if = {
 				limit = {
+					has_game_rule = {
+						rule = TFRNS_Total_War
+						option = TFRNS_Total_War_ON
+					}
 					NOT = {
 						has_idea = TFRNS_no_surrender
 					}

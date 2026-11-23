@@ -1,0 +1,211 @@
+# TFR No Surrender - French regionalist war rule enforcement.
+#
+# on_startup / on_declare_war / on_peace are global; on_weekly runs per country.
+# on_capitulation is the hard cleanup: it strips the buff from all eight
+# regionalists the instant France falls to one of them, before Germany's own
+# capitulation handler finishes annexing France.
+
+on_actions = {
+	on_startup = {
+		effect = {
+			TFRNS_reconcile_french_regionalist_war_buff = yes
+		}
+	}
+	on_declare_war = {
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							ROOT = { tag = FRA }
+							FROM = {
+								OR = {
+									tag = NMD
+									tag = SAX
+									tag = BRI
+									tag = FCM
+									tag = PIC
+									tag = OCT
+									tag = LIM
+									tag = PRV
+								}
+							}
+						}
+						AND = {
+							ROOT = {
+								OR = {
+									tag = NMD
+									tag = SAX
+									tag = BRI
+									tag = FCM
+									tag = PIC
+									tag = OCT
+									tag = LIM
+									tag = PRV
+								}
+							}
+							FROM = { tag = FRA }
+						}
+						AND = {
+							ROOT = {
+								OR = {
+									tag = NMD
+									tag = SAX
+									tag = BRI
+									tag = FCM
+									tag = PIC
+									tag = OCT
+									tag = LIM
+									tag = PRV
+								}
+							}
+							FROM = {
+								OR = {
+									tag = NMD
+									tag = SAX
+									tag = BRI
+									tag = FCM
+									tag = PIC
+									tag = OCT
+									tag = LIM
+									tag = PRV
+								}
+							}
+						}
+					}
+				}
+				TFRNS_reconcile_french_regionalist_war_buff = yes
+			}
+		}
+	}
+	on_weekly = {
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						tag = FRA
+						tag = NMD
+						tag = SAX
+						tag = BRI
+						tag = FCM
+						tag = PIC
+						tag = OCT
+						tag = LIM
+						tag = PRV
+					}
+				}
+				TFRNS_reconcile_french_regionalist_war_buff = yes
+			}
+		}
+	}
+	on_peace = {
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							ROOT = { tag = FRA }
+							FROM = {
+								OR = {
+									tag = NMD
+									tag = SAX
+									tag = BRI
+									tag = FCM
+									tag = PIC
+									tag = OCT
+									tag = LIM
+									tag = PRV
+								}
+							}
+						}
+						AND = {
+							ROOT = {
+								OR = {
+									tag = NMD
+									tag = SAX
+									tag = BRI
+									tag = FCM
+									tag = PIC
+									tag = OCT
+									tag = LIM
+									tag = PRV
+								}
+							}
+							FROM = { tag = FRA }
+						}
+						AND = {
+							ROOT = {
+								OR = {
+									tag = NMD
+									tag = SAX
+									tag = BRI
+									tag = FCM
+									tag = PIC
+									tag = OCT
+									tag = LIM
+									tag = PRV
+								}
+							}
+							FROM = {
+								OR = {
+									tag = NMD
+									tag = SAX
+									tag = BRI
+									tag = FCM
+									tag = PIC
+									tag = OCT
+									tag = LIM
+									tag = PRV
+								}
+							}
+						}
+					}
+				}
+				TFRNS_reconcile_french_regionalist_war_buff = yes
+			}
+		}
+	}
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					ROOT = { tag = FRA }
+					FROM = {
+						OR = {
+							tag = NMD
+							tag = SAX
+							tag = BRI
+							tag = FCM
+							tag = PIC
+							tag = OCT
+							tag = LIM
+							tag = PRV
+						}
+					}
+				}
+				# Germany is about to annex France and war all eight. Mark the
+				# handover and strip every regionalist immediately.
+				set_global_flag = TFRNS_French_Regionalist_War_Germany_Intervened
+				if = {
+					limit = { country_exists = FRA }
+					FRA = { TFRNS_release_french_regionalist_war_buff = yes }
+				}
+				every_country = {
+					limit = {
+						OR = {
+							tag = NMD
+							tag = SAX
+							tag = BRI
+							tag = FCM
+							tag = PIC
+							tag = OCT
+							tag = LIM
+							tag = PRV
+						}
+					}
+					TFRNS_release_french_regionalist_war_buff = yes
+				}
+			}
+		}
+	}
+}

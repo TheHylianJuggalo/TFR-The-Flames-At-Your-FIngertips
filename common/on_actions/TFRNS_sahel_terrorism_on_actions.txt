@@ -1,0 +1,191 @@
+on_actions = {
+	on_declare_war = {
+		effect = {
+			if = {
+				limit = {
+					# Sahel rebellion (Wilayat Sahil) - any war among the six tags
+					ROOT = {
+						OR = {
+							tag = MLI
+							tag = VOL
+							tag = NGR
+							tag = IVO
+							tag = IAI
+							tag = MLT
+						}
+					}
+					FROM = {
+						OR = {
+							tag = MLI
+							tag = VOL
+							tag = NGR
+							tag = IVO
+							tag = IAI
+							tag = MLT
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = The_IAI_Terrorism
+							option = The_IAI_Terrorism_QUASHED
+						}
+						NOT = {
+							has_global_flag = The_IAI_Terrorism_QUASHED_BUFF_APPLIED
+						}
+					}
+					set_global_flag = The_IAI_Terrorism_QUASHED_BUFF_APPLIED
+					if = {
+						limit = { country_exists = MLI }
+						MLI = { apply_war_buff_with_20_divisions = yes }
+					}
+					if = {
+						limit = { country_exists = VOL }
+						VOL = { apply_war_buff_with_20_divisions = yes }
+					}
+					if = {
+						limit = { country_exists = NGR }
+						NGR = { apply_war_buff_with_20_divisions = yes }
+					}
+					if = {
+						limit = { country_exists = IVO }
+						IVO = { apply_war_buff_with_20_divisions = yes }
+					}
+				}
+			}
+		}
+	}
+	on_peace = {
+		effect = {
+			if = {
+				limit = {
+					# Sahel rebellion ended
+					ROOT = {
+						OR = {
+							tag = MLI
+							tag = VOL
+							tag = NGR
+							tag = IVO
+							tag = IAI
+							tag = MLT
+						}
+					}
+					FROM = {
+						OR = {
+							tag = MLI
+							tag = VOL
+							tag = NGR
+							tag = IVO
+							tag = IAI
+							tag = MLT
+						}
+					}
+					NOT = {
+						count_triggers = {
+							amount = 2
+							OR = {
+								country_exists = MLI
+								country_exists = VOL
+								country_exists = NGR
+								country_exists = IVO
+							}
+							country_exists = IAI
+							country_exists = MLT
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = The_IAI_Terrorism
+							option = The_IAI_Terrorism_QUASHED
+						}
+					}
+					if = {
+						limit = { country_exists = MLI }
+						MLI = { remove_war_buff = yes }
+					}
+					if = {
+						limit = { country_exists = VOL }
+						VOL = { remove_war_buff = yes }
+					}
+					if = {
+						limit = { country_exists = NGR }
+						NGR = { remove_war_buff = yes }
+					}
+					if = {
+						limit = { country_exists = IVO }
+						IVO = { remove_war_buff = yes }
+					}
+				}
+			}
+		}
+	}
+	on_annex = {
+		effect = {
+			if = {
+				limit = {
+					# Sahel rebellion ended (annexation)
+					ROOT = {
+						OR = {
+							tag = MLI
+							tag = VOL
+							tag = NGR
+							tag = IVO
+							tag = IAI
+							tag = MLT
+						}
+					}
+					FROM = {
+						OR = {
+							tag = MLI
+							tag = VOL
+							tag = NGR
+							tag = IVO
+							tag = IAI
+							tag = MLT
+						}
+					}
+					NOT = {
+						count_triggers = {
+							amount = 2
+							OR = {
+								country_exists = MLI
+								country_exists = VOL
+								country_exists = NGR
+								country_exists = IVO
+							}
+							country_exists = IAI
+							country_exists = MLT
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = The_IAI_Terrorism
+							option = The_IAI_Terrorism_QUASHED
+						}
+					}
+					if = {
+						limit = { country_exists = MLI }
+						MLI = { remove_war_buff = yes }
+					}
+					if = {
+						limit = { country_exists = VOL }
+						VOL = { remove_war_buff = yes }
+					}
+					if = {
+						limit = { country_exists = NGR }
+						NGR = { remove_war_buff = yes }
+					}
+					if = {
+						limit = { country_exists = IVO }
+						IVO = { remove_war_buff = yes }
+					}
+				}
+			}
+		}
+	}
+}

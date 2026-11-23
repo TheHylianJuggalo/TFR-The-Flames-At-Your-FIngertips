@@ -1,0 +1,195 @@
+# TFR No Surrender - Sahel War side rules
+# Lets the player force which camp each Sahel swing state joins in the Sahel War
+# (the Mali-led West African Security Pact vs. the Ivory Coast-led ECOMOG).
+# TFR itself decides this in france.28 (pro-French) and russia.724 (pro-Russian)
+# based on ideology popularity. These rules hard-set the side instead.
+TFRNS_GNA_Sahel_Side = {
+	name = "TFRNS_GNA_Sahel_Side"
+	group = "RULE_GROUP_Western_Africa"
+	icon = GFX_decision_generic_political_discussion
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_GNA_Sahel_Side_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_GNA_Sahel_Side_SOV
+		text = "TFRNS_GNA_Sahel_Side_SOV_TXT"
+		desc = "TFRNS_GNA_Sahel_Side_SOV_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_GNA_Sahel_Side_FRA
+		text = "TFRNS_GNA_Sahel_Side_FRA_TXT"
+		desc = "TFRNS_GNA_Sahel_Side_FRA_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+TFRNS_TOG_Sahel_Side = {
+	name = "TFRNS_TOG_Sahel_Side"
+	group = "RULE_GROUP_Western_Africa"
+	icon = GFX_decision_generic_political_discussion
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_TOG_Sahel_Side_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_TOG_Sahel_Side_SOV
+		text = "TFRNS_TOG_Sahel_Side_SOV_TXT"
+		desc = "TFRNS_TOG_Sahel_Side_SOV_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_TOG_Sahel_Side_FRA
+		text = "TFRNS_TOG_Sahel_Side_FRA_TXT"
+		desc = "TFRNS_TOG_Sahel_Side_FRA_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+TFRNS_DAH_Sahel_Side = {
+	name = "TFRNS_DAH_Sahel_Side"
+	group = "RULE_GROUP_Western_Africa"
+	icon = GFX_decision_generic_political_discussion
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_DAH_Sahel_Side_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_DAH_Sahel_Side_SOV
+		text = "TFRNS_DAH_Sahel_Side_SOV_TXT"
+		desc = "TFRNS_DAH_Sahel_Side_SOV_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_DAH_Sahel_Side_FRA
+		text = "TFRNS_DAH_Sahel_Side_FRA_TXT"
+		desc = "TFRNS_DAH_Sahel_Side_FRA_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+TFRNS_GHA_Sahel_Side = {
+	name = "TFRNS_GHA_Sahel_Side"
+	group = "RULE_GROUP_Western_Africa"
+	icon = GFX_decision_generic_political_discussion
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_GHA_Sahel_Side_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_GHA_Sahel_Side_SOV
+		text = "TFRNS_GHA_Sahel_Side_SOV_TXT"
+		desc = "TFRNS_GHA_Sahel_Side_SOV_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_GHA_Sahel_Side_FRA
+		text = "TFRNS_GHA_Sahel_Side_FRA_TXT"
+		desc = "TFRNS_GHA_Sahel_Side_FRA_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+TFRNS_SIE_Sahel_Side = {
+	name = "TFRNS_SIE_Sahel_Side"
+	group = "RULE_GROUP_Western_Africa"
+	icon = GFX_decision_generic_political_discussion
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_SIE_Sahel_Side_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_SIE_Sahel_Side_SOV
+		text = "TFRNS_SIE_Sahel_Side_SOV_TXT"
+		desc = "TFRNS_SIE_Sahel_Side_SOV_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_SIE_Sahel_Side_FRA
+		text = "TFRNS_SIE_Sahel_Side_FRA_TXT"
+		desc = "TFRNS_SIE_Sahel_Side_FRA_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+TFRNS_LIB_Sahel_Side = {
+	name = "TFRNS_LIB_Sahel_Side"
+	group = "RULE_GROUP_Western_Africa"
+	icon = GFX_decision_generic_political_discussion
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_LIB_Sahel_Side_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_LIB_Sahel_Side_SOV
+		text = "TFRNS_LIB_Sahel_Side_SOV_TXT"
+		desc = "TFRNS_LIB_Sahel_Side_SOV_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_LIB_Sahel_Side_FRA
+		text = "TFRNS_LIB_Sahel_Side_FRA_TXT"
+		desc = "TFRNS_LIB_Sahel_Side_FRA_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+# Chad has a single Sahel path in TFR: it only joins the Mali-led West African
+# Security Pact, and only if SOV has taken the SOV_pressure_chad decision
+# (country flag SOV_chad_pressured). There is no ECOMOG path for Chad.
+TFRNS_CHA_Sahel_Side = {
+	name = "TFRNS_CHA_Sahel_Side"
+	group = "RULE_GROUP_Western_Africa"
+	icon = GFX_decision_generic_political_discussion
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_CHA_Sahel_Side_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_CHA_Sahel_Side_SOV
+		text = "TFRNS_CHA_Sahel_Side_SOV_TXT"
+		desc = "TFRNS_CHA_Sahel_Side_SOV_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_CHA_Sahel_Side_NEUTRAL
+		text = "TFRNS_CHA_Sahel_Side_NEUTRAL_TXT"
+		desc = "TFRNS_CHA_Sahel_Side_NEUTRAL_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+# Mauritania has a single Sahel path in TFR: it only joins the Ivory Coast-led
+# ECOMOG, and only if FRA has taken the FRA_pressure_mauritania decision
+# (country flag FRA_mauritania_pressured). There is no Sahel-pact path for it.
+TFRNS_MRT_Sahel_Side = {
+	name = "TFRNS_MRT_Sahel_Side"
+	group = "RULE_GROUP_Western_Africa"
+	icon = GFX_decision_generic_political_discussion
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_MRT_Sahel_Side_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_MRT_Sahel_Side_FRA
+		text = "TFRNS_MRT_Sahel_Side_FRA_TXT"
+		desc = "TFRNS_MRT_Sahel_Side_FRA_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_MRT_Sahel_Side_NEUTRAL
+		text = "TFRNS_MRT_Sahel_Side_NEUTRAL_TXT"
+		desc = "TFRNS_MRT_Sahel_Side_NEUTRAL_TXT_DESC"
+		allow_achievements = yes
+	}
+}

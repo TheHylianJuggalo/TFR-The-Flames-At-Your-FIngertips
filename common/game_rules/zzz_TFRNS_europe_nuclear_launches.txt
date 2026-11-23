@@ -1,0 +1,23 @@
+TFRNS_European_Nuclear_Launches = {
+	name = "TFRNS_European_Nuclear_Launches"
+	group = "RULE_GROUP_EUROPE"
+	icon = GFX_decision_generic_make_nukes
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_European_Nuclear_Launches_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_European_Nuclear_Launches_LAUNCH
+		text = "TFRNS_European_Nuclear_Launches_LAUNCH_TXT"
+		desc = "TFRNS_European_Nuclear_Launches_LAUNCH_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_European_Nuclear_Launches_NO_LAUNCH
+		text = "TFRNS_European_Nuclear_Launches_NO_LAUNCH_TXT"
+		desc = "TFRNS_European_Nuclear_Launches_NO_LAUNCH_DESC"
+		allow_achievements = yes
+	}
+}

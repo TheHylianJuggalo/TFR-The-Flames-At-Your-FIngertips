@@ -1,0 +1,17 @@
+TFRNS_Total_War = {
+	name = "TFRNS_Total_War"
+	group = "RULE_GROUP_GAMEPLAY"
+	icon = GFX_decision_generic_war_hawk
+	default = {
+		name = TFRNS_Total_War_OFF
+		text = "TFRNS_Total_War_OFF_TXT"
+		desc = "TFRNS_Total_War_OFF_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Total_War_ON
+		text = "TFRNS_Total_War_ON_TXT"
+		desc = "TFRNS_Total_War_ON_DESC"
+		allow_achievements = yes
+	}
+}

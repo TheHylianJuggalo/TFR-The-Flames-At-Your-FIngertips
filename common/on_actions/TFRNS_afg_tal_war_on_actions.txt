@@ -1,0 +1,49 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			TFRNS_reconcile_afg_tal_war_buff = yes
+		}
+	}
+	on_declare_war = {
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						AND = { ROOT = { original_tag = TAL } FROM = { original_tag = AFG } }
+						AND = { ROOT = { original_tag = AFG } FROM = { original_tag = TAL } }
+					}
+				}
+				TFRNS_reconcile_afg_tal_war_buff = yes
+			}
+		}
+	}
+	# on_weekly runs once per country (ROOT is that country), so only AFG and TAL
+	# bother running the reconciliation. The buff is only ever held by one of
+	# them, so this still covers every cleanup path.
+	on_weekly = {
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						original_tag = AFG
+						original_tag = TAL
+					}
+				}
+				TFRNS_reconcile_afg_tal_war_buff = yes
+			}
+		}
+	}
+	on_peace = {
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						AND = { ROOT = { original_tag = TAL } FROM = { original_tag = AFG } }
+						AND = { ROOT = { original_tag = AFG } FROM = { original_tag = TAL } }
+					}
+				}
+				TFRNS_reconcile_afg_tal_war_buff = yes
+			}
+		}
+	}
+}

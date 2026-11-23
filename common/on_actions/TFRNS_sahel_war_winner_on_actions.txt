@@ -1,0 +1,63 @@
+# TFR No Surrender - Sahel War winner rule enforcement.
+#
+# on_startup / on_declare_war / on_peace run in global scope, so they iterate
+# every_country. on_weekly runs once per country (ROOT is that country), so the
+# weekly hook reconciles ROOT only - that is what makes faction membership
+# dynamic without an expensive global sweep.
+
+on_actions = {
+	on_startup = {
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						TFRNS_sahel_war_ongoing = yes
+						any_country = { limit = { has_country_flag = TFRNS_Source_Sahel_War } }
+					}
+				}
+				every_country = { TFRNS_reconcile_sahel_war_winner_buff = yes }
+			}
+		}
+	}
+	on_declare_war = {
+		effect = {
+			# mali.99 sets MLI_sahel_war_flag immediately before Mali declares
+			# war on Ivory Coast. Only that declaration seeds the buff.
+			if = {
+				limit = {
+					has_global_flag = MLI_sahel_war_flag
+					OR = {
+						AND = { ROOT = { tag = MLI } FROM = { tag = IVO } }
+						AND = { ROOT = { tag = IVO } FROM = { tag = MLI } }
+					}
+				}
+				every_country = { TFRNS_reconcile_sahel_war_winner_buff = yes }
+			}
+		}
+	}
+	on_peace = {
+		effect = {
+			# Strip promptly on any peace once the buff has been handed out,
+			# without touching unrelated peace deals.
+			if = {
+				limit = {
+					any_country = { limit = { has_country_flag = TFRNS_Source_Sahel_War } }
+				}
+				every_country = { TFRNS_reconcile_sahel_war_winner_buff = yes }
+			}
+		}
+	}
+	on_weekly = {
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						TFRNS_sahel_war_ongoing = yes
+						has_country_flag = TFRNS_Source_Sahel_War
+					}
+				}
+				TFRNS_reconcile_sahel_war_winner_buff = yes
+			}
+		}
+	}
+}

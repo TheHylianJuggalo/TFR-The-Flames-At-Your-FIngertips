@@ -1,0 +1,175 @@
+on_actions = {
+	on_weekly = {
+		effect = {
+			# =================================================================
+			# Maghreb War reconciliation
+			# =================================================================
+			# Keeps the winner buff honest while the war rages and releases it
+			# once the war is over. ALG_maghreb_war_global is never cleared when
+			# the war ends, so the war itself is detected via ALG vs MOR.
+			if = {
+				limit = {
+					OR = {
+						has_global_flag = MAGHREB_WAR_MOR_BUFF_APPLIED
+						has_global_flag = MAGHREB_WAR_ALG_BUFF_APPLIED
+						any_country = { limit = { has_country_flag = TFRNS_Source_Maghreb } }
+					}
+				}
+				if = {
+					# The war is still being fought.
+					limit = {
+						country_exists = ALG
+						country_exists = MOR
+						ALG = { has_war_with = MOR }
+					}
+					# Winner: Morocco - only Morocco and its own faction keep it.
+					if = {
+						limit = {
+							has_game_rule = {
+								rule = TFRNS_Maghreb_War_Winner
+								option = TFRNS_Maghreb_War_Winner_MOR
+							}
+						}
+						every_country = {
+							limit = {
+								has_country_flag = TFRNS_Source_Maghreb
+								NOT = {
+									OR = {
+										tag = MOR
+										AND = { tag = TUN is_in_faction_with = MOR }
+									}
+								}
+							}
+							TFRNS_release_maghreb_buff = yes
+						}
+					}
+					# Winner: Algeria - only Algeria, its puppet Western Sahara and
+					# its own faction keep it.
+					if = {
+						limit = {
+							has_game_rule = {
+								rule = TFRNS_Maghreb_War_Winner
+								option = TFRNS_Maghreb_War_Winner_ALG
+							}
+						}
+						every_country = {
+							limit = {
+								has_country_flag = TFRNS_Source_Maghreb
+								NOT = {
+									OR = {
+										tag = ALG
+										tag = WES
+										AND = { OR = { tag = TUN tag = MRT } is_in_faction_with = ALG }
+									}
+								}
+							}
+							TFRNS_release_maghreb_buff = yes
+						}
+					}
+					# Any other rule (including DEFAULT): nobody keeps it.
+					if = {
+						limit = {
+							NOT = {
+								has_game_rule = {
+									rule = TFRNS_Maghreb_War_Winner
+									option = TFRNS_Maghreb_War_Winner_MOR
+								}
+							}
+							NOT = {
+								has_game_rule = {
+									rule = TFRNS_Maghreb_War_Winner
+									option = TFRNS_Maghreb_War_Winner_ALG
+								}
+							}
+						}
+						every_country = {
+							limit = { has_country_flag = TFRNS_Source_Maghreb }
+							TFRNS_release_maghreb_buff = yes
+						}
+					}
+				}
+				else = {
+					# The war is over - release everything and reset the guards.
+					every_country = {
+						limit = { has_country_flag = TFRNS_Source_Maghreb }
+						TFRNS_release_maghreb_buff = yes
+					}
+					clr_global_flag = MAGHREB_WAR_MOR_BUFF_APPLIED
+					clr_global_flag = MAGHREB_WAR_ALG_BUFF_APPLIED
+				}
+			}
+			# =================================================================
+			# Algerian Civil War reconciliation
+			# =================================================================
+			# Only the rule-selected winner may hold the buff, and every trace is
+			# removed once the war concludes.
+			if = {
+				limit = {
+					OR = {
+						has_global_flag = ALG_CW_ALG_BUFF_APPLIED
+						has_global_flag = ALG_CW_AG1_BUFF_APPLIED
+						has_global_flag = ALG_CW_AG2_BUFF_APPLIED
+						any_country = { limit = { has_country_flag = TFRNS_Source_Algerian_CW } }
+					}
+				}
+				if = {
+					# The war is over (or was never running) - strip every trace.
+					limit = {
+						OR = {
+							NOT = { has_global_flag = Algerian_Civil_War_Flag }
+							NOT = { TFRNS_algerian_civil_war_ongoing = yes }
+						}
+					}
+					every_country = {
+						limit = { has_country_flag = TFRNS_Source_Algerian_CW }
+						TFRNS_release_algerian_cw_buff = yes
+					}
+					clr_global_flag = ALG_CW_ALG_BUFF_APPLIED
+					clr_global_flag = ALG_CW_AG1_BUFF_APPLIED
+					clr_global_flag = ALG_CW_AG2_BUFF_APPLIED
+					clr_global_flag = TFRNS_HRL_Algerian_CW_Buff_Suppressed
+				}
+				else = {
+					# The war is still being fought - only the chosen winner keeps
+					# it. Anyone else is stripped, which also covers DEFAULT.
+					if = {
+						limit = {
+							country_exists = ALG
+							NOT = {
+								has_game_rule = {
+									rule = TFRNS_Algeria_Civil_War_Winner
+									option = TFRNS_Algeria_Civil_War_Winner_ALG
+								}
+							}
+						}
+						ALG = { TFRNS_release_algerian_cw_buff = yes }
+					}
+					if = {
+						limit = {
+							country_exists = AG1
+							NOT = {
+								has_game_rule = {
+									rule = TFRNS_Algeria_Civil_War_Winner
+									option = TFRNS_Algeria_Civil_War_Winner_AG1
+								}
+							}
+						}
+						AG1 = { TFRNS_release_algerian_cw_buff = yes }
+					}
+					if = {
+						limit = {
+							country_exists = AG2
+							NOT = {
+								has_game_rule = {
+									rule = TFRNS_Algeria_Civil_War_Winner
+									option = TFRNS_Algeria_Civil_War_Winner_AG2
+								}
+							}
+						}
+						AG2 = { TFRNS_release_algerian_cw_buff = yes }
+					}
+				}
+			}
+		}
+	}
+}

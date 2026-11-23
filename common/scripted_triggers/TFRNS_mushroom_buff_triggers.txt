@@ -1,0 +1,34 @@
+TFRNS_has_any_mushroom_buff = {
+	OR = {
+		has_idea = Custom_TFR_war_buff
+		has_idea = Custom_TFR_def_buff
+		has_idea = Custom_TFR_Crazy_war_buff
+		has_idea = Custom_TFR_Crazy_def_buff
+		has_template = "Mushroom Army"
+		has_template = "Mushroom Army 2"
+	}
+}
+
+# True while the Algerian Civil War is still being fought. The war is treated
+# as over once fewer than two of the three belligerents still exist. This is
+# deliberately not keyed on Algerian_Civil_War_Flag, which is almost never
+# cleared when the war actually ends.
+TFRNS_algerian_civil_war_ongoing = {
+	count_triggers = {
+		amount = 2
+		country_exists = ALG
+		country_exists = AG1
+		country_exists = AG2
+	}
+}
+
+# True while the Sahel War is still being fought. mali.99 sets
+# MLI_sahel_war_flag and has Mali declare war on Ivory Coast; federation
+# decisions only clear that flag after the war, so the war-with check is the
+# reliable "still fighting" test.
+TFRNS_sahel_war_ongoing = {
+	has_global_flag = MLI_sahel_war_flag
+	country_exists = MLI
+	country_exists = IVO
+	MLI = { has_war_with = IVO }
+}

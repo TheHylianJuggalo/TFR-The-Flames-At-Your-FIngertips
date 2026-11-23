@@ -1,0 +1,60 @@
+# Keeps the Afghanistan-Taliban War Winner rule honest. The chosen side holds
+# the Mushroom Army buff only while the rule's gating is satisfied (after
+# 1 March 2020 and while AFG and TAL are at war); everyone else, and both sides
+# once the war ends, releases it. Safe to call every week.
+TFRNS_reconcile_afg_tal_war_buff = {
+	if = {
+		limit = {
+			TFRNS_afg_tal_war_active = yes
+			has_game_rule = {
+				rule = TFRNS_AFG_TAL_War_Winner
+				option = TFRNS_AFG_TAL_War_Winner_AFG
+			}
+		}
+		# Winner: Afghanistan.
+		if = {
+			limit = { country_exists = AFG }
+			AFG = {
+				set_country_flag = TFRNS_Source_AFG_TAL
+				TFRNS_apply_attack_mushroom_buff_if_missing = yes
+			}
+		}
+		if = {
+			limit = { country_exists = TAL }
+			TAL = { TFRNS_release_afg_tal_buff = yes }
+		}
+	}
+	else_if = {
+		limit = {
+			TFRNS_afg_tal_war_active = yes
+			has_game_rule = {
+				rule = TFRNS_AFG_TAL_War_Winner
+				option = TFRNS_AFG_TAL_War_Winner_TAL
+			}
+		}
+		# Winner: Taliban.
+		if = {
+			limit = { country_exists = TAL }
+			TAL = {
+				set_country_flag = TFRNS_Source_AFG_TAL
+				TFRNS_apply_attack_mushroom_buff_if_missing = yes
+			}
+		}
+		if = {
+			limit = { country_exists = AFG }
+			AFG = { TFRNS_release_afg_tal_buff = yes }
+		}
+	}
+	else = {
+		# DEFAULT, or the gating is not satisfied (before the ceasefire, or the
+		# war has ended): nobody keeps the buff.
+		if = {
+			limit = { country_exists = AFG }
+			AFG = { TFRNS_release_afg_tal_buff = yes }
+		}
+		if = {
+			limit = { country_exists = TAL }
+			TAL = { TFRNS_release_afg_tal_buff = yes }
+		}
+	}
+}

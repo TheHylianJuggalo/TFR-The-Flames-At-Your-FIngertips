@@ -1,0 +1,349 @@
+# TFR No Surrender - European civil war winner enforcement
+#
+# Keeps each of the four European civil war winner rules honest: while the war
+# is being fought only the rule-selected side may hold the Mushroom Army buff,
+# and every trace is released once the war ends. Safe to call every week - each
+# effect is fully idempotent.
+
+# --- release helpers (current scope = the country losing the buff) --------
+
+TFRNS_release_british_cw_buff = {
+	if = {
+		limit = { has_country_flag = TFRNS_Source_British_CW }
+		clr_country_flag = TFRNS_Source_British_CW
+		TFRNS_remove_mushroom_buff_if_no_other_campaign_owns_it = yes
+	}
+}
+
+TFRNS_release_troubles_buff = {
+	if = {
+		limit = { has_country_flag = TFRNS_Source_Troubles }
+		clr_country_flag = TFRNS_Source_Troubles
+		TFRNS_remove_mushroom_buff_if_no_other_campaign_owns_it = yes
+	}
+}
+
+TFRNS_release_spanish_cw_buff = {
+	if = {
+		limit = { has_country_flag = TFRNS_Source_Spanish_CW }
+		clr_country_flag = TFRNS_Source_Spanish_CW
+		TFRNS_remove_mushroom_buff_if_no_other_campaign_owns_it = yes
+	}
+}
+
+TFRNS_release_portuguese_cw_buff = {
+	if = {
+		limit = { has_country_flag = TFRNS_Source_Portuguese_CW }
+		clr_country_flag = TFRNS_Source_Portuguese_CW
+		TFRNS_remove_mushroom_buff_if_no_other_campaign_owns_it = yes
+	}
+}
+
+# --- reconciliation -------------------------------------------------------
+
+# British Civil War winner: ENG, UK2 or SCO.
+TFRNS_reconcile_british_civil_war_buff = {
+	if = {
+		limit = {
+			TFRNS_british_civil_war_ongoing = yes
+			has_game_rule = {
+				rule = TFRNS_British_Civil_War_Winner
+				option = TFRNS_British_Civil_War_Winner_ENG
+			}
+		}
+		# Winner: the United Kingdom.
+		if = {
+			limit = { country_exists = ENG }
+			ENG = {
+				set_country_flag = TFRNS_Source_British_CW
+				TFRNS_apply_attack_mushroom_buff_if_missing = yes
+			}
+		}
+		if = { limit = { country_exists = UK2 } UK2 = { TFRNS_release_british_cw_buff = yes } }
+		if = { limit = { country_exists = SCO } SCO = { TFRNS_release_british_cw_buff = yes } }
+	}
+	else_if = {
+		limit = {
+			TFRNS_british_civil_war_ongoing = yes
+			has_game_rule = {
+				rule = TFRNS_British_Civil_War_Winner
+				option = TFRNS_British_Civil_War_Winner_UK2
+			}
+		}
+		# Winner: the British Revolution.
+		if = {
+			limit = { country_exists = UK2 }
+			UK2 = {
+				set_country_flag = TFRNS_Source_British_CW
+				TFRNS_apply_attack_mushroom_buff_if_missing = yes
+			}
+		}
+		if = { limit = { country_exists = ENG } ENG = { TFRNS_release_british_cw_buff = yes } }
+		if = { limit = { country_exists = SCO } SCO = { TFRNS_release_british_cw_buff = yes } }
+	}
+	else_if = {
+		limit = {
+			TFRNS_british_civil_war_ongoing = yes
+			has_game_rule = {
+				rule = TFRNS_British_Civil_War_Winner
+				option = TFRNS_British_Civil_War_Winner_SCO
+			}
+		}
+		# Winner: Scotland.
+		if = {
+			limit = { country_exists = SCO }
+			SCO = {
+				set_country_flag = TFRNS_Source_British_CW
+				TFRNS_apply_attack_mushroom_buff_if_missing = yes
+			}
+		}
+		if = { limit = { country_exists = ENG } ENG = { TFRNS_release_british_cw_buff = yes } }
+		if = { limit = { country_exists = UK2 } UK2 = { TFRNS_release_british_cw_buff = yes } }
+	}
+	else = {
+		# DEFAULT, or the war is over: nobody keeps the buff.
+		if = { limit = { country_exists = ENG } ENG = { TFRNS_release_british_cw_buff = yes } }
+		if = { limit = { country_exists = UK2 } UK2 = { TFRNS_release_british_cw_buff = yes } }
+		if = { limit = { country_exists = SCO } SCO = { TFRNS_release_british_cw_buff = yes } }
+	}
+}
+
+# Second Troubles winner: NIR, IRA or IRE.
+TFRNS_reconcile_troubles_buff = {
+	if = {
+		limit = {
+			TFRNS_troubles_ongoing = yes
+			has_game_rule = {
+				rule = TFRNS_Troubles_Winner
+				option = TFRNS_Troubles_Winner_NIR
+			}
+		}
+		# Winner: Northern Ireland.
+		if = {
+			limit = { country_exists = NIR }
+			NIR = {
+				set_country_flag = TFRNS_Source_Troubles
+				TFRNS_apply_attack_mushroom_buff_if_missing = yes
+			}
+		}
+		if = { limit = { country_exists = IRA } IRA = { TFRNS_release_troubles_buff = yes } }
+		if = { limit = { country_exists = IRE } IRE = { TFRNS_release_troubles_buff = yes } }
+	}
+	else_if = {
+		limit = {
+			TFRNS_troubles_ongoing = yes
+			has_game_rule = {
+				rule = TFRNS_Troubles_Winner
+				option = TFRNS_Troubles_Winner_IRA
+			}
+		}
+		# Winner: the IRA.
+		if = {
+			limit = { country_exists = IRA }
+			IRA = {
+				set_country_flag = TFRNS_Source_Troubles
+				TFRNS_apply_attack_mushroom_buff_if_missing = yes
+			}
+		}
+		if = { limit = { country_exists = NIR } NIR = { TFRNS_release_troubles_buff = yes } }
+		if = { limit = { country_exists = IRE } IRE = { TFRNS_release_troubles_buff = yes } }
+	}
+	else_if = {
+		limit = {
+			has_game_rule = {
+				rule = TFRNS_Troubles_Winner
+				option = TFRNS_Troubles_Winner_IRE
+			}
+		}
+		# Winner: Ireland, in the follow-up war the IRA declares only after it
+		# has beaten the Ulster Coalition. Back the IRA during the Troubles,
+		# strip the buff off it at the handover, then back Ireland.
+		if = {
+			limit = { TFRNS_troubles_ongoing = yes }
+			if = {
+				limit = { country_exists = IRA }
+				IRA = {
+					set_country_flag = TFRNS_Source_Troubles
+					TFRNS_apply_attack_mushroom_buff_if_missing = yes
+				}
+			}
+			if = { limit = { country_exists = NIR } NIR = { TFRNS_release_troubles_buff = yes } }
+			if = { limit = { country_exists = IRE } IRE = { TFRNS_release_troubles_buff = yes } }
+		}
+		else_if = {
+			limit = { TFRNS_irish_unification_ongoing = yes }
+			if = { limit = { country_exists = IRA } IRA = { TFRNS_release_troubles_buff = yes } }
+			if = {
+				limit = { country_exists = IRE }
+				IRE = {
+					set_country_flag = TFRNS_Source_Troubles
+					TFRNS_apply_attack_mushroom_buff_if_missing = yes
+				}
+			}
+			if = { limit = { country_exists = NIR } NIR = { TFRNS_release_troubles_buff = yes } }
+		}
+		else = {
+			if = { limit = { country_exists = NIR } NIR = { TFRNS_release_troubles_buff = yes } }
+			if = { limit = { country_exists = IRA } IRA = { TFRNS_release_troubles_buff = yes } }
+			if = { limit = { country_exists = IRE } IRE = { TFRNS_release_troubles_buff = yes } }
+		}
+	}
+	else = {
+		if = { limit = { country_exists = NIR } NIR = { TFRNS_release_troubles_buff = yes } }
+		if = { limit = { country_exists = IRA } IRA = { TFRNS_release_troubles_buff = yes } }
+		if = { limit = { country_exists = IRE } IRE = { TFRNS_release_troubles_buff = yes } }
+	}
+}
+
+# Second Spanish Civil War winner: SPR, RSR, SNS, CAT or BSQ.
+TFRNS_reconcile_spanish_civil_war_buff = {
+	if = {
+		limit = {
+			TFRNS_spanish_civil_war_ongoing = yes
+			has_game_rule = {
+				rule = TFRNS_Spanish_Civil_War_Winner
+				option = TFRNS_Spanish_Civil_War_Winner_SPR
+			}
+		}
+		# Winner: the Kingdom of Spain.
+		if = {
+			limit = { country_exists = SPR }
+			SPR = {
+				set_country_flag = TFRNS_Source_Spanish_CW
+				TFRNS_apply_attack_mushroom_buff_if_missing = yes
+			}
+		}
+		if = { limit = { country_exists = RSR } RSR = { TFRNS_release_spanish_cw_buff = yes } }
+		if = { limit = { country_exists = SNS } SNS = { TFRNS_release_spanish_cw_buff = yes } }
+		if = { limit = { country_exists = CAT } CAT = { TFRNS_release_spanish_cw_buff = yes } }
+		if = { limit = { country_exists = BSQ } BSQ = { TFRNS_release_spanish_cw_buff = yes } }
+	}
+	else_if = {
+		limit = {
+			TFRNS_spanish_civil_war_ongoing = yes
+			has_game_rule = {
+				rule = TFRNS_Spanish_Civil_War_Winner
+				option = TFRNS_Spanish_Civil_War_Winner_RSR
+			}
+		}
+		# Winner: the Republican side - Republican Spain plus Catalonia and the
+		# Basque Country, which only ever fight SPR and SNS.
+		if = {
+			limit = { country_exists = RSR }
+			RSR = {
+				set_country_flag = TFRNS_Source_Spanish_CW
+				TFRNS_apply_attack_mushroom_buff_if_missing = yes
+			}
+		}
+		if = {
+			limit = { country_exists = CAT }
+			CAT = {
+				set_country_flag = TFRNS_Source_Spanish_CW
+				TFRNS_apply_attack_mushroom_buff_if_missing = yes
+			}
+		}
+		if = {
+			limit = { country_exists = BSQ }
+			BSQ = {
+				set_country_flag = TFRNS_Source_Spanish_CW
+				TFRNS_apply_attack_mushroom_buff_if_missing = yes
+			}
+		}
+		if = { limit = { country_exists = SPR } SPR = { TFRNS_release_spanish_cw_buff = yes } }
+		if = { limit = { country_exists = SNS } SNS = { TFRNS_release_spanish_cw_buff = yes } }
+	}
+	else_if = {
+		limit = {
+			TFRNS_spanish_civil_war_ongoing = yes
+			has_game_rule = {
+				rule = TFRNS_Spanish_Civil_War_Winner
+				option = TFRNS_Spanish_Civil_War_Winner_SNS
+			}
+		}
+		# Winner: the Spanish National State.
+		if = {
+			limit = { country_exists = SNS }
+			SNS = {
+				set_country_flag = TFRNS_Source_Spanish_CW
+				TFRNS_apply_attack_mushroom_buff_if_missing = yes
+			}
+		}
+		if = { limit = { country_exists = SPR } SPR = { TFRNS_release_spanish_cw_buff = yes } }
+		if = { limit = { country_exists = RSR } RSR = { TFRNS_release_spanish_cw_buff = yes } }
+		if = { limit = { country_exists = CAT } CAT = { TFRNS_release_spanish_cw_buff = yes } }
+		if = { limit = { country_exists = BSQ } BSQ = { TFRNS_release_spanish_cw_buff = yes } }
+	}
+	else = {
+		if = { limit = { country_exists = SPR } SPR = { TFRNS_release_spanish_cw_buff = yes } }
+		if = { limit = { country_exists = RSR } RSR = { TFRNS_release_spanish_cw_buff = yes } }
+		if = { limit = { country_exists = SNS } SNS = { TFRNS_release_spanish_cw_buff = yes } }
+		if = { limit = { country_exists = CAT } CAT = { TFRNS_release_spanish_cw_buff = yes } }
+		if = { limit = { country_exists = BSQ } BSQ = { TFRNS_release_spanish_cw_buff = yes } }
+	}
+}
+
+# Portuguese Civil War winner: POR, PRP or GOD.
+TFRNS_reconcile_portuguese_civil_war_buff = {
+	if = {
+		limit = {
+			TFRNS_portuguese_civil_war_ongoing = yes
+			has_game_rule = {
+				rule = TFRNS_Portuguese_Civil_War_Winner
+				option = TFRNS_Portuguese_Civil_War_Winner_POR
+			}
+		}
+		# Winner: the Portuguese Republic.
+		if = {
+			limit = { country_exists = POR }
+			POR = {
+				set_country_flag = TFRNS_Source_Portuguese_CW
+				TFRNS_apply_attack_mushroom_buff_if_missing = yes
+			}
+		}
+		if = { limit = { country_exists = PRP } PRP = { TFRNS_release_portuguese_cw_buff = yes } }
+		if = { limit = { country_exists = GOD } GOD = { TFRNS_release_portuguese_cw_buff = yes } }
+	}
+	else_if = {
+		limit = {
+			TFRNS_portuguese_civil_war_ongoing = yes
+			has_game_rule = {
+				rule = TFRNS_Portuguese_Civil_War_Winner
+				option = TFRNS_Portuguese_Civil_War_Winner_PRP
+			}
+		}
+		# Winner: the People's Republic of Portugal.
+		if = {
+			limit = { country_exists = PRP }
+			PRP = {
+				set_country_flag = TFRNS_Source_Portuguese_CW
+				TFRNS_apply_attack_mushroom_buff_if_missing = yes
+			}
+		}
+		if = { limit = { country_exists = POR } POR = { TFRNS_release_portuguese_cw_buff = yes } }
+		if = { limit = { country_exists = GOD } GOD = { TFRNS_release_portuguese_cw_buff = yes } }
+	}
+	else_if = {
+		limit = {
+			TFRNS_portuguese_civil_war_ongoing = yes
+			has_game_rule = {
+				rule = TFRNS_Portuguese_Civil_War_Winner
+				option = TFRNS_Portuguese_Civil_War_Winner_GOD
+			}
+		}
+		# Winner: Regnum Caelorum in Terra.
+		if = {
+			limit = { country_exists = GOD }
+			GOD = {
+				set_country_flag = TFRNS_Source_Portuguese_CW
+				TFRNS_apply_attack_mushroom_buff_if_missing = yes
+			}
+		}
+		if = { limit = { country_exists = POR } POR = { TFRNS_release_portuguese_cw_buff = yes } }
+		if = { limit = { country_exists = PRP } PRP = { TFRNS_release_portuguese_cw_buff = yes } }
+	}
+	else = {
+		if = { limit = { country_exists = POR } POR = { TFRNS_release_portuguese_cw_buff = yes } }
+		if = { limit = { country_exists = PRP } PRP = { TFRNS_release_portuguese_cw_buff = yes } }
+		if = { limit = { country_exists = GOD } GOD = { TFRNS_release_portuguese_cw_buff = yes } }
+	}
+}

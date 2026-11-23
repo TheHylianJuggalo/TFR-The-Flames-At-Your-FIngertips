@@ -1,0 +1,103 @@
+# TFR No Surrender - French regionalist war winner enforcement
+#
+# Keeps TFRNS_French_Regionalist_War_Winner honest. The buff only exists while
+# France is fighting the eight regionalists. Once France capitulates to any one
+# of them, TFR hands France to Germany and Germany wars all eight; at that point
+# every trace of the submod buff is released. Safe to call every week - each
+# effect is idempotent.
+
+TFRNS_release_french_regionalist_war_buff = {
+	if = {
+		limit = { has_country_flag = TFRNS_Source_French_Regionalist_War }
+		clr_country_flag = TFRNS_Source_French_Regionalist_War
+		TFRNS_remove_mushroom_buff_if_no_other_campaign_owns_it = yes
+	}
+}
+
+TFRNS_reconcile_french_regionalist_war_buff = {
+	if = {
+		limit = {
+			TFRNS_french_regionalist_war_ongoing = yes
+			has_game_rule = {
+				rule = TFRNS_French_Regionalist_War_Winner
+				option = TFRNS_French_Regionalist_War_Winner_FRA
+			}
+		}
+		# Winner: Lambart's France.
+		if = {
+			limit = { country_exists = FRA }
+			FRA = {
+				set_country_flag = TFRNS_Source_French_Regionalist_War
+				TFRNS_apply_attack_mushroom_buff_if_missing = yes
+			}
+		}
+		every_country = {
+			limit = {
+				OR = {
+					tag = NMD
+					tag = SAX
+					tag = BRI
+					tag = FCM
+					tag = PIC
+					tag = OCT
+					tag = LIM
+					tag = PRV
+				}
+			}
+			TFRNS_release_french_regionalist_war_buff = yes
+		}
+	}
+	else_if = {
+		limit = {
+			TFRNS_french_regionalist_war_ongoing = yes
+			has_game_rule = {
+				rule = TFRNS_French_Regionalist_War_Winner
+				option = TFRNS_French_Regionalist_War_Winner_REGIONS
+			}
+		}
+		# Winner: all eight regional breakaways together.
+		every_country = {
+			limit = {
+				OR = {
+					tag = NMD
+					tag = SAX
+					tag = BRI
+					tag = FCM
+					tag = PIC
+					tag = OCT
+					tag = LIM
+					tag = PRV
+				}
+			}
+			set_country_flag = TFRNS_Source_French_Regionalist_War
+			TFRNS_apply_attack_mushroom_buff_if_missing = yes
+		}
+		if = {
+			limit = { country_exists = FRA }
+			FRA = { TFRNS_release_french_regionalist_war_buff = yes }
+		}
+	}
+	else = {
+		# DEFAULT, France already annexed, or Germany already took over the war:
+		# nobody keeps the buff.
+		if = {
+			limit = { country_exists = FRA }
+			FRA = { TFRNS_release_french_regionalist_war_buff = yes }
+		}
+		every_country = {
+			limit = {
+				OR = {
+					tag = NMD
+					tag = SAX
+					tag = BRI
+					tag = FCM
+					tag = PIC
+					tag = OCT
+					tag = LIM
+					tag = PRV
+				}
+			}
+			TFRNS_release_french_regionalist_war_buff = yes
+		}
+	}
+}

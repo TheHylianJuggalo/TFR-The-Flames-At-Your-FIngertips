@@ -1,0 +1,15 @@
+TFRNS_cobasna_depot_detonate = {
+	if = {
+		limit = { NOT = { has_global_flag = TRA_destroyed_cobasna } }
+		set_global_flag = TRA_destroyed_cobasna
+		every_country = {
+			goto_province = 13213
+			news_event = { id = news.276 }
+		}
+		launch_nuke = {
+			province = 13213
+			use_nuke = no
+		}
+		TRA = { remove_ideas = TRA_cobasna_ammunition_depot }
+	}
+}

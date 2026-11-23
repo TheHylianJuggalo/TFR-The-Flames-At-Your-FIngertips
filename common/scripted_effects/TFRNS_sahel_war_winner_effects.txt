@@ -1,0 +1,73 @@
+# TFR No Surrender - Sahel War winner enforcement
+#
+# Keeps the Sahel War winner rule honest: while the war is being fought only
+# the rule-selected camp may hold the Mushroom Army buff, and every trace is
+# released once the war ends. Safe to call every week - fully idempotent.
+
+# --- release helper (current scope = the country losing the buff) ---------
+
+TFRNS_release_sahel_war_buff = {
+	if = {
+		limit = { has_country_flag = TFRNS_Source_Sahel_War }
+		clr_country_flag = TFRNS_Source_Sahel_War
+		TFRNS_remove_mushroom_buff_if_no_other_campaign_owns_it = yes
+	}
+}
+
+# --- reconciliation -------------------------------------------------------
+
+# Current scope = the country being reconciled. Faction membership is checked
+# on every pass, so a nation that joins or leaves the winning faction mid-war
+# gains or loses the buff on the next weekly tick.
+TFRNS_reconcile_sahel_war_winner_buff = {
+	if = {
+		limit = {
+			TFRNS_sahel_war_ongoing = yes
+			has_game_rule = {
+				rule = TFRNS_Sahel_War_Winner
+				option = TFRNS_Sahel_War_Winner_ECOMOG
+			}
+		}
+		# ECOMOG: Ivory Coast plus every nation in its faction.
+		if = {
+			limit = {
+				OR = {
+					tag = IVO
+					is_in_faction_with = IVO
+				}
+			}
+			set_country_flag = TFRNS_Source_Sahel_War
+			TFRNS_apply_attack_mushroom_buff_if_missing = yes
+		}
+		else = {
+			TFRNS_release_sahel_war_buff = yes
+		}
+	}
+	else_if = {
+		limit = {
+			TFRNS_sahel_war_ongoing = yes
+			has_game_rule = {
+				rule = TFRNS_Sahel_War_Winner
+				option = TFRNS_Sahel_War_Winner_SAHEL
+			}
+		}
+		# Sahel Security Pact: Mali plus every nation in its faction.
+		if = {
+			limit = {
+				OR = {
+					tag = MLI
+					is_in_faction_with = MLI
+				}
+			}
+			set_country_flag = TFRNS_Source_Sahel_War
+			TFRNS_apply_attack_mushroom_buff_if_missing = yes
+		}
+		else = {
+			TFRNS_release_sahel_war_buff = yes
+		}
+	}
+	else = {
+		# DEFAULT, or the war is over: nobody keeps the buff.
+		TFRNS_release_sahel_war_buff = yes
+	}
+}

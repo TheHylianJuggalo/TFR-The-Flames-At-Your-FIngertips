@@ -1,0 +1,277 @@
+on_actions = {
+	on_declare_war = {
+		effect = {
+			if = {
+				limit = {
+					ROOT = { tag = HRL }
+					has_global_flag = TFRNS_HRL_Haftar_Invasion_Active
+					has_game_rule = {
+						rule = TFRNS_HRL_Haftar_Invasion_Outcome
+						option = TFRNS_HRL_Haftar_Invasion_Outcome_HRL_Wins
+					}
+				}
+				HRL = {
+					set_country_flag = TFRNS_HRL_Haftar_Invasion_Participant
+					set_country_flag = TFRNS_Source_HRL_Haftar
+					TFRNS_apply_attack_mushroom_buff_if_missing = yes
+				}
+				FROM = {
+					set_country_flag = TFRNS_HRL_Haftar_Invasion_Participant
+					TFRNS_remove_mushroom_buff_if_present = yes
+				}
+				if = {
+					limit = {
+						has_global_flag = Algerian_Civil_War_Flag
+						FROM = { OR = { tag = ALG tag = AG1 tag = AG2 tag = AG3 } }
+						has_game_rule = {
+							rule = TFRNS_Algeria_Civil_War_Winner
+							option = TFRNS_Algeria_Civil_War_Winner_ALG
+						}
+					}
+					set_global_flag = TFRNS_HRL_Algerian_CW_Buff_Suppressed
+					ALG = { TFRNS_remove_mushroom_buff_if_present = yes }
+				}
+				if = {
+					limit = {
+						has_global_flag = Algerian_Civil_War_Flag
+						FROM = { OR = { tag = ALG tag = AG1 tag = AG2 tag = AG3 } }
+						has_game_rule = {
+							rule = TFRNS_Algeria_Civil_War_Winner
+							option = TFRNS_Algeria_Civil_War_Winner_AG1
+						}
+					}
+					set_global_flag = TFRNS_HRL_Algerian_CW_Buff_Suppressed
+					AG1 = { TFRNS_remove_mushroom_buff_if_present = yes }
+				}
+				if = {
+					limit = {
+						has_global_flag = Algerian_Civil_War_Flag
+						FROM = { OR = { tag = ALG tag = AG1 tag = AG2 tag = AG3 } }
+						has_game_rule = {
+							rule = TFRNS_Algeria_Civil_War_Winner
+							option = TFRNS_Algeria_Civil_War_Winner_AG2
+						}
+					}
+					set_global_flag = TFRNS_HRL_Algerian_CW_Buff_Suppressed
+					AG2 = { TFRNS_remove_mushroom_buff_if_present = yes }
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { tag = HRL }
+				has_global_flag = TFRNS_HRL_Haftar_Invasion_Active
+				has_game_rule = {
+					rule = TFRNS_HRL_Haftar_Invasion_Outcome
+					option = TFRNS_HRL_Haftar_Invasion_Outcome_Repelled
+				}
+			}
+			HRL = { set_country_flag = TFRNS_HRL_Haftar_Invasion_Participant }
+			FROM = {
+				set_country_flag = TFRNS_HRL_Haftar_Invasion_Participant
+				set_country_flag = TFRNS_Source_HRL_Haftar
+				TFRNS_apply_defense_mushroom_buff_if_missing = yes
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { tag = HRL }
+				has_global_flag = TFRNS_HRL_Gaddafi_Invasion_Active
+				has_game_rule = {
+					rule = TFRNS_HRL_Gaddafi_Invasion_Outcome
+					option = TFRNS_HRL_Gaddafi_Invasion_Outcome_HRL_Wins
+				}
+			}
+			HRL = {
+				set_country_flag = TFRNS_HRL_Gaddafi_Invasion_Participant
+				set_country_flag = TFRNS_Source_HRL_Gaddafi
+				TFRNS_apply_attack_mushroom_buff_if_missing = yes
+			}
+			FROM = {
+				set_country_flag = TFRNS_HRL_Gaddafi_Invasion_Participant
+				TFRNS_remove_mushroom_buff_if_present = yes
+			}
+			if = {
+				limit = {
+					has_global_flag = Algerian_Civil_War_Flag
+					FROM = { OR = { tag = ALG tag = AG1 tag = AG2 tag = AG3 } }
+					has_game_rule = {
+						rule = TFRNS_Algeria_Civil_War_Winner
+						option = TFRNS_Algeria_Civil_War_Winner_ALG
+					}
+				}
+				set_global_flag = TFRNS_HRL_Algerian_CW_Buff_Suppressed
+				ALG = { TFRNS_remove_mushroom_buff_if_present = yes }
+			}
+			if = {
+				limit = {
+					has_global_flag = Algerian_Civil_War_Flag
+					FROM = { OR = { tag = ALG tag = AG1 tag = AG2 tag = AG3 } }
+					has_game_rule = {
+						rule = TFRNS_Algeria_Civil_War_Winner
+						option = TFRNS_Algeria_Civil_War_Winner_AG1
+					}
+				}
+				set_global_flag = TFRNS_HRL_Algerian_CW_Buff_Suppressed
+				AG1 = { TFRNS_remove_mushroom_buff_if_present = yes }
+			}
+			if = {
+				limit = {
+					has_global_flag = Algerian_Civil_War_Flag
+					FROM = { OR = { tag = ALG tag = AG1 tag = AG2 tag = AG3 } }
+					has_game_rule = {
+						rule = TFRNS_Algeria_Civil_War_Winner
+						option = TFRNS_Algeria_Civil_War_Winner_AG2
+					}
+				}
+				set_global_flag = TFRNS_HRL_Algerian_CW_Buff_Suppressed
+				AG2 = { TFRNS_remove_mushroom_buff_if_present = yes }
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { tag = HRL }
+				has_global_flag = TFRNS_HRL_Gaddafi_Invasion_Active
+				has_game_rule = {
+					rule = TFRNS_HRL_Gaddafi_Invasion_Outcome
+					option = TFRNS_HRL_Gaddafi_Invasion_Outcome_Repelled
+				}
+			}
+			HRL = { set_country_flag = TFRNS_HRL_Gaddafi_Invasion_Participant }
+			FROM = {
+				set_country_flag = TFRNS_HRL_Gaddafi_Invasion_Participant
+				set_country_flag = TFRNS_Source_HRL_Gaddafi
+				TFRNS_apply_defense_mushroom_buff_if_missing = yes
+			}
+		}
+	}
+	on_weekly = {
+		effect = {
+			# Reconcile the invasion buffs after country splits and delayed war starts.
+			if = {
+				limit = {
+					HRL = {
+						has_war = yes
+						has_global_flag = TFRNS_HRL_Haftar_Invasion_Active
+						has_game_rule = {
+							rule = TFRNS_HRL_Haftar_Invasion_Outcome
+							option = TFRNS_HRL_Haftar_Invasion_Outcome_HRL_Wins
+						}
+					}
+				}
+				HRL = {
+					set_country_flag = TFRNS_HRL_Haftar_Invasion_Participant
+					set_country_flag = TFRNS_Source_HRL_Haftar
+					TFRNS_apply_attack_mushroom_buff_if_missing = yes
+				}
+				every_country = {
+					limit = { has_war_with = HRL }
+					set_country_flag = TFRNS_HRL_Haftar_Invasion_Participant
+					TFRNS_remove_mushroom_buff_if_present = yes
+				}
+			}
+			if = {
+				limit = {
+					HRL = {
+						has_war = yes
+						has_global_flag = TFRNS_HRL_Haftar_Invasion_Active
+						has_game_rule = {
+							rule = TFRNS_HRL_Haftar_Invasion_Outcome
+							option = TFRNS_HRL_Haftar_Invasion_Outcome_Repelled
+						}
+					}
+				}
+				every_country = {
+					limit = { has_war_with = HRL }
+					set_country_flag = TFRNS_HRL_Haftar_Invasion_Participant
+					set_country_flag = TFRNS_Source_HRL_Haftar
+					TFRNS_apply_defense_mushroom_buff_if_missing = yes
+				}
+			}
+			if = {
+				limit = {
+					HRL = {
+						has_war = yes
+						has_global_flag = TFRNS_HRL_Gaddafi_Invasion_Active
+						has_game_rule = {
+							rule = TFRNS_HRL_Gaddafi_Invasion_Outcome
+							option = TFRNS_HRL_Gaddafi_Invasion_Outcome_HRL_Wins
+						}
+					}
+				}
+				HRL = {
+					set_country_flag = TFRNS_HRL_Gaddafi_Invasion_Participant
+					set_country_flag = TFRNS_Source_HRL_Gaddafi
+					TFRNS_apply_attack_mushroom_buff_if_missing = yes
+				}
+				every_country = {
+					limit = { has_war_with = HRL }
+					set_country_flag = TFRNS_HRL_Gaddafi_Invasion_Participant
+					TFRNS_remove_mushroom_buff_if_present = yes
+				}
+			}
+			if = {
+				limit = {
+					HRL = {
+						has_war = yes
+						has_global_flag = TFRNS_HRL_Gaddafi_Invasion_Active
+						has_game_rule = {
+							rule = TFRNS_HRL_Gaddafi_Invasion_Outcome
+							option = TFRNS_HRL_Gaddafi_Invasion_Outcome_Repelled
+						}
+					}
+				}
+				every_country = {
+					limit = { has_war_with = HRL }
+					set_country_flag = TFRNS_HRL_Gaddafi_Invasion_Participant
+					set_country_flag = TFRNS_Source_HRL_Gaddafi
+					TFRNS_apply_defense_mushroom_buff_if_missing = yes
+				}
+			}
+			if = {
+				limit = {
+					tag = HRL
+					has_global_flag = TFRNS_HRL_Haftar_Morocco_Final_Stage
+					NOT = {
+						any_country = {
+							limit = {
+								has_country_flag = TFRNS_HRL_Haftar_Invasion_Participant
+								has_war_with = HRL
+							}
+						}
+					}
+				}
+				clr_global_flag = TFRNS_HRL_Haftar_Invasion_Active
+				clr_global_flag = TFRNS_HRL_Haftar_Morocco_Final_Stage
+				every_country = {
+					limit = { has_country_flag = TFRNS_HRL_Haftar_Invasion_Participant }
+					clr_country_flag = TFRNS_HRL_Haftar_Invasion_Participant
+					clr_country_flag = TFRNS_Source_HRL_Haftar
+					TFRNS_remove_mushroom_buff_if_no_other_campaign_owns_it = yes
+				}
+			}
+			if = {
+				limit = {
+					tag = HRL
+					has_global_flag = TFRNS_HRL_Gaddafi_Morocco_Final_Stage
+					NOT = {
+						any_country = {
+							limit = {
+								has_country_flag = TFRNS_HRL_Gaddafi_Invasion_Participant
+								has_war_with = HRL
+							}
+						}
+					}
+				}
+				clr_global_flag = TFRNS_HRL_Gaddafi_Invasion_Active
+				clr_global_flag = TFRNS_HRL_Gaddafi_Morocco_Final_Stage
+				every_country = {
+					limit = { has_country_flag = TFRNS_HRL_Gaddafi_Invasion_Participant }
+					clr_country_flag = TFRNS_HRL_Gaddafi_Invasion_Participant
+					clr_country_flag = TFRNS_Source_HRL_Gaddafi
+					TFRNS_remove_mushroom_buff_if_no_other_campaign_owns_it = yes
+				}
+			}
+		}
+	}
+}

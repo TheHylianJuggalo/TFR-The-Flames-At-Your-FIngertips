@@ -1,0 +1,23 @@
+TFRNS_AFG_TAL_War_Winner = {
+	name = "TFRNS_AFG_TAL_War_Winner"
+	group = "RULE_GROUP_Central_Asia"
+	icon = GFX_decision_generic_army_support
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_AFG_TAL_War_Winner_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_AFG_TAL_War_Winner_AFG
+		text = "TFRNS_AFG_TAL_War_Winner_AFG_TXT"
+		desc = "TFRNS_AFG_TAL_War_Winner_AFG_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_AFG_TAL_War_Winner_TAL
+		text = "TFRNS_AFG_TAL_War_Winner_TAL_TXT"
+		desc = "TFRNS_AFG_TAL_War_Winner_TAL_DESC"
+		allow_achievements = yes
+	}
+}

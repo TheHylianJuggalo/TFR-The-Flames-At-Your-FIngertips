@@ -1,0 +1,46 @@
+# TFRNS: Stockpile top-ups used only when the matching nuclear-launch game rule
+# is set to LAUNCH. Each effect raises the scoped country to at least the number
+# of bombs its full existing launch chain can consume, so no launch is blocked
+# purely by an empty stockpile. Default/No Launch leave stocks untouched.
+
+# Germany: 52 launches in nato.10 + 8 in the Day X salvo = 60.
+# 70 also covers the num_of_nukes > 1 checks on the 8 tactical strikes.
+TFRNS_top_up_german_nuclear_stockpile = {
+	if = {
+		limit = { num_of_nukes < 70 }
+		add_nuclear_bombs = 70
+	}
+}
+
+# Free France: 6 decisions x 5 explicit bombs + 6 use_nuke = yes = 36.
+TFRNS_top_up_french_nuclear_stockpile = {
+	if = {
+		limit = { num_of_nukes < 40 }
+		add_nuclear_bombs = 40
+	}
+}
+
+# Soviet Union: 8 single tactical strikes + 3 in the goodbye-Moscow strike = 11.
+TFRNS_top_up_soviet_nuclear_stockpile = {
+	if = {
+		limit = { num_of_nukes < 20 }
+		add_nuclear_bombs = 20
+	}
+}
+
+# Britain / France in the NATO variant: 5 retaliatory strikes each.
+TFRNS_top_up_allied_nuclear_stockpile = {
+	if = {
+		limit = { num_of_nukes < 10 }
+		add_nuclear_bombs = 10
+	}
+}
+
+# China: PRC_nuke_kyoto and PRC_nuke_kyoto_imper are the only GAW launches with
+# use_nuke = yes, so a small reserve covers both mutually exclusive paths.
+TFRNS_top_up_prc_nuclear_stockpile = {
+	if = {
+		limit = { num_of_nukes < 10 }
+		add_nuclear_bombs = 10
+	}
+}

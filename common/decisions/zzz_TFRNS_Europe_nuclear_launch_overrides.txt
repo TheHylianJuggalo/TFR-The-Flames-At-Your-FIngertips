@@ -1,0 +1,1707 @@
+# TFRNS: gates every existing European nuclear launch decision.
+# GER_launch_nuclear_strike is gated in zzz_TFRNS_GER_nuclear_decision_override.txt.
+# nato.10 is gated by controlling its two callers.
+# Default TFR behavior is untouched when the rule is not set to NO_LAUNCH.
+
+GER_second_NATO_war_category = {
+	GER_tactical_nuke_minsk = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_European_Nuclear_Launches
+					option = TFRNS_European_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			num_of_nukes > 1
+			num_planes_stationed_in_regions = {
+				value > 200
+				regions = {
+					39
+				}
+			}
+			206 = {
+				is_controlled_by_SOV_or_ally = yes
+			}
+			has_war_with = SOV
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = GER_nuclearized
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 206
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 50
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			launch_nuke = {
+				province = 11370
+			}
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+
+	GER_tactical_nuke_riga = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_European_Nuclear_Launches
+					option = TFRNS_European_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			num_of_nukes > 1
+			num_planes_stationed_in_regions = {
+				value > 200
+				regions = {
+					39
+				}
+			}
+			12 = {
+				is_controlled_by_SOV_or_ally = yes
+			}
+			has_war_with = SOV
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = GER_nuclearized
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 12
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 50
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			launch_nuke = {
+				province = 9340
+			}
+			set_global_flag = SOV_riga_nuked
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+
+	GER_tactical_nuke_kiev = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_European_Nuclear_Launches
+					option = TFRNS_European_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			num_of_nukes > 1
+			num_planes_stationed_in_regions = {
+				value > 200
+				regions = {
+					130
+				}
+			}
+			1285 = {
+				is_controlled_by_SOV_or_ally = yes
+			}
+			has_war_with = SOV
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = GER_nuclearized
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1285
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 50
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			launch_nuke = {
+				province = 525
+			}
+			set_global_flag = SOV_kiev_nuked
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+
+	GER_tactical_nuke_leningrad = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_European_Nuclear_Launches
+					option = TFRNS_European_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			num_of_nukes > 1
+			OR = {
+				num_planes_stationed_in_regions = {
+					value > 200
+					regions = {
+						37
+					}
+				}
+				num_planes_stationed_in_regions = {
+					value > 200
+					regions = {
+						132
+					}
+				}
+			}
+			195 = {
+				is_controlled_by_SOV_or_ally = yes
+			}
+			has_war_with = SOV
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = GER_nuclearized
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 195
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 50
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			launch_nuke = {
+				province = 3151
+			}
+			set_global_flag = SOV_leningrad_nuked
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+
+	GER_tactical_nuke_moscow = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_European_Nuclear_Launches
+					option = TFRNS_European_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_completed_focus = GER_fall_bassenheim
+					}
+				}
+				num_of_nukes > 1
+			}
+			num_planes_stationed_in_regions = {
+				value > 400
+				regions = {
+					133
+				}
+			}
+			1339 = {
+				is_controlled_by_SOV_or_ally = yes
+			}
+			has_war_with = SOV
+			command_power > 29
+		}
+		visible = {
+			OR = {
+				has_country_flag = GER_nuclearized
+				has_completed_focus = GER_fall_bassenheim
+			}
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1339
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 50
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			launch_nuke = {
+				province = 6380
+			}
+			set_global_flag = SOV_moscow_nuked
+			hidden_effect = {
+				if = {
+					limit = {
+						GER = {
+							has_completed_focus = GER_facit_omnia_voluntas
+						}
+					}
+					country_event = {
+						id = germany.281
+						hours = 12
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+
+	GER_tactical_nuke_sevastopol = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_European_Nuclear_Launches
+					option = TFRNS_European_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			num_of_nukes > 1
+			OR = {
+				num_planes_stationed_in_regions = {
+					value > 300
+					regions = {
+						130
+					}
+				}
+				num_planes_stationed_in_regions = {
+					value > 300
+					regions = {
+						26
+					}
+				}
+			}
+			1059 = {
+				is_controlled_by_SOV_or_ally = yes
+			}
+			has_war_with = SOV
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = GER_nuclearized
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1059
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 50
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			launch_nuke = {
+				province = 3686
+			}
+			set_global_flag = SOV_sevastopol_nuked
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+
+	GER_tactical_nuke_volgograd = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_European_Nuclear_Launches
+					option = TFRNS_European_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			num_of_nukes > 1
+			num_planes_stationed_in_regions = {
+				value > 300
+				regions = {
+					137
+				}
+			}
+			217 = {
+				is_controlled_by_SOV_or_ally = yes
+			}
+			has_war_with = SOV
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = GER_nuclearized
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 217
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 50
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			launch_nuke = {
+				province = 3529
+			}
+			set_global_flag = SOV_volgograd_nuked
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+
+	GER_tactical_nuke_kharkov = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_European_Nuclear_Launches
+					option = TFRNS_European_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			num_of_nukes > 1
+			num_planes_stationed_in_regions = {
+				value > 300
+				regions = {
+					208
+				}
+			}
+			221 = {
+				is_controlled_by_SOV_or_ally = yes
+			}
+			has_war_with = SOV
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = GER_nuclearized
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 221
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 50
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			launch_nuke = {
+				province = 418
+			}
+			set_global_flag = SOV_kharkov_nuked
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+
+}
+
+FAF_Second_NATO_war_category = {
+	FAF_nuke_stalingrad_decision = {
+		visible = {
+			tag = FAF
+			has_completed_focus = FAF_Remove_Weapon_Restrictions
+		}
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_European_Nuclear_Launches
+					option = TFRNS_European_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			num_of_nukes > 5
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 217
+			}
+			highlight_color_before_active = 3
+			highlight_color_while_active = 2
+		}
+		icon = GFX_FRA_Doorway_to_Africa
+		days_remove = 30
+		fire_only_once = yes
+		modifier = {
+		}
+		complete_effect = {
+			add_nuclear_bombs = -5
+		}
+		remove_effect = {
+			sound_effect = siren_sound_effect
+			every_country = {
+				goto_province = 3529
+			}
+			set_global_flag = SOV_nuked_deployed
+			launch_nuke = {
+				province = 3529
+				controller = SOV
+				use_nuke = yes
+			}
+		}
+	}
+
+	FAF_nuke_sevastapol_decision = {
+		visible = {
+			tag = FAF
+			has_completed_focus = FAF_Remove_Weapon_Restrictions
+		}
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_European_Nuclear_Launches
+					option = TFRNS_European_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			num_of_nukes > 5
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1059
+			}
+			highlight_color_before_active = 3
+			highlight_color_while_active = 2
+		}
+		icon = GFX_FRA_Doorway_to_Africa
+		days_remove = 30
+		fire_only_once = yes
+		modifier = {
+		}
+		complete_effect = {
+			add_nuclear_bombs = -5
+		}
+		remove_effect = {
+			sound_effect = siren_sound_effect
+			every_country = {
+				goto_province = 3686
+			}
+			set_global_flag = SOV_nuked_deployed
+			launch_nuke = {
+				province = 3686
+				controller = SOV
+				use_nuke = yes
+			}
+		}
+	}
+
+	FAF_Nuke_Warsaw_decision = {
+		visible = {
+			tag = FAF
+			has_completed_focus = FAF_Remove_Weapon_Restrictions
+		}
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_European_Nuclear_Launches
+					option = TFRNS_European_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			num_of_nukes > 5
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 855
+			}
+			highlight_color_before_active = 3
+			highlight_color_while_active = 2
+		}
+		icon = GFX_FRA_Doorway_to_Africa
+		days_remove = 30
+		fire_only_once = yes
+		modifier = {
+		}
+		complete_effect = {
+			add_nuclear_bombs = -5
+		}
+		remove_effect = {
+			sound_effect = siren_sound_effect
+			every_country = {
+				goto_province = 3544
+			}
+			set_global_flag = SOV_nuked_deployed
+			launch_nuke = {
+				province = 3544
+				controller = SOV
+				use_nuke = yes
+			}
+		}
+	}
+
+	FAF_Nuke_Moscow_decision = {
+		visible = {
+			tag = FAF
+			has_completed_focus = FAF_Remove_Weapon_Restrictions
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1339
+			}
+			highlight_color_before_active = 3
+			highlight_color_while_active = 2
+		}
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_European_Nuclear_Launches
+					option = TFRNS_European_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			num_of_nukes > 5
+		}
+		icon = GFX_FRA_Doorway_to_Africa
+		days_remove = 30
+		fire_only_once = yes
+		modifier = {
+		}
+		complete_effect = {
+			add_nuclear_bombs = -5
+		}
+		remove_effect = {
+			sound_effect = siren_sound_effect
+			every_country = {
+				goto_province = 6380
+			}
+			set_global_flag = SOV_nuked_deployed
+			launch_nuke = {
+				province = 6380
+				controller = SOV
+				use_nuke = yes
+			}
+		}
+	}
+
+	FAF_Nuke_Kiev_decision = {
+		visible = {
+			tag = FAF
+			has_completed_focus = FAF_Remove_Weapon_Restrictions
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1285
+			}
+			highlight_color_before_active = 3
+			highlight_color_while_active = 2
+		}
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_European_Nuclear_Launches
+					option = TFRNS_European_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			num_of_nukes > 5
+		}
+		icon = GFX_FRA_Doorway_to_Africa
+		days_remove = 30
+		fire_only_once = yes
+		modifier = {
+		}
+		complete_effect = {
+			add_nuclear_bombs = -5
+		}
+		remove_effect = {
+			sound_effect = siren_sound_effect
+			every_country = {
+				goto_province = 525
+			}
+			set_global_flag = SOV_nuked_deployed
+			launch_nuke = {
+				province = 525
+				controller = SOV
+				use_nuke = yes
+			}
+		}
+	}
+
+	FAF_Nuke_Leningrad_decision = {
+		visible = {
+			tag = FAF
+			has_completed_focus = FAF_Remove_Weapon_Restrictions
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 208
+			}
+			highlight_color_before_active = 3
+			highlight_color_while_active = 2
+		}
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_European_Nuclear_Launches
+					option = TFRNS_European_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			num_of_nukes > 5
+		}
+		icon = GFX_FRA_Doorway_to_Africa
+		days_remove = 30
+		fire_only_once = yes
+		modifier = {
+		}
+		complete_effect = {
+			add_nuclear_bombs = -5
+		}
+		remove_effect = {
+			sound_effect = siren_sound_effect
+			every_country = {
+				goto_province = 3151
+			}
+			set_global_flag = SOV_nuked_deployed
+			launch_nuke = {
+				province = 3151
+				controller = SOV
+				use_nuke = yes
+			}
+		}
+	}
+
+}
+
+SOV_second_NATO_war_category = {
+	SOV_tatical_nuke_kiev = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_European_Nuclear_Launches
+					option = TFRNS_European_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			has_country_flag = activated_nuke_arsenal
+		}
+		cost = 50
+		days_remove = 5
+		fire_only_once = yes
+		visible = {
+			tag = SOV
+			1285 = {
+				controller = {
+					has_war_with = SOV
+					is_neighbor_of = SOV
+				}
+			}
+		}
+		cancel_if_not_visible = yes
+		complete_effect = {
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = SOV_nuked_deployed
+					}
+				}
+				sound_effect = siren_sound_effect
+				every_country = {
+					goto_province = 525
+				}
+				set_global_flag = SOV_nuked_deployed
+			}
+			launch_nuke = {
+				province = 525
+				controller = UKR
+				use_nuke = yes
+			}
+			set_global_flag = SOV_kiev_nuked
+			hidden_effect = {
+				random_list = {
+					4 = {
+						SOV = {
+							country_event = {
+								id = indonesia.1
+								days = 5
+							}
+						}
+					}
+					96 = {
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 0.5
+			modifier = {
+				factor = 0.5
+				has_country_leader = {
+					name = "SOV_alexei_navalny"
+					ruling_only = yes
+				}
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_warsaw_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_budapest_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_berlin_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_bucharest_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_volgograd_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_moscow_nuked
+			}
+		}
+	}
+
+	SOV_tatical_nuke_warsaw = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_European_Nuclear_Launches
+					option = TFRNS_European_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			has_country_flag = activated_nuke_arsenal
+		}
+		cost = 50
+		days_remove = 5
+		fire_only_once = yes
+		visible = {
+			tag = SOV
+			855 = {
+				controller = {
+					has_war_with = SOV
+					is_neighbor_of = SOV
+				}
+			}
+		}
+		cancel_if_not_visible = yes
+		complete_effect = {
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = SOV_nuked_deployed
+					}
+				}
+				sound_effect = siren_sound_effect
+				every_country = {
+					goto_province = 3544
+				}
+				set_global_flag = SOV_nuked_deployed
+			}
+			launch_nuke = {
+				province = 3544
+				controller = PLD
+				use_nuke = yes
+			}
+			set_global_flag = SOV_warsaw_nuked
+		}
+		ai_will_do = {
+			base = 0.5
+			modifier = {
+				factor = 0.5
+				has_country_leader = {
+					name = "SOV_alexei_navalny"
+					ruling_only = yes
+				}
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_kiev_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_budapest_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_berlin_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_bucharest_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_volgograd_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_moscow_nuked
+			}
+		}
+	}
+
+	SOV_tatical_nuke_bucharest = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_European_Nuclear_Launches
+					option = TFRNS_European_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			has_country_flag = activated_nuke_arsenal
+		}
+		cost = 50
+		days_remove = 5
+		fire_only_once = yes
+		visible = {
+			tag = SOV
+			835 = {
+				controller = {
+					has_war_with = SOV
+					is_neighbor_of = SOV
+				}
+			}
+		}
+		cancel_if_not_visible = yes
+		complete_effect = {
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = SOV_nuked_deployed
+					}
+				}
+				sound_effect = siren_sound_effect
+				every_country = {
+					goto_province = 9617
+				}
+				set_global_flag = SOV_nuked_deployed
+			}
+			launch_nuke = {
+				province = 9617
+				controller = ROM
+				use_nuke = yes
+			}
+			set_global_flag = SOV_bucharest_nuked
+		}
+		ai_will_do = {
+			base = 0.5
+			modifier = {
+				factor = 0.5
+				has_country_leader = {
+					name = "SOV_alexei_navalny"
+					ruling_only = yes
+				}
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_kiev_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_warsaw_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_berlin_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_bucharest_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_volgograd_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_moscow_nuked
+			}
+		}
+	}
+
+	SOV_tatical_nuke_budapest = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_European_Nuclear_Launches
+					option = TFRNS_European_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			has_country_flag = activated_nuke_arsenal
+		}
+		cost = 50
+		days_remove = 5
+		fire_only_once = yes
+		visible = {
+			tag = SOV
+			854 = {
+				controller = {
+					has_war_with = SOV
+					is_neighbor_of = SOV
+				}
+			}
+		}
+		cancel_if_not_visible = yes
+		complete_effect = {
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = SOV_nuked_deployed
+					}
+				}
+				sound_effect = siren_sound_effect
+				every_country = {
+					goto_province = 9660
+				}
+				set_global_flag = SOV_nuked_deployed
+			}
+			launch_nuke = {
+				province = 9660
+				controller = HUN
+				use_nuke = yes
+			}
+			set_global_flag = SOV_budapest_nuked
+		}
+		ai_will_do = {
+			base = 0.5
+			modifier = {
+				factor = 0.5
+				has_country_leader = {
+					name = "SOV_alexei_navalny"
+					ruling_only = yes
+				}
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_kiev_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_warsaw_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_berlin_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_bucharest_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_volgograd_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_moscow_nuked
+			}
+		}
+	}
+
+	SOV_tatical_nuke_berlin = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_European_Nuclear_Launches
+					option = TFRNS_European_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			has_country_flag = activated_nuke_arsenal
+		}
+		cost = 50
+		days_remove = 5
+		fire_only_once = yes
+		visible = {
+			tag = SOV
+			1378 = {
+				controller = {
+					has_war_with = SOV
+					is_neighbor_of = SOV
+				}
+			}
+		}
+		cancel_if_not_visible = yes
+		complete_effect = {
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = SOV_nuked_deployed
+					}
+				}
+				sound_effect = siren_sound_effect
+				every_country = {
+					goto_province = 6521
+				}
+				set_global_flag = SOV_nuked_deployed
+			}
+			launch_nuke = {
+				province = 6521
+				controller = GER
+				use_nuke = yes
+			}
+			set_global_flag = SOV_berlin_nuked
+		}
+		ai_will_do = {
+			base = 5
+		}
+	}
+
+	SOV_tatical_nuke_milan = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_European_Nuclear_Launches
+					option = TFRNS_European_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			has_country_flag = activated_nuke_arsenal
+		}
+		cost = 50
+		days_remove = 5
+		fire_only_once = yes
+		visible = {
+			tag = SOV
+			1492 = {
+				controller = {
+					has_war_with = SOV
+					is_neighbor_of = SOV
+				}
+			}
+		}
+		cancel_if_not_visible = yes
+		complete_effect = {
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = SOV_nuked_deployed
+					}
+				}
+				sound_effect = siren_sound_effect
+				every_country = {
+					goto_province = 3780
+				}
+				set_global_flag = SOV_nuked_deployed
+			}
+			launch_nuke = {
+				province = 3780
+				controller = GER
+				use_nuke = yes
+			}
+			set_global_flag = SOV_milan_nuked
+		}
+		ai_will_do = {
+			base = 5
+		}
+	}
+
+	SOV_tatical_nuke_paris = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_European_Nuclear_Launches
+					option = TFRNS_European_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			has_country_flag = activated_nuke_arsenal
+		}
+		cost = 50
+		days_remove = 5
+		fire_only_once = yes
+		visible = {
+			tag = SOV
+			16 = {
+				controller = {
+					has_war_with = SOV
+					is_neighbor_of = SOV
+				}
+			}
+		}
+		cancel_if_not_visible = yes
+		complete_effect = {
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = SOV_nuked_deployed
+					}
+				}
+				sound_effect = siren_sound_effect
+				every_country = {
+					goto_province = 11506
+				}
+				set_global_flag = SOV_nuked_deployed
+			}
+			launch_nuke = {
+				province = 11506
+				controller = GER
+				use_nuke = yes
+			}
+			set_global_flag = SOV_paris_nuked
+		}
+		ai_will_do = {
+			base = 5
+		}
+	}
+
+	SOV_tatical_nuke_london = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_European_Nuclear_Launches
+					option = TFRNS_European_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			has_country_flag = activated_nuke_arsenal
+		}
+		cost = 50
+		days_remove = 5
+		fire_only_once = yes
+		visible = {
+			tag = SOV
+			126 = {
+				controller = {
+					has_war_with = SOV
+					is_neighbor_of = SOV
+				}
+			}
+		}
+		cancel_if_not_visible = yes
+		complete_effect = {
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = SOV_nuked_deployed
+					}
+				}
+				sound_effect = siren_sound_effect
+				every_country = {
+					goto_province = 6103
+				}
+				set_global_flag = SOV_nuked_deployed
+			}
+			launch_nuke = {
+				province = 6103
+				controller = GER
+				use_nuke = yes
+			}
+			set_global_flag = SOV_london_nuked
+		}
+		ai_will_do = {
+			base = 5
+		}
+	}
+
+	SOV_tatical_nuke_moscow = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_European_Nuclear_Launches
+					option = TFRNS_European_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			has_country_flag = activated_nuke_arsenal
+		}
+		cost = 50
+		days_remove = 5
+		fire_only_once = yes
+		visible = {
+			tag = SOV
+			1339 = {
+				controller = {
+					has_war_with = SOV
+					is_neighbor_of = SOV
+				}
+			}
+		}
+		cancel_if_not_visible = yes
+		complete_effect = {
+			custom_effect_tooltip = SOV_goodybye_moscow_tt
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = SOV_nuked_deployed
+					}
+				}
+				sound_effect = siren_sound_effect
+				every_country = {
+					goto_province = 6380
+				}
+				set_global_flag = SOV_nuked_deployed
+			}
+			launch_nuke = {
+				province = 6380
+				controller = GER
+				use_nuke = yes
+			}
+			launch_nuke = {
+				province = 6414
+				controller = GER
+				use_nuke = yes
+			}
+			launch_nuke = {
+				province = 14865
+				controller = GER
+				use_nuke = yes
+			}
+			set_global_flag = SOV_moscow_nuked
+		}
+		ai_will_do = {
+			base = 5
+		}
+	}
+
+	SOV_tatical_nuke_st_petersburg = {
+
+		icon = eng_blackshirt_march
+
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_European_Nuclear_Launches
+					option = TFRNS_European_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+
+		}
+
+		cost = 100
+		
+		days_remove = 5
+
+		fire_only_once = yes
+
+		visible = {
+			OR = {
+				tag = ENG
+				tag = FRA
+				num_of_nukes > 1
+			}
+			is_in_faction_with = ENG
+		}
+
+		cancel_if_not_visible = yes
+		
+		complete_effect = {
+
+		}
+		
+		remove_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = SOV_nuked_deployed
+					}
+				}
+				sound_effect = siren_sound_effect
+				every_country = {
+					goto_province = 525 
+				}
+				set_global_flag = SOV_nuked_deployed
+			}
+			launch_nuke = {
+				province = 3151
+				controller = SOV
+				use_nuke = yes
+			}
+			set_global_flag = SOV_st_petersburg_nuked
+		}
+
+		ai_will_do = {
+			factor = 0
+			
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_kiev_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_budapest_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_berlin_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_bucharest_nuked
+			}
+		}
+	}
+
+	SOV_tatical_nuke_moscow = {
+
+		icon = eng_blackshirt_march
+
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_European_Nuclear_Launches
+					option = TFRNS_European_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+
+		}
+
+		cost = 100
+		
+		days_remove = 5
+
+		fire_only_once = yes
+
+		visible = {
+			OR = {
+				tag = ENG
+				tag = FRA
+				num_of_nukes > 1
+			}
+			is_in_faction_with = ENG
+		}
+
+		cancel_if_not_visible = yes
+		
+		complete_effect = {
+
+		}
+		
+		remove_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = SOV_nuked_deployed
+					}
+				}
+				sound_effect = siren_sound_effect
+				every_country = {
+					goto_province = 525 
+				}
+				set_global_flag = SOV_nuked_deployed
+			}
+			launch_nuke = {
+				province = 6380
+				controller = SOV
+				use_nuke = yes
+			}
+			set_global_flag = SOV_moscow_nuked
+		}
+
+		ai_will_do = {
+			factor = 0
+			
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_kiev_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_budapest_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_berlin_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_bucharest_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_warsaw_nuked
+			}
+		}
+	}
+
+	SOV_tatical_nuke_volgograd = {
+
+		icon = eng_blackshirt_march
+
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_European_Nuclear_Launches
+					option = TFRNS_European_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+
+		}
+
+		cost = 100
+		
+		days_remove = 5
+
+		fire_only_once = yes
+
+		visible = {
+			OR = {
+				tag = ENG
+				tag = FRA
+				num_of_nukes > 1
+			}
+			is_in_faction_with = ENG
+		}
+
+		cancel_if_not_visible = yes
+		
+		complete_effect = {
+
+		}
+		
+		remove_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = SOV_nuked_deployed
+					}
+				}
+				sound_effect = siren_sound_effect
+				every_country = {
+					goto_province = 525 
+				}
+				set_global_flag = SOV_nuked_deployed
+			}
+			launch_nuke = {
+				province = 6380
+				controller = SOV
+				use_nuke = yes
+			}
+			set_global_flag = SOV_volgograd_nuked
+		}
+
+		ai_will_do = {
+			factor = 0
+			
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_kiev_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_budapest_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_berlin_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_bucharest_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_warsaw_nuked
+			}
+		}
+	}
+
+	SOV_tatical_nuke_belgorod = {
+
+		icon = eng_blackshirt_march
+
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_European_Nuclear_Launches
+					option = TFRNS_European_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+
+		}
+
+		cost = 100
+		
+		days_remove = 5
+
+		fire_only_once = yes
+
+		visible = {
+			OR = {
+				tag = ENG
+				tag = FRA
+				num_of_nukes > 1
+			}
+			is_in_faction_with = ENG
+		}
+
+		cancel_if_not_visible = yes
+		
+		complete_effect = {
+
+		}
+		
+		remove_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = SOV_nuked_deployed
+					}
+				}
+				sound_effect = siren_sound_effect
+				every_country = {
+					goto_province = 525 
+				}
+				set_global_flag = SOV_nuked_deployed
+			}
+			launch_nuke = {
+				province = 6517
+				controller = SOV
+				use_nuke = yes
+			}
+			set_global_flag = SOV_belgorod_nuked
+		}
+
+		ai_will_do = {
+			factor = 0
+			
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_kiev_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_budapest_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_berlin_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_bucharest_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_warsaw_nuked
+			}
+		}
+	}
+
+	SOV_tatical_nuke_rostov = {
+
+		icon = eng_blackshirt_march
+
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_European_Nuclear_Launches
+					option = TFRNS_European_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+
+		}
+
+		cost = 100
+		
+		days_remove = 5
+
+		fire_only_once = yes
+
+		visible = {
+			OR = {
+				tag = ENG
+				tag = FRA
+				num_of_nukes > 1
+			}
+			is_in_faction_with = ENG
+		}
+
+		cancel_if_not_visible = yes
+		
+		complete_effect = {
+
+		}
+		
+		remove_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = SOV_nuked_deployed
+					}
+				}
+				sound_effect = siren_sound_effect
+				every_country = {
+					goto_province = 525 
+				}
+				set_global_flag = SOV_nuked_deployed
+			}
+			launch_nuke = {
+				province = 9417
+				controller = SOV
+				use_nuke = yes
+			}
+			set_global_flag = SOV_rostov_nuked
+		}
+
+		ai_will_do = {
+			factor = 0
+			
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_kiev_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_budapest_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_berlin_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_bucharest_nuked
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = SOV_warsaw_nuked
+			}
+		}
+	}
+
+}

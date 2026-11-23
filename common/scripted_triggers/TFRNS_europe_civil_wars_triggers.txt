@@ -1,0 +1,69 @@
+# TFR No Surrender - European civil war "war ongoing" checks
+#
+# Each trigger is true only while the corresponding civil war is actually being
+# fought. TFR declares every one of these wars with type = civil_war /
+# annex_everything and resolves them purely by capitulation, so the war is
+# considered ongoing while any two of the belligerents still exist and are at
+# war with each other. Once one side is annexed the pair check fails and the
+# rule's buff is released.
+
+# British Civil War: ENG vs UK2, with SCO joining in on its own against both.
+TFRNS_british_civil_war_ongoing = {
+	OR = {
+		AND = {
+			country_exists = ENG
+			country_exists = UK2
+			ENG = { has_war_with = UK2 }
+		}
+		AND = {
+			country_exists = ENG
+			country_exists = SCO
+			ENG = { has_war_with = SCO }
+		}
+		AND = {
+			country_exists = UK2
+			country_exists = SCO
+			UK2 = { has_war_with = SCO }
+		}
+	}
+}
+
+# Second Troubles: the IRA insurgency against Northern Ireland (uk.54).
+TFRNS_troubles_ongoing = {
+	country_exists = NIR
+	country_exists = IRA
+	NIR = { has_war_with = IRA }
+}
+
+# Irish Unification War: the follow-up war the IRA declares on Ireland (uk.62)
+# only after it has beaten the Ulster Coalition. Used by the IRE option of the
+# Troubles rule for its second phase.
+TFRNS_irish_unification_ongoing = {
+	country_exists = IRA
+	country_exists = IRE
+	IRA = { has_war_with = IRE }
+}
+
+# Second Spanish Civil War: SPR, SNS and RSR each declare on one another, and
+# SPR/SNS also declare on the regional breakaways CAT/BSQ, so the war is ongoing
+# while any two of the listed belligerents still exist and are at war.
+TFRNS_spanish_civil_war_ongoing = {
+	OR = {
+		AND = { country_exists = SPR country_exists = SNS SPR = { has_war_with = SNS } }
+		AND = { country_exists = SPR country_exists = RSR SPR = { has_war_with = RSR } }
+		AND = { country_exists = SPR country_exists = CAT SPR = { has_war_with = CAT } }
+		AND = { country_exists = SPR country_exists = BSQ SPR = { has_war_with = BSQ } }
+		AND = { country_exists = SNS country_exists = RSR SNS = { has_war_with = RSR } }
+		AND = { country_exists = SNS country_exists = CAT SNS = { has_war_with = CAT } }
+		AND = { country_exists = SNS country_exists = BSQ SNS = { has_war_with = BSQ } }
+	}
+}
+
+# Portuguese Civil War: POR vs PRP, POR vs GOD and PRP vs GOD (spain.2).
+TFRNS_portuguese_civil_war_ongoing = {
+	OR = {
+		AND = { country_exists = POR country_exists = PRP POR = { has_war_with = PRP } }
+		AND = { country_exists = POR country_exists = GOD POR = { has_war_with = GOD } }
+		AND = { country_exists = PRP country_exists = GOD PRP = { has_war_with = GOD } }
+	}
+}

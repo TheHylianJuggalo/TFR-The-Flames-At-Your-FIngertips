@@ -1,0 +1,36 @@
+TFRNS_Arab_Israeli_War_Outcome = {
+	name = "TFRNS_Arab_Israeli_War_Outcome"
+	group = "RULE_GROUP_Western_Asia"
+	icon = GFX_decision_generic_army_support
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Arab_Israeli_War_Outcome_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Arab_Israeli_War_Outcome_ISR
+		text = "TFRNS_Arab_Israeli_War_Outcome_ISR_TXT"
+		desc = "TFRNS_Arab_Israeli_War_Outcome_ISR_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Arab_Israeli_War_Outcome_ARAB
+		text = "TFRNS_Arab_Israeli_War_Outcome_ARAB_TXT"
+		desc = "TFRNS_Arab_Israeli_War_Outcome_ARAB_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Arab_Israeli_War_Outcome_STALEMATE
+		text = "TFRNS_Stalemate_TXT"
+		desc = "TFRNS_Arab_Israeli_War_Outcome_STALEMATE_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Arab_Israeli_War_Outcome_SAMPSON
+		text = "TFRNS_Arab_Israeli_War_Outcome_SAMPSON_TXT"
+		desc = "TFRNS_Arab_Israeli_War_Outcome_SAMPSON_DESC"
+		allow_achievements = yes
+	}
+}
+

@@ -1,0 +1,33 @@
+# TFR No Surrender - Xinjiang Insurgency winner rule
+#
+# TFR's china.41 event ("Collapse of Order in Xinjiang") can only fire after
+# China loses the Taiwan war (china.24). It spawns the East Turkestan rebels
+# (SIK, HUT, ETL) against the Xinjiang Production and Construction Corps (XIN),
+# and that war is resolved purely by normal combat and capitulation. This rule
+# does not invent any new logic - it simply gives the chosen side the same
+# Mushroom Army attack buff the other submod winner rules hand out, for as long
+# as the insurgency is actually being fought. DEFAULT leaves TFR exactly as it
+# is.
+TFRNS_Xinjiang_Insurgency = {
+	name = "TFRNS_Xinjiang_Insurgency"
+	group = "RULE_GROUP_EAST_ASIAN"
+	icon = GFX_decision_generic_civil_war
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Xinjiang_Insurgency_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Xinjiang_Insurgency_CRUSHED
+		text = "TFRNS_Xinjiang_Insurgency_CRUSHED_TXT"
+		desc = "TFRNS_Xinjiang_Insurgency_CRUSHED_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Xinjiang_Insurgency_UNCONTROLLED
+		text = "TFRNS_Xinjiang_Insurgency_UNCONTROLLED_TXT"
+		desc = "TFRNS_Xinjiang_Insurgency_UNCONTROLLED_DESC"
+		allow_achievements = yes
+	}
+}

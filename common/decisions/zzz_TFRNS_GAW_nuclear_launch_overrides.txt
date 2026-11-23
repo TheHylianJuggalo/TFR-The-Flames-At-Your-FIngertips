@@ -1,0 +1,3541 @@
+# TFRNS: gates every existing Greater Asian War nuclear launch decision.
+# Default TFR behavior is untouched when the rule is not set to NO_LAUNCH.
+
+PRC_great_asian_war = {
+	PRC_final_chance_thermonuclear = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			surrender_progress > 0.3
+			has_war_with = JAP
+		}
+		visible = {
+			has_country_flag = PRC_put_the_nuclear_arsenal_on_full_operational_alert_flag
+			NOT = {
+				has_country_flag = PRC_nationalist_win
+			}
+		}
+		fire_only_once = yes
+		cost = 10
+		days_remove = 3
+		complete_effect = {
+		}
+		remove_effect = {
+			custom_effect_tooltip = PRC_thermonuke_japan_tt
+			launch_nuke = {
+				province = 9950
+				controller = JAP
+				nuke_type = thermonuclear_bomb
+			}
+			launch_nuke = {
+				province = 1092
+				controller = JAP
+				nuke_type = thermonuclear_bomb
+			}
+			launch_nuke = {
+				province = 11960
+				controller = JAP
+				nuke_type = thermonuclear_bomb
+			}
+			launch_nuke = {
+				province = 1182
+				controller = JAP
+				nuke_type = thermonuclear_bomb
+			}
+			launch_nuke = {
+				province = 14704
+				controller = JAP
+				nuke_type = thermonuclear_bomb
+			}
+			JAP = {
+				country_event = china.360
+			}
+			news_event = {
+				id = china.361
+				hours = 5
+			}
+			hidden_effect = {
+				sound_effect = siren_sound_effect
+				every_country = {
+					goto_state = 1332
+				}
+				every_state = {
+					limit = {
+						OR = {
+							state = 528
+							state = 529
+							state = 531
+							state = 1332
+							state = 533
+						}
+					}
+					remove_dynamic_modifier = {
+						modifier = fallout_atomic
+					}
+					add_dynamic_modifier = {
+						modifier = fallout_thermonuclear
+						days = 730
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 15
+			modifier = {
+				add = 75
+				JAP = {
+					has_country_flag = RAJ_nukes_allowed
+				}
+			}
+			modifier = {
+				add = 100
+				has_global_flag = RAJ_beijing_bombed
+			}
+			modifier = {
+				add = 50
+				has_global_flag = RAJ_shanghai_bombed
+			}
+		}
+	}
+
+	PRC_thermonuclear_purification_japan = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			has_global_flag = pan_asian_war_ongoing
+			JAP = {
+				controls_province = 1182
+			}
+			has_war_with = JAP
+			command_power > 34
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = PRC_thermonuclear_purification_timer
+				}
+			}
+		}
+		visible = {
+			has_completed_focus = PRC_reopen_the_pangu_heavens
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1332
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 100
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -35
+			set_country_flag = PRC_thermonuclear_purification_timer
+		}
+		remove_effect = {
+			clr_country_flag = PRC_thermonuclear_purification_timer
+			custom_effect_tooltip = PRC_thermonuke_japan_tt
+			add_days_mission_timeout = {
+				mission = PRC_GAW_war_exhaustion
+				days = 30
+			}
+			JAP = {
+				add_days_mission_timeout = {
+					mission = JAP_GAW_war_exhaustion
+					days = -45
+				}
+			}
+			launch_nuke = {
+				province = 9950
+				controller = JAP
+				nuke_type = thermonuclear_bomb
+			}
+			launch_nuke = {
+				province = 1092
+				controller = JAP
+				nuke_type = thermonuclear_bomb
+			}
+			launch_nuke = {
+				province = 11960
+				controller = JAP
+				nuke_type = thermonuclear_bomb
+			}
+			launch_nuke = {
+				province = 1182
+				controller = JAP
+				nuke_type = thermonuclear_bomb
+			}
+			launch_nuke = {
+				province = 14704
+				controller = JAP
+				nuke_type = thermonuclear_bomb
+			}
+			JAP = {
+				country_event = china.360
+			}
+			news_event = {
+				id = china.361
+				hours = 5
+			}
+			hidden_effect = {
+				sound_effect = siren_sound_effect
+				every_state = {
+					limit = {
+						OR = {
+							state = 528
+							state = 529
+							state = 531
+							state = 1332
+							state = 533
+						}
+					}
+					remove_dynamic_modifier = {
+						modifier = fallout_atomic
+					}
+					add_dynamic_modifier = {
+						modifier = fallout_thermonuclear
+						days = 730
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = PRC_used_nukes
+						}
+					}
+					JAP = {
+						country_event = {
+							id = jap.61
+							days = 1
+						}
+					}
+				}
+				AST = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -45
+					}
+				}
+				RAJ = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -45
+					}
+				}
+				set_country_flag = PRC_used_nukes
+			}
+		}
+		ai_will_do = {
+			base = 25
+		}
+	}
+
+	PRC_thermonuclear_purification_korea = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			has_global_flag = pan_asian_war_ongoing
+			KOR = {
+				controls_province = 13692
+				controls_province = 4056
+			}
+			has_war_with = KOR
+			command_power > 34
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = PRC_thermonuclear_purification_timer
+				}
+			}
+		}
+		visible = {
+			has_completed_focus = PRC_reopen_the_pangu_heavens
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1041
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 100
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -35
+			set_country_flag = PRC_thermonuclear_purification_timer
+		}
+		remove_effect = {
+			clr_country_flag = PRC_thermonuclear_purification_timer
+			custom_effect_tooltip = PRC_thermonuke_korea_tt
+			KOR = {
+				add_timed_idea = {
+					idea = PRC_consequences_of_nuclear_war
+					days = 500
+				}
+			}
+			add_days_mission_timeout = {
+				mission = PRC_GAW_war_exhaustion
+				days = 30
+			}
+			JAP = {
+				add_days_mission_timeout = {
+					mission = JAP_GAW_war_exhaustion
+					days = -45
+				}
+			}
+			launch_nuke = {
+				province = 13692
+				controller = KOR
+				nuke_type = thermonuclear_bomb
+			}
+			launch_nuke = {
+				province = 11977
+				controller = KOR
+				nuke_type = thermonuclear_bomb
+			}
+			launch_nuke = {
+				province = 14234
+				controller = KOR
+				nuke_type = thermonuclear_bomb
+			}
+			launch_nuke = {
+				province = 4056
+				controller = KOR
+				nuke_type = thermonuclear_bomb
+			}
+			news_event = {
+				id = news.423
+				hours = 5
+			}
+			hidden_effect = {
+				sound_effect = siren_sound_effect
+				every_state = {
+					limit = {
+						OR = {
+							state = 1041
+							state = 525
+							state = 1411
+							state = 1409
+						}
+					}
+					remove_dynamic_modifier = {
+						modifier = fallout_atomic
+					}
+					add_dynamic_modifier = {
+						modifier = fallout_thermonuclear
+						days = 730
+					}
+				}
+				AST = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -45
+					}
+				}
+				RAJ = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -45
+					}
+				}
+				set_country_flag = PRC_used_nukes
+			}
+		}
+		ai_will_do = {
+			base = 25
+		}
+	}
+
+	PRC_thermonuclear_purification_australia = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			has_global_flag = pan_asian_war_ongoing
+			AST = {
+				controls_province = 7859
+				controls_province = 12406
+			}
+			has_war_with = AST
+			command_power > 34
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = PRC_thermonuclear_purification_timer
+				}
+			}
+		}
+		visible = {
+			has_completed_focus = PRC_reopen_the_pangu_heavens
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 868
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 100
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -35
+			set_country_flag = PRC_thermonuclear_purification_timer
+		}
+		remove_effect = {
+			clr_country_flag = PRC_thermonuclear_purification_timer
+			custom_effect_tooltip = PRC_thermonuke_australia_tt
+			AST = {
+				add_timed_idea = {
+					idea = PRC_consequences_of_nuclear_war
+					days = 500
+				}
+			}
+			add_days_mission_timeout = {
+				mission = PRC_GAW_war_exhaustion
+				days = 30
+			}
+			JAP = {
+				add_days_mission_timeout = {
+					mission = JAP_GAW_war_exhaustion
+					days = -45
+				}
+			}
+			launch_nuke = {
+				province = 7859
+				controller = AST
+				nuke_type = thermonuclear_bomb
+			}
+			launch_nuke = {
+				province = 12406
+				controller = AST
+				nuke_type = thermonuclear_bomb
+			}
+			launch_nuke = {
+				province = 7564
+				controller = AST
+				nuke_type = thermonuclear_bomb
+			}
+			launch_nuke = {
+				province = 7798
+				controller = AST
+				nuke_type = thermonuclear_bomb
+			}
+			news_event = {
+				id = news.424
+				hours = 5
+			}
+			hidden_effect = {
+				sound_effect = siren_sound_effect
+				every_state = {
+					limit = {
+						OR = {
+							state = 868
+							state = 285
+							state = 521
+							state = 517
+						}
+					}
+					remove_dynamic_modifier = {
+						modifier = fallout_atomic
+					}
+					add_dynamic_modifier = {
+						modifier = fallout_thermonuclear
+						days = 730
+					}
+				}
+				AST = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -45
+					}
+				}
+				RAJ = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -45
+					}
+				}
+				set_country_flag = PRC_used_nukes
+			}
+		}
+		ai_will_do = {
+			base = 25
+		}
+	}
+
+	PRC_thermonuclear_purification_india = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			has_global_flag = pan_asian_war_ongoing
+			RAJ = {
+				controls_province = 2086
+				controls_province = 4516
+				controls_province = 4971
+			}
+			has_war_with = RAJ
+			command_power > 34
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = PRC_thermonuclear_purification_timer
+				}
+			}
+		}
+		visible = {
+			has_completed_focus = PRC_reopen_the_pangu_heavens
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1379
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 100
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -35
+			set_country_flag = PRC_thermonuclear_purification_timer
+		}
+		remove_effect = {
+			clr_country_flag = PRC_thermonuclear_purification_timer
+			custom_effect_tooltip = PRC_thermonuke_india_tt
+			RAJ = {
+				add_timed_idea = {
+					idea = PRC_consequences_of_nuclear_war
+					days = 500
+				}
+			}
+			add_days_mission_timeout = {
+				mission = PRC_GAW_war_exhaustion
+				days = 30
+			}
+			JAP = {
+				add_days_mission_timeout = {
+					mission = JAP_GAW_war_exhaustion
+					days = -45
+				}
+			}
+			launch_nuke = {
+				province = 2086
+				controller = RAJ
+				nuke_type = thermonuclear_bomb
+			}
+			launch_nuke = {
+				province = 12137
+				controller = RAJ
+				nuke_type = thermonuclear_bomb
+			}
+			launch_nuke = {
+				province = 4516
+				controller = RAJ
+				nuke_type = thermonuclear_bomb
+			}
+			launch_nuke = {
+				province = 4245
+				controller = RAJ
+				nuke_type = thermonuclear_bomb
+			}
+			launch_nuke = {
+				province = 4971
+				controller = RAJ
+				nuke_type = thermonuclear_bomb
+			}
+			launch_nuke = {
+				province = 9975
+				controller = RAJ
+				nuke_type = thermonuclear_bomb
+			}
+			news_event = {
+				id = news.425
+				hours = 5
+			}
+			hidden_effect = {
+				sound_effect = siren_sound_effect
+				every_state = {
+					limit = {
+						OR = {
+							state = 868
+							state = 285
+							state = 521
+							state = 517
+						}
+					}
+					remove_dynamic_modifier = {
+						modifier = fallout_atomic
+					}
+					add_dynamic_modifier = {
+						modifier = fallout_thermonuclear
+						days = 730
+					}
+				}
+				AST = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -45
+					}
+				}
+				RAJ = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -45
+					}
+				}
+				set_country_flag = PRC_used_nukes
+			}
+		}
+		ai_will_do = {
+			base = 25
+		}
+	}
+
+	PRC_nuke_tokyo = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			has_global_flag = pan_asian_war_ongoing
+			JAP = {
+				controls_province = 1182
+			}
+			has_war_with = JAP
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = PRC_nukes_available
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1332
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			launch_nuke = {
+				province = 1182
+			}
+			news_event = news.528
+			add_days_mission_timeout = {
+				mission = PRC_GAW_war_exhaustion
+				days = 25
+			}
+			JAP = {
+				add_days_mission_timeout = {
+					mission = JAP_GAW_war_exhaustion
+					days = -25
+				}
+			}
+			set_global_flag = PRC_tokyo_nuked_flag
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = PRC_used_nukes
+						}
+					}
+					JAP = {
+						country_event = {
+							id = jap.61
+							days = 1
+						}
+					}
+				}
+				AST = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -25
+					}
+				}
+				RAJ = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -25
+					}
+				}
+				set_country_flag = PRC_used_nukes
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PRC_nuke_nagoya = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			has_global_flag = pan_asian_war_ongoing
+			JAP = {
+				controls_province = 10125
+			}
+			has_war_with = JAP
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = PRC_nukes_available
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1337
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 10125
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PRC_nuke_osaka = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			has_global_flag = pan_asian_war_ongoing
+			JAP = {
+				controls_province = 7072
+			}
+			has_war_with = JAP
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = PRC_nukes_available
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1340
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 7072
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PRC_nuke_hiroshima = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			has_global_flag = pan_asian_war_ongoing
+			JAP = {
+				controls_province = 1092
+			}
+			has_war_with = JAP
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = PRC_nukes_available
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 529
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 1092
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PRC_nuke_kyoto = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			has_global_flag = pan_asian_war_ongoing
+			JAP = {
+				controls_province = 11960
+			}
+			has_war_with = JAP
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = PRC_nukes_available
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 531
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 11960
+				controller = PRC
+				use_nuke = yes
+			}
+			news_event = news.529
+			add_days_mission_timeout = {
+				mission = PRC_GAW_war_exhaustion
+				days = 20
+			}
+			JAP = {
+				add_days_mission_timeout = {
+					mission = JAP_GAW_war_exhaustion
+					days = -20
+				}
+			}
+			hidden_effect = {
+				AST = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -20
+					}
+				}
+				RAJ = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -20
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PRC_nuke_sendai = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			has_global_flag = pan_asian_war_ongoing
+			JAP = {
+				controls_province = 7169
+			}
+			has_war_with = JAP
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = PRC_nukes_available
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1335
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 7169
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PRC_nuke_sapporo = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			has_global_flag = pan_asian_war_ongoing
+			JAP = {
+				controls_province = 10444
+			}
+			has_war_with = JAP
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = PRC_nukes_available
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1334
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 10444
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PRC_nuke_hochimin_city = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			has_global_flag = pan_asian_war_ongoing
+			VIN = {
+				controls_province = 4401
+			}
+			has_war_with = VIN
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = PRC_nukes_available
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 783
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 4401
+			}
+			news_event = news.530
+			add_days_mission_timeout = {
+				mission = PRC_GAW_war_exhaustion
+				days = 15
+			}
+			JAP = {
+				add_days_mission_timeout = {
+					mission = JAP_GAW_war_exhaustion
+					days = -15
+				}
+			}
+			hidden_effect = {
+				AST = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -15
+					}
+				}
+				RAJ = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -15
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PRC_nuke_bangkok = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			has_global_flag = pan_asian_war_ongoing
+			SIA = {
+				controls_province = 7408
+			}
+			has_war_with = SIA
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = PRC_nukes_available
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 289
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 7408
+			}
+			news_event = news.531
+			add_days_mission_timeout = {
+				mission = PRC_GAW_war_exhaustion
+				days = 15
+			}
+			JAP = {
+				add_days_mission_timeout = {
+					mission = JAP_GAW_war_exhaustion
+					days = -15
+				}
+			}
+			hidden_effect = {
+				AST = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -15
+					}
+				}
+				RAJ = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -15
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PRC_nuke_dehli = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			has_global_flag = pan_asian_war_ongoing
+			RAJ = {
+				controls_province = 2086
+			}
+			has_war_with = RAJ
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = PRC_nukes_available
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1379
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_global_flag = PRC_dehli_bombed
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 2086
+			}
+			news_event = news.532
+			add_days_mission_timeout = {
+				mission = PRC_GAW_war_exhaustion
+				days = 20
+			}
+			JAP = {
+				add_days_mission_timeout = {
+					mission = JAP_GAW_war_exhaustion
+					days = -20
+				}
+			}
+			hidden_effect = {
+				AST = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -20
+					}
+				}
+				RAJ = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -20
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PRC_nuke_chennai = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			has_global_flag = pan_asian_war_ongoing
+			RAJ = {
+				controls_province = 10278
+			}
+			has_war_with = RAJ
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = PRC_nukes_available
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1418
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 10278
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PRC_nuke_jakarta = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			has_global_flag = pan_asian_war_ongoing
+			INS = {
+				controls_province = 7381
+			}
+			has_war_with = INS
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = PRC_nukes_available
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1387
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 7381
+			}
+			news_event = news.533
+			add_days_mission_timeout = {
+				mission = PRC_GAW_war_exhaustion
+				days = 20
+			}
+			JAP = {
+				add_days_mission_timeout = {
+					mission = JAP_GAW_war_exhaustion
+					days = -20
+				}
+			}
+			hidden_effect = {
+				AST = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -20
+					}
+				}
+				RAJ = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -20
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PRC_nuke_sydney = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			has_global_flag = pan_asian_war_ongoing
+			AST = {
+				controls_province = 12406
+			}
+			has_war_with = AST
+			command_power > 29
+			520 = {
+				is_controlled_by_ROOT_or_ally = yes
+			}
+		}
+		visible = {
+			has_country_flag = PRC_nukes_available
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 285
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 12406
+			}
+			news_event = news.534
+			add_days_mission_timeout = {
+				mission = PRC_GAW_war_exhaustion
+				days = 20
+			}
+			JAP = {
+				add_days_mission_timeout = {
+					mission = JAP_GAW_war_exhaustion
+					days = -20
+				}
+			}
+			hidden_effect = {
+				AST = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -20
+					}
+				}
+				RAJ = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -20
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PRC_nuke_seoul = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			has_global_flag = pan_asian_war_ongoing
+			KOR = {
+				controls_province = 13692
+			}
+			has_war_with = KOR
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = PRC_nukes_available
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1041
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 13692
+			}
+			news_event = news.535
+			add_days_mission_timeout = {
+				mission = PRC_GAW_war_exhaustion
+				days = 15
+			}
+			JAP = {
+				add_days_mission_timeout = {
+					mission = JAP_GAW_war_exhaustion
+					days = -15
+				}
+			}
+			hidden_effect = {
+				AST = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -15
+					}
+				}
+				RAJ = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -15
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PRC_nuke_busan = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			has_global_flag = pan_asian_war_ongoing
+			KOR = {
+				controls_province = 4056
+			}
+			has_war_with = KOR
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = PRC_nukes_available
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1409
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 4056
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+}
+
+PRC_china_of_a_new_era_cat = {
+	PRC_final_chance_thermonuclear_imper = {
+		name = PRC_final_chance_thermonuclear
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			surrender_progress > 0.3
+			has_war_with = JAP
+		}
+		visible = {
+			has_country_flag = PRC_put_the_nuclear_arsenal_on_full_operational_alert_flag
+		}
+		fire_only_once = yes
+		cost = 10
+		days_remove = 3
+		complete_effect = {
+		}
+		remove_effect = {
+			custom_effect_tooltip = PRC_thermonuke_japan_tt
+			launch_nuke = {
+				province = 9950
+				controller = JAP
+				nuke_type = thermonuclear_bomb
+			}
+			launch_nuke = {
+				province = 1092
+				controller = JAP
+				nuke_type = thermonuclear_bomb
+			}
+			launch_nuke = {
+				province = 11960
+				controller = JAP
+				nuke_type = thermonuclear_bomb
+			}
+			launch_nuke = {
+				province = 1182
+				controller = JAP
+				nuke_type = thermonuclear_bomb
+			}
+			launch_nuke = {
+				province = 14704
+				controller = JAP
+				nuke_type = thermonuclear_bomb
+			}
+			JAP = {
+				country_event = china.360
+			}
+			news_event = {
+				id = china.361
+				hours = 5
+			}
+			hidden_effect = {
+				sound_effect = siren_sound_effect
+				every_country = {
+					goto_state = 1332
+				}
+				every_state = {
+					limit = {
+						OR = {
+							state = 528
+							state = 529
+							state = 531
+							state = 1332
+							state = 533
+						}
+					}
+					remove_dynamic_modifier = {
+						modifier = fallout_atomic
+					}
+					add_dynamic_modifier = {
+						modifier = fallout_thermonuclear
+						days = 730
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 15
+			modifier = {
+				add = 75
+				JAP = {
+					has_country_flag = RAJ_nukes_allowed
+				}
+			}
+			modifier = {
+				add = 100
+				has_global_flag = RAJ_beijing_bombed
+			}
+			modifier = {
+				add = 50
+				has_global_flag = RAJ_shanghai_bombed
+			}
+		}
+	}
+
+	PRC_nuke_tokyo_imper = {
+		name = PRC_nuke_tokyo
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			#has_global_flag = pan_asian_war_ongoing
+			JAP = {
+				controls_province = 1182
+			}
+			has_war_with = JAP
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = PRC_nukes_available
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1332
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			launch_nuke = {
+				province = 1182
+			}
+			news_event = news.528
+			add_days_mission_timeout = {
+				mission = PRC_GAW_war_exhaustion
+				days = 25
+			}
+			JAP = {
+				add_days_mission_timeout = {
+					mission = JAP_GAW_war_exhaustion
+					days = -25
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = PRC_used_nukes
+						}
+					}
+					JAP = {
+						country_event = {
+							id = jap.61
+							days = 1
+						}
+					}
+				}
+				AST = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -25
+					}
+				}
+				RAJ = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -25
+					}
+				}
+				set_country_flag = PRC_used_nukes
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PRC_nuke_nagoya_imper = {
+		name = PRC_nuke_nagoya
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			#has_global_flag = pan_asian_war_ongoing
+			JAP = {
+				controls_province = 10125
+			}
+			has_war_with = JAP
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = PRC_nukes_available
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1337
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 10125
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PRC_nuke_osaka_imper = {
+		name = PRC_nuke_osaka
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			#has_global_flag = pan_asian_war_ongoing
+			JAP = {
+				controls_province = 7072
+			}
+			has_war_with = JAP
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = PRC_nukes_available
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1340
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 7072
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PRC_nuke_hiroshima_imper = {
+		name = PRC_nuke_hiroshima
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			#has_global_flag = pan_asian_war_ongoing
+			JAP = {
+				controls_province = 1092
+			}
+			has_war_with = JAP
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = PRC_nukes_available
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 529
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 1092
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PRC_nuke_kyoto_imper = {
+		name = PRC_nuke_kyoto
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			#has_global_flag = pan_asian_war_ongoing
+			JAP = {
+				controls_province = 11960
+			}
+			has_war_with = JAP
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = PRC_nukes_available
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 531
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 11960
+				controller = PRC
+				use_nuke = yes
+			}
+			news_event = news.529
+			add_days_mission_timeout = {
+				mission = PRC_GAW_war_exhaustion
+				days = 20
+			}
+			JAP = {
+				add_days_mission_timeout = {
+					mission = JAP_GAW_war_exhaustion
+					days = -20
+				}
+			}
+			hidden_effect = {
+				AST = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -20
+					}
+				}
+				RAJ = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -20
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PRC_nuke_sendai_imper = {
+		name = PRC_nuke_sendai
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			#has_global_flag = pan_asian_war_ongoing
+			JAP = {
+				controls_province = 7169
+			}
+			has_war_with = JAP
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = PRC_nukes_available
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1335
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 7169
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PRC_nuke_sapporo_imper = {
+		name = PRC_nuke_sapporo
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			#has_global_flag = pan_asian_war_ongoing
+			JAP = {
+				controls_province = 10444
+			}
+			has_war_with = JAP
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = PRC_nukes_available
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1334
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 10444
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PRC_nuke_hochimin_city_imper = {
+		name = PRC_nuke_hochimin_city
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			#has_global_flag = pan_asian_war_ongoing
+			VIN = {
+				controls_province = 4401
+			}
+			has_war_with = VIN
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = PRC_nukes_available
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 783
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 4401
+			}
+			news_event = news.530
+			add_days_mission_timeout = {
+				mission = PRC_GAW_war_exhaustion
+				days = 15
+			}
+			JAP = {
+				add_days_mission_timeout = {
+					mission = JAP_GAW_war_exhaustion
+					days = -15
+				}
+			}
+			hidden_effect = {
+				AST = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -15
+					}
+				}
+				RAJ = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -15
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PRC_nuke_bangkok_imper = {
+		name = PRC_nuke_bangkok
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			#has_global_flag = pan_asian_war_ongoing
+			SIA = {
+				controls_province = 7408
+			}
+			has_war_with = SIA
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = PRC_nukes_available
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 289
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 7408
+			}
+			news_event = news.531
+			add_days_mission_timeout = {
+				mission = PRC_GAW_war_exhaustion
+				days = 15
+			}
+			JAP = {
+				add_days_mission_timeout = {
+					mission = JAP_GAW_war_exhaustion
+					days = -15
+				}
+			}
+			hidden_effect = {
+				AST = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -15
+					}
+				}
+				RAJ = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -15
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PRC_nuke_dehli_imper = {
+		name = PRC_nuke_dehli
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			#has_global_flag = pan_asian_war_ongoing
+			RAJ = {
+				controls_province = 2086
+			}
+			has_war_with = RAJ
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = PRC_nukes_available
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1379
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_global_flag = PRC_dehli_bombed
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 2086
+			}
+			news_event = news.532
+			add_days_mission_timeout = {
+				mission = PRC_GAW_war_exhaustion
+				days = 20
+			}
+			JAP = {
+				add_days_mission_timeout = {
+					mission = JAP_GAW_war_exhaustion
+					days = -20
+				}
+			}
+			hidden_effect = {
+				AST = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -20
+					}
+				}
+				RAJ = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -20
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PRC_nuke_chennai_imper = {
+		name = PRC_nuke_chennai
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			#has_global_flag = pan_asian_war_ongoing
+			RAJ = {
+				controls_province = 10278
+			}
+			has_war_with = RAJ
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = PRC_nukes_available
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1418
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 10278
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PRC_nuke_jakarta_imper = {
+		name = PRC_nuke_jakarta
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			#has_global_flag = pan_asian_war_ongoing
+			INS = {
+				controls_province = 7381
+			}
+			has_war_with = INS
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = PRC_nukes_available
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1387
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 7381
+			}
+			news_event = news.533
+			add_days_mission_timeout = {
+				mission = PRC_GAW_war_exhaustion
+				days = 20
+			}
+			JAP = {
+				add_days_mission_timeout = {
+					mission = JAP_GAW_war_exhaustion
+					days = -20
+				}
+			}
+			hidden_effect = {
+				AST = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -20
+					}
+				}
+				RAJ = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -20
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PRC_nuke_sydney_imper = {
+		name = PRC_nuke_sydney
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			#has_global_flag = pan_asian_war_ongoing
+			AST = {
+				controls_province = 12406
+			}
+			has_war_with = AST
+			command_power > 29
+			520 = {
+				is_controlled_by_ROOT_or_ally = yes
+			}
+		}
+		visible = {
+			has_country_flag = PRC_nukes_available
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 285
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 12406
+			}
+			news_event = news.534
+			add_days_mission_timeout = {
+				mission = PRC_GAW_war_exhaustion
+				days = 20
+			}
+			JAP = {
+				add_days_mission_timeout = {
+					mission = JAP_GAW_war_exhaustion
+					days = -20
+				}
+			}
+			hidden_effect = {
+				AST = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -20
+					}
+				}
+				RAJ = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -20
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PRC_nuke_seoul_imper = {
+		name = PRC_nuke_seoul
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			#has_global_flag = pan_asian_war_ongoing
+			KOR = {
+				controls_province = 13692
+			}
+			has_war_with = KOR
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = PRC_nukes_available
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1041
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 13692
+			}
+			news_event = news.535
+			add_days_mission_timeout = {
+				mission = PRC_GAW_war_exhaustion
+				days = 15
+			}
+			JAP = {
+				add_days_mission_timeout = {
+					mission = JAP_GAW_war_exhaustion
+					days = -15
+				}
+			}
+			hidden_effect = {
+				AST = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -15
+					}
+				}
+				RAJ = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -15
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PRC_nuke_busan_imper = {
+		name = PRC_nuke_busan
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			#has_global_flag = pan_asian_war_ongoing
+			KOR = {
+				controls_province = 4056
+			}
+			has_war_with = KOR
+			command_power > 29
+		}
+		visible = {
+			has_country_flag = PRC_nukes_available
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1409
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 4056
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+}
+
+PAK_nukes_cat = {
+	PAK_nuke_dehli = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			RAJ  = {
+				controls_province = 2086
+			}
+			has_war_with = RAJ
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				command_power > 15
+			}
+			else = {
+				command_power > 29
+			}
+		}
+		visible = {
+			has_country_flag = PAK_nukes_allowed
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 50
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 2086
+			}
+			news_event = news.532
+			add_days_mission_timeout = {
+				mission = PRC_GAW_war_exhaustion
+				days = 20
+			}
+			JAP = {
+				add_days_mission_timeout = {
+					mission = JAP_GAW_war_exhaustion
+					days = -20
+				}
+			}
+			hidden_effect = {
+				AST = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -20
+					}
+				}
+				RAJ = {
+					add_days_mission_timeout = {
+						mission = JAP_GAW_war_exhaustion
+						days = -20
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PAK_nuke_chennai = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			RAJ  = {
+				controls_province = 10278
+			}
+			has_war_with = RAJ
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				command_power > 15
+			}
+			else = {
+				command_power > 29
+			}
+		}
+		visible = {
+			has_country_flag = PAK_nukes_allowed
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 50
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 10278
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PAK_nuke_mumbai = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			RAJ  = {
+				controls_province = 1349
+			}
+			has_war_with = RAJ
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				command_power > 15
+			}
+			else = {
+				command_power > 29
+			}
+		}
+		visible = {
+			has_country_flag = PAK_nukes_allowed
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 50
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 1349
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PAK_nuke_ahmbadabad = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			RAJ  = {
+				controls_province = 9975
+			}
+			has_war_with = RAJ
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				command_power > 15
+			}
+			else = {
+				command_power > 29
+			}
+		}
+		visible = {
+			has_country_flag = PAK_nukes_allowed
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 50
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 9975
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PAK_nuke_lucknow = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			RAJ  = {
+				controls_province = 12137
+			}
+			has_war_with = RAJ
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				command_power > 15
+			}
+			else = {
+				command_power > 29
+			}
+		}
+		visible = {
+			has_country_flag = PAK_nukes_allowed
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 50
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 12137
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PAK_nuke_indian_hyderabad = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			RAJ  = {
+				controls_province = 8087
+			}
+			has_war_with = RAJ
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				command_power > 15
+			}
+			else = {
+				command_power > 29
+			}
+		}
+		visible = {
+			has_country_flag = PAK_nukes_allowed
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 50
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 8087
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	PAK_nuke_calcutta = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			RAJ  = {
+				controls_province = 4245
+			}
+			has_war_with = RAJ
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				command_power > 15
+			}
+			else = {
+				command_power > 29
+			}
+		}
+		visible = {
+			has_country_flag = PAK_nukes_allowed
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 50
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = PRC_used_nukes
+			launch_nuke = {
+				province = 4245
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+}
+
+RAJ_nukes_cat = {
+	RAJ_nuke_islamabad = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			PAK  = {
+				controls_province = 4979
+			}
+			has_war_with = PAK
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				command_power > 15
+			}
+			else = {
+				command_power > 29
+			}
+		}
+		visible = {
+			has_country_flag = RAJ_nukes_allowed
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 440
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			launch_nuke = {
+				province = 4979
+			}
+		}
+		ai_will_do = {
+			base = 75
+		}
+	}
+
+	RAJ_nuke_karachi = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			PAK  = {
+				controls_province = 3456
+			}
+			has_war_with = PAK
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				command_power > 15
+			}
+			else = {
+				command_power > 29
+			}
+		}
+		visible = {
+			has_country_flag = RAJ_nukes_allowed
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1324
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			launch_nuke = {
+				province = 3456
+			}
+		}
+		ai_will_do = {
+			base = 75
+		}
+	}
+
+	RAJ_nuke_lahore = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			PAK  = {
+				controls_province = 10772
+			}
+			has_war_with = PAK
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				command_power > 15
+			}
+			else = {
+				command_power > 29
+			}
+		}
+		visible = {
+			has_country_flag = RAJ_nukes_allowed
+			tag = RAJ
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1380
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 50
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			launch_nuke = {
+				province = 10772
+			}
+		}
+		ai_will_do = {
+			base = 75
+		}
+	}
+
+	RAJ_nuke_pakistani_hyderabad = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			PAK  = {
+				controls_province = 4110
+			}
+			has_war_with = PAK
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				command_power > 15
+			}
+			else = {
+				command_power > 29
+			}
+		}
+		visible = {
+			has_country_flag = RAJ_nukes_allowed
+			tag = RAJ
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 443
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 50
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			launch_nuke = {
+				province = 4110
+			}
+		}
+		ai_will_do = {
+			base = 75
+		}
+	}
+
+	RAJ_nuke_hong_kong = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			PRC  = {
+				controls_province = 10062
+			}
+			has_war_with = PRC
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				command_power > 15
+			}
+			else = {
+				command_power > 29
+			}
+		}
+		visible = {
+			has_country_flag = RAJ_nukes_allowed
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 326
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			launch_nuke = {
+				province = 10062
+			}
+			hidden_effect = {
+				PRC = {
+					if = {
+						limit = {
+							NOT = {
+								has_country_flag = PRC_put_the_nuclear_arsenal_on_full_operational_alert_flag
+							}
+						}
+						country_event = china.499
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	RAJ_nuke_guanghzhou = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			PRC  = {
+				controls_province = 1047
+			}
+			has_war_with = PRC
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				command_power > 15
+			}
+			else = {
+				command_power > 29
+			}
+		}
+		visible = {
+			has_country_flag = RAJ_nukes_allowed
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 592
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			launch_nuke = {
+				province = 1047
+			}
+			hidden_effect = {
+				PRC = {
+					if = {
+						limit = {
+							NOT = {
+								has_country_flag = PRC_put_the_nuclear_arsenal_on_full_operational_alert_flag
+							}
+						}
+						country_event = china.499
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	RAJ_nuke_shanghai = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			PRC  = {
+				controls_province = 7014
+			}
+			has_war_with = PRC
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				command_power > 15
+			}
+			else = {
+				command_power > 29
+			}
+		}
+		visible = {
+			has_country_flag = RAJ_nukes_allowed
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1215
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_global_flag = RAJ_shanghai_bombed
+			launch_nuke = {
+				province = 7014
+			}
+			hidden_effect = {
+				PRC = {
+					if = {
+						limit = {
+							NOT = {
+								has_country_flag = PRC_put_the_nuclear_arsenal_on_full_operational_alert_flag
+							}
+						}
+						country_event = china.499
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	RAJ_nuke_beijing = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			PRC  = {
+				controls_province = 9843
+			}
+			has_war_with = PRC
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				command_power > 15
+			}
+			else = {
+				command_power > 29
+			}
+		}
+		visible = {
+			has_country_flag = RAJ_nukes_allowed
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 608
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_global_flag = RAJ_beijing_bombed
+			launch_nuke = {
+				province = 9843
+			}
+			hidden_effect = {
+				PRC = {
+					if = {
+						limit = {
+							NOT = {
+								has_country_flag = PRC_put_the_nuclear_arsenal_on_full_operational_alert_flag
+							}
+						}
+						country_event = china.499
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	RAJ_nuke_shenyang = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			PRC  = {
+				controls_province = 11771
+			}
+			has_war_with = PRC
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				command_power > 15
+			}
+			else = {
+				command_power > 29
+			}
+		}
+		visible = {
+			has_country_flag = RAJ_nukes_allowed
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 716
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			launch_nuke = {
+				province = 11771
+			}
+			hidden_effect = {
+				PRC = {
+					if = {
+						limit = {
+							NOT = {
+								has_country_flag = PRC_put_the_nuclear_arsenal_on_full_operational_alert_flag
+							}
+						}
+						country_event = china.499
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	RAJ_nuke_wuhan = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			PRC  = {
+				controls_province = 4619
+			}
+			has_war_with = PRC
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				command_power > 15
+			}
+			else = {
+				command_power > 29
+			}
+		}
+		visible = {
+			has_country_flag = RAJ_nukes_allowed
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1211
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			launch_nuke = {
+				province = 4619
+			}
+			hidden_effect = {
+				PRC = {
+					if = {
+						limit = {
+							NOT = {
+								has_country_flag = PRC_put_the_nuclear_arsenal_on_full_operational_alert_flag
+							}
+						}
+						country_event = china.499
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	RAJ_nuke_pyongyang = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			PRK  = {
+				controls_province = 13705
+			}
+			has_war_with = PRK
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				command_power > 15
+			}
+			else = {
+				command_power > 29
+			}
+		}
+		visible = {
+			has_country_flag = RAJ_nukes_allowed
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1043
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		fire_only_once = yes
+		cost = 75
+		days_remove = 2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			launch_nuke = {
+				province = 13705
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	RAJ_our_final_decision = {
+		icon = GFX_decision_generic_deploy_nukes
+		available = {
+			NOT = {
+				has_game_rule = {
+					rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+					option = TFRNS_Greater_Asian_War_Nuclear_Launches_NO_LAUNCH
+				}
+			}
+			surrender_progress > 0.35
+		}
+		visible = {
+			has_completed_focus = RAJ_activate_nuclear_arsenal
+		}
+		fire_only_once = yes
+		cost = 75
+		days_remove = 5
+		complete_effect = {
+		}
+		remove_effect = {
+			launch_nuke = {
+				province = 4987
+			}
+			launch_nuke = {
+				province = 8010
+			}
+	
+			launch_nuke = {
+				province = 13984
+				controller = PRC
+			}
+			launch_nuke = {
+				province = 4994
+				controller = PRC
+			}
+			launch_nuke = {
+				province = 2015
+				controller = PRC
+			}
+			launch_nuke = {
+				province = 4709
+				controller = PRC
+			}
+			launch_nuke = {
+				province = 1783
+				controller = PRC
+			}
+			launch_nuke = {
+				province = 12864
+				controller = PRC
+			}
+			launch_nuke = {
+				province = 12327
+				controller = PRC
+			}
+			launch_nuke = {
+				province = 2022
+				controller = PRC
+			}
+			launch_nuke = {
+				province = 7270
+				controller = PRC
+			}
+			launch_nuke = {
+				province = 531
+				controller = PRC
+			}
+			launch_nuke = {
+				province = 6638
+				controller = PRC
+			}
+			launch_nuke = {
+				province = 3742
+				controller = PRC
+			}
+			launch_nuke = {
+				province = 10724
+				controller = PRC
+			}
+			launch_nuke = {
+				province = 1976
+				controller = PRC
+			}
+			launch_nuke = {
+				province = 7418
+				controller = PRC
+			}
+			launch_nuke = {
+				province = 12274
+				controller = PRC
+			}
+			launch_nuke = {
+				province = 4925
+				controller = PRC
+			}
+			launch_nuke = {
+				province = 6999
+				controller = PRC
+			}
+			launch_nuke = {
+				province = 4504
+				controller = PRC
+			}
+			launch_nuke = {
+				province = 7446
+				controller = PRC
+			}
+			launch_nuke = {
+				province = 12841
+				controller = PRC
+			}
+			launch_nuke = {
+				province = 7965
+				controller = PRC
+			}
+			launch_nuke = {
+				province = 10856
+				controller = PRC
+			}
+			launch_nuke = {
+				province = 2067
+				controller = PRC
+			}
+
+			launch_nuke = {
+				province = 4979
+				controller = PAK
+			}
+			launch_nuke = {
+				province = 3456
+				controller = PAK
+			}
+			launch_nuke = {
+				province = 4110
+				controller = PAK
+			}
+			launch_nuke = {
+				province = 10772
+				controller = PAK
+			}
+
+			launch_nuke = {
+				province = 11929
+				controller = BAN
+			}
+			PRC = {
+				country_event = china.496
+			}
+		}
+		ai_will_do = {
+			base = 15
+			modifier = {
+    		    add = 100
+    		    NOT = {
+					is_ally_with = JAP
+				}
+    		}
+			modifier = {
+    		    add = 50
+    		    PRC = {
+					has_country_flag = PRC_nukes_available
+				}
+    		}
+			modifier = {
+    		    add = 100
+    		    has_global_flag = PRC_dehli_bombed
+    		}
+		}
+	}
+
+}

@@ -1,0 +1,80 @@
+on_actions = {
+	on_weekly = {
+		effect = {
+			if = {
+				limit = {
+					tag = EGY
+					has_country_flag = EGY_water_war
+					NOT = { has_country_flag = EGY_won_water_war }
+					NOT = { has_country_flag = EGY_failed_water_war }
+					has_game_rule = {
+						rule = TFRNS_Third_African_War_Outcome
+						option = TFRNS_Third_African_War_Outcome_EAP
+					}
+				}
+				if = {
+					limit = { NOT = { has_global_flag = TFRNS_Third_African_War_Outcome_Initialized } }
+					set_global_flag = TFRNS_Third_African_War_Outcome_Initialized
+					TFRNS_remove_third_african_war_conflicting_buffs = yes
+				}
+				TFRNS_apply_third_african_war_eap_buffs = yes
+			}
+			if = {
+				limit = {
+					tag = EGY
+					has_country_flag = EGY_water_war
+					NOT = { has_country_flag = EGY_won_water_war }
+					NOT = { has_country_flag = EGY_failed_water_war }
+					has_game_rule = {
+						rule = TFRNS_Third_African_War_Outcome
+						option = TFRNS_Third_African_War_Outcome_NRC
+					}
+				}
+				if = {
+					limit = { NOT = { has_global_flag = TFRNS_Third_African_War_Outcome_Initialized } }
+					set_global_flag = TFRNS_Third_African_War_Outcome_Initialized
+					TFRNS_remove_third_african_war_conflicting_buffs = yes
+				}
+				TFRNS_apply_third_african_war_nrc_buffs = yes
+			}
+			if = {
+				limit = {
+					tag = EGY
+					has_country_flag = EGY_water_war
+					NOT = { has_country_flag = EGY_won_water_war }
+					NOT = { has_country_flag = EGY_failed_water_war }
+					has_game_rule = {
+						rule = TFRNS_Third_African_War_Outcome
+						option = TFRNS_Third_African_War_Outcome_STALEMATE
+					}
+				}
+				if = {
+					limit = { NOT = { has_global_flag = TFRNS_Third_African_War_Outcome_Initialized } }
+					set_global_flag = TFRNS_Third_African_War_Outcome_Initialized
+					TFRNS_remove_third_african_war_conflicting_buffs = yes
+				}
+				set_global_flag = TFRNS_Third_African_War_Stalemate_Active
+				TFRNS_apply_third_african_war_stalemate_states = yes
+			}
+			}
+		if = {
+			limit = {
+				tag = EGY
+				OR = {
+					has_country_flag = EGY_won_water_war
+					has_country_flag = EGY_failed_water_war
+				}
+			}
+			if = {
+				limit = { has_global_flag = TFRNS_Third_African_War_Outcome_Initialized }
+				TFRNS_cleanup_third_african_war_buffs = yes
+				if = {
+					limit = { has_global_flag = TFRNS_Third_African_War_Stalemate_Active }
+					TFRNS_remove_third_african_war_peoples_war_states = yes
+				}
+				clr_global_flag = TFRNS_Third_African_War_Outcome_Initialized
+				clr_global_flag = TFRNS_Third_African_War_Stalemate_Active
+			}
+		}
+	}
+}

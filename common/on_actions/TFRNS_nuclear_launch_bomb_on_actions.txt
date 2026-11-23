@@ -1,0 +1,58 @@
+on_actions = {
+	on_weekly = {
+		effect = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = TFRNS_European_Nuclear_Launches
+						option = TFRNS_European_Nuclear_Launches_LAUNCH
+					}
+				}
+				GER = {
+					if = {
+						limit = { exists = yes }
+						TFRNS_top_up_german_nuclear_stockpile = yes
+					}
+				}
+				FAF = {
+					if = {
+						limit = { exists = yes }
+						TFRNS_top_up_french_nuclear_stockpile = yes
+					}
+				}
+				SOV = {
+					if = {
+						limit = { exists = yes }
+						TFRNS_top_up_soviet_nuclear_stockpile = yes
+					}
+				}
+				ENG = {
+					if = {
+						limit = { exists = yes }
+						TFRNS_top_up_allied_nuclear_stockpile = yes
+					}
+				}
+				FRA = {
+					if = {
+						limit = { exists = yes }
+						TFRNS_top_up_allied_nuclear_stockpile = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = TFRNS_Greater_Asian_War_Nuclear_Launches
+						option = TFRNS_Greater_Asian_War_Nuclear_Launches_LAUNCH
+					}
+				}
+				PRC = {
+					if = {
+						limit = { exists = yes }
+						TFRNS_top_up_prc_nuclear_stockpile = yes
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,44 @@
+# TFR No Surrender - Xinjiang Insurgency winner rule enforcement.
+#
+# The reconcile is cheap and fully idempotent, so it is safe to run from any of
+# these hooks. on_startup and on_peace/on_declare_war run in a global scope,
+# while on_weekly runs once per country (ROOT is that country), so the weekly
+# hook is gated to the belligerents of the insurgency.
+on_actions = {
+	on_startup = {
+		effect = {
+			TFRNS_reconcile_xinjiang_insurgency_buff = yes
+		}
+	}
+	on_declare_war = {
+		effect = {
+			# Xinjiang Insurgency
+			if = {
+				limit = {
+					ROOT = { OR = { tag = XIN tag = SIK tag = HUT tag = ETL } }
+					FROM = { OR = { tag = XIN tag = SIK tag = HUT tag = ETL } }
+				}
+				TFRNS_reconcile_xinjiang_insurgency_buff = yes
+			}
+		}
+	}
+	on_weekly = {
+		effect = {
+			if = {
+				limit = { OR = { tag = XIN tag = SIK tag = HUT tag = ETL } }
+				TFRNS_reconcile_xinjiang_insurgency_buff = yes
+			}
+		}
+	}
+	on_peace = {
+		effect = {
+			if = {
+				limit = {
+					ROOT = { OR = { tag = XIN tag = SIK tag = HUT tag = ETL } }
+					FROM = { OR = { tag = XIN tag = SIK tag = HUT tag = ETL } }
+				}
+				TFRNS_reconcile_xinjiang_insurgency_buff = yes
+			}
+		}
+	}
+}

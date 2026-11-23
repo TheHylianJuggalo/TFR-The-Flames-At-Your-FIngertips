@@ -1,0 +1,59 @@
+TFRNS_apply_arab_israeli_attack_to_country = {
+	set_country_flag = TFRNS_Source_Arab_Israeli
+	if = {
+		limit = {
+			OR = {
+				has_idea = Custom_TFR_def_buff
+				has_idea = Custom_TFR_Crazy_def_buff
+			}
+		}
+		TFRNS_remove_mushroom_buff_if_present = yes
+	}
+	if = {
+		limit = {
+			NOT = {
+				OR = {
+					has_idea = Custom_TFR_war_buff
+					has_idea = Custom_TFR_Crazy_war_buff
+				}
+			}
+		}
+		TFRNS_apply_attack_mushroom_buff_if_missing = yes
+	}
+}
+
+TFRNS_apply_arab_israeli_defense_to_country = {
+	set_country_flag = TFRNS_Source_Arab_Israeli
+	if = {
+		limit = {
+			OR = {
+				has_idea = Custom_TFR_war_buff
+				has_idea = Custom_TFR_Crazy_war_buff
+			}
+		}
+		TFRNS_remove_mushroom_buff_if_present = yes
+	}
+	if = {
+		limit = {
+			NOT = {
+				OR = {
+					has_idea = Custom_TFR_def_buff
+					has_idea = Custom_TFR_Crazy_def_buff
+				}
+			}
+		}
+		TFRNS_apply_defense_mushroom_buff_if_missing = yes
+	}
+}
+
+TFRNS_give_israel_six_nukes_if_needed = {
+	if = {
+		limit = { num_of_nukes < 6 }
+		if = { limit = { num_of_nukes = 0 } add_nuclear_bombs = 6 }
+		if = { limit = { num_of_nukes = 1 } add_nuclear_bombs = 5 }
+		if = { limit = { num_of_nukes = 2 } add_nuclear_bombs = 4 }
+		if = { limit = { num_of_nukes = 3 } add_nuclear_bombs = 3 }
+		if = { limit = { num_of_nukes = 4 } add_nuclear_bombs = 2 }
+		if = { limit = { num_of_nukes = 5 } add_nuclear_bombs = 1 }
+	}
+}

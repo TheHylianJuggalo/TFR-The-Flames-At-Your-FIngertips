@@ -1,0 +1,33 @@
+# TFR No Surrender - Sahel War side rules enforcement.
+#
+# Two jobs:
+#   * The six ideology-driven swing states (GNA/TOG/DAH/GHA/SIE/LIB): the rules
+#     force a side at game start (blocking TFR's own france.28/russia.724 events
+#     from picking the other side) and then keep the nation in the correct
+#     faction once the faction leader has created it.
+#   * Chad and Mauritania: the rules force/clear the SOV/FRA pressure flags that
+#     gate TFR's own mali.17 / mali.13 joins.
+on_actions = {
+	on_startup = {
+		effect = {
+			# on_startup is global, so iterate every country; the effect only
+			# acts on the six Sahel swing states.
+			every_country = {
+				TFRNS_enforce_sahel_side_choices = yes
+			}
+			# Pressure-flag enforcement is global (it sets flags on SOV/FRA),
+			# so it only needs to run once here.
+			TFRNS_enforce_sahel_pressure_flags = yes
+		}
+	}
+	# on_monthly runs once per country (ROOT is that country). The effects only
+	# act on the six Sahel swing states / the pressure flags, so this is cheap
+	# for everyone else. The monthly pass is what keeps a NEUTRAL rule's flag
+	# cleared after the AI's fire_only_once pressure decision would set it.
+	on_monthly = {
+		effect = {
+			TFRNS_enforce_sahel_side_choices = yes
+			TFRNS_enforce_sahel_pressure_flags = yes
+		}
+	}
+}

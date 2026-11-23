@@ -21,3 +21,227 @@ TFRNS_Maghreb_Mauritania_Pressure = {
 		allow_achievements = yes
 	}
 }
+TFRNS_Maghreb_War_Winner = {
+	name = "TFRNS_Maghreb_War_Winner"
+	group = "RULE_GROUP_North_Africa"
+	icon = GFX_decision_generic_army_support
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Maghreb_War_Winner_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Maghreb_War_Winner_MOR
+		text = "TFRNS_Maghreb_War_Winner_MOR_TXT"
+		desc = "TFRNS_Maghreb_War_Winner_MOR_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Maghreb_War_Winner_ALG
+		text = "TFRNS_Maghreb_War_Winner_ALG_TXT"
+		desc = "TFRNS_Maghreb_War_Winner_ALG_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Maghreb_War_Winner_STALEMATE
+		text = "TFRNS_Stalemate_TXT"
+		desc = "TFRNS_Maghreb_War_Winner_STALEMATE_DESC"
+		allow_achievements = yes
+	}
+}
+TFRNS_HRL_PostWar_Election = {
+	name = "TFRNS_HRL_PostWar_Election"
+	group = "RULE_GROUP_North_Africa"
+	icon = GFX_decision_generic_elections
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_HRL_PostWar_Election_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_HRL_PostWar_Election_Gaddafi
+		text = "TFRNS_HRL_PostWar_Election_Gaddafi_TXT"
+		desc = "TFRNS_HRL_PostWar_Election_Gaddafi_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_HRL_PostWar_Election_Haftar
+		text = "TFRNS_HRL_PostWar_Election_Haftar_TXT"
+		desc = "TFRNS_HRL_PostWar_Election_Haftar_DESC"
+		allow_achievements = yes
+	}
+}
+TFRNS_LBA_PostWar_Election = {
+	name = "TFRNS_LBA_PostWar_Election"
+	group = "RULE_GROUP_North_Africa"
+	icon = GFX_decision_generic_elections
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_LBA_PostWar_Election_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_LBA_PostWar_Election_Gaddafi
+		text = "TFRNS_LBA_PostWar_Election_Gaddafi_TXT"
+		desc = "TFRNS_LBA_PostWar_Election_Gaddafi_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_LBA_PostWar_Election_Dbeibeh
+		text = "TFRNS_LBA_PostWar_Election_Dbeibeh_TXT"
+		desc = "TFRNS_LBA_PostWar_Election_Dbeibeh_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_LBA_PostWar_Election_Jalil
+		text = "TFRNS_LBA_PostWar_Election_Jalil_TXT"
+		desc = "TFRNS_LBA_PostWar_Election_Jalil_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_LBA_PostWar_Election_Suspended
+		text = "TFRNS_LBA_PostWar_Election_Suspended_TXT"
+		desc = "TFRNS_LBA_PostWar_Election_Suspended_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_LBA_PostWar_Election_Abusahmain
+		text = "TFRNS_LBA_PostWar_Election_Abusahmain_TXT"
+		desc = "TFRNS_LBA_PostWar_Election_Abusahmain_DESC"
+		allow_achievements = yes
+	}
+}
+TFRNS_HRL_Haftar_Invasion_Outcome = {
+	name = "TFRNS_HRL_Haftar_Invasion_Outcome"
+	group = "RULE_GROUP_North_Africa"
+	icon = GFX_decision_generic_army_support
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_HRL_Haftar_Invasion_Outcome_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_HRL_Haftar_Invasion_Outcome_HRL_Wins
+		text = "TFRNS_HRL_Invasion_HRL_Wins_TXT"
+		desc = "TFRNS_HRL_Haftar_Invasion_Outcome_HRL_Wins_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_HRL_Haftar_Invasion_Outcome_Repelled
+		text = "TFRNS_HRL_Invasion_Repelled_TXT"
+		desc = "TFRNS_HRL_Haftar_Invasion_Outcome_Repelled_DESC"
+		allow_achievements = yes
+	}
+}
+TFRNS_HRL_Gaddafi_Invasion_Outcome = {
+	name = "TFRNS_HRL_Gaddafi_Invasion_Outcome"
+	group = "RULE_GROUP_North_Africa"
+	icon = GFX_decision_generic_army_support
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_HRL_Gaddafi_Invasion_Outcome_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_HRL_Gaddafi_Invasion_Outcome_HRL_Wins
+		text = "TFRNS_HRL_Invasion_HRL_Wins_TXT"
+		desc = "TFRNS_HRL_Gaddafi_Invasion_Outcome_HRL_Wins_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_HRL_Gaddafi_Invasion_Outcome_Repelled
+		text = "TFRNS_HRL_Invasion_Repelled_TXT"
+		desc = "TFRNS_HRL_Gaddafi_Invasion_Outcome_Repelled_DESC"
+		allow_achievements = yes
+	}
+}
+TFRNS_Algeria_Civil_War_Winner = {
+	name = "TFRNS_Algeria_Civil_War_Winner"
+	group = "RULE_GROUP_North_Africa"
+	icon = GFX_decision_generic_civil_war
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Algeria_Civil_War_Winner_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Algeria_Civil_War_Winner_ALG
+		text = "TFRNS_Algeria_Civil_War_Winner_ALG_TXT"
+		desc = "TFRNS_Algeria_Civil_War_Winner_ALG_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Algeria_Civil_War_Winner_AG1
+		text = "TFRNS_Algeria_Civil_War_Winner_AG1_TXT"
+		desc = "TFRNS_Algeria_Civil_War_Winner_AG1_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Algeria_Civil_War_Winner_AG2
+		text = "TFRNS_Algeria_Civil_War_Winner_AG2_TXT"
+		desc = "TFRNS_Algeria_Civil_War_Winner_AG2_DESC"
+		allow_achievements = yes
+	}
+}
+
+TFRNS_Egyptian_Civil_War_Winner = {
+	name = "TFRNS_Egyptian_Civil_War_Winner"
+	group = "RULE_GROUP_North_Africa"
+	icon = GFX_decision_generic_civil_war
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Egyptian_Civil_War_Winner_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Egyptian_Civil_War_Winner_EGY
+		text = "TFRNS_Egyptian_Civil_War_Winner_EGY_TXT"
+		desc = "TFRNS_Egyptian_Civil_War_Winner_EGY_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Egyptian_Civil_War_Winner_MUS
+		text = "TFRNS_Egyptian_Civil_War_Winner_MUS_TXT"
+		desc = "TFRNS_Egyptian_Civil_War_Winner_MUS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Egyptian_Civil_War_Winner_MEK
+		text = "TFRNS_Egyptian_Civil_War_Winner_MEK_TXT"
+		desc = "TFRNS_Egyptian_Civil_War_Winner_MEK_DESC"
+		allow_achievements = yes
+	}
+}
+
+TFRNS_Indo_Pakistan_Nuclear_Agreement = {
+	name = "TFRNS_Indo_Pakistan_Nuclear_Agreement"
+	group = "RULE_GROUP_South_Asia"
+	icon = GFX_decision_generic_make_nukes
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Indo_Pakistan_Nuclear_Agreement_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Indo_Pakistan_Nuclear_Agreement_SUCCEEDS
+		text = "TFRNS_Indo_Pakistan_Nuclear_Agreement_SUCCEEDS_TXT"
+		desc = "TFRNS_Indo_Pakistan_Nuclear_Agreement_SUCCEEDS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Indo_Pakistan_Nuclear_Agreement_FAILS
+		text = "TFRNS_Indo_Pakistan_Nuclear_Agreement_FAILS_TXT"
+		desc = "TFRNS_Indo_Pakistan_Nuclear_Agreement_FAILS_DESC"
+		allow_achievements = yes
+	}
+}
+
+

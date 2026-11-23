@@ -1,0 +1,79 @@
+TFRNS_apply_libyan_stalemate_to_owned_states = {
+	every_owned_state = {
+		limit = { NOT = { has_state_flag = TFRNS_Libyan_Stalemate_State } }
+		set_state_flag = TFRNS_Libyan_Stalemate_State
+		add_dynamic_modifier = { modifier = TFRNS_Libyan_Civil_War_Peoples_War }
+	}
+}
+
+TFRNS_remove_libyan_stalemate_states = {
+	every_state = {
+		limit = { has_state_flag = TFRNS_Libyan_Stalemate_State }
+		remove_dynamic_modifier = { modifier = TFRNS_Libyan_Civil_War_Peoples_War }
+		clr_state_flag = TFRNS_Libyan_Stalemate_State
+	}
+}
+
+TFRNS_apply_maghreb_stalemate_to_owned_states = {
+	every_owned_state = {
+		limit = { NOT = { has_state_flag = TFRNS_Maghreb_Stalemate_State } }
+		set_state_flag = TFRNS_Maghreb_Stalemate_State
+		add_dynamic_modifier = { modifier = TFRNS_Maghreb_Peoples_War }
+	}
+}
+
+TFRNS_remove_maghreb_stalemate_states = {
+	every_state = {
+		limit = { has_state_flag = TFRNS_Maghreb_Stalemate_State }
+		remove_dynamic_modifier = { modifier = TFRNS_Maghreb_Peoples_War }
+		clr_state_flag = TFRNS_Maghreb_Stalemate_State
+	}
+}
+
+# Applies the People's War modifier to the states of every country that is an
+# actual participant in the Maghreb War. Countries that are not at war (for
+# example Mauritania or Tunisia sitting the war out) are deliberately skipped.
+TFRNS_apply_maghreb_stalemate_to_war_parties = {
+	if = {
+		limit = { country_exists = MOR }
+		MOR = {
+			if = { limit = { has_war = yes } TFRNS_apply_maghreb_stalemate_to_owned_states = yes }
+		}
+	}
+	if = {
+		limit = { country_exists = ALG }
+		ALG = {
+			if = { limit = { has_war = yes } TFRNS_apply_maghreb_stalemate_to_owned_states = yes }
+		}
+	}
+	if = {
+		limit = { country_exists = WES }
+		WES = {
+			if = { limit = { has_war = yes } TFRNS_apply_maghreb_stalemate_to_owned_states = yes }
+		}
+	}
+	every_country = {
+		limit = {
+			OR = { tag = TUN tag = MRT tag = HRL tag = LBA }
+			has_war = yes
+			OR = { has_war_with = MOR has_war_with = ALG }
+		}
+		TFRNS_apply_maghreb_stalemate_to_owned_states = yes
+	}
+}
+
+TFRNS_apply_indo_pakistan_stalemate_to_owned_states = {
+	every_owned_state = {
+		limit = { NOT = { has_state_flag = TFRNS_Indo_Pakistan_Stalemate_State } }
+		set_state_flag = TFRNS_Indo_Pakistan_Stalemate_State
+		add_dynamic_modifier = { modifier = TFRNS_Indo_Pakistan_Peoples_War }
+	}
+}
+
+TFRNS_remove_indo_pakistan_stalemate_states = {
+	every_state = {
+		limit = { has_state_flag = TFRNS_Indo_Pakistan_Stalemate_State }
+		remove_dynamic_modifier = { modifier = TFRNS_Indo_Pakistan_Peoples_War }
+		clr_state_flag = TFRNS_Indo_Pakistan_Stalemate_State
+	}
+}

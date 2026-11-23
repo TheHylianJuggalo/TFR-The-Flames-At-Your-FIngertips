@@ -1,0 +1,135 @@
+TFRNS_apply_attack_mushroom_buff_if_missing = {
+	if = {
+		limit = { NOT = { TFRNS_has_any_mushroom_buff = yes } }
+		add_ideas = Custom_TFR_war_buff
+		division_template = {
+			name = "Mushroom Army"
+			is_locked = yes
+			regiments = {
+				modern_armor = { x = 0 y = 0 }
+				modern_armor = { x = 0 y = 1 }
+				modern_armor = { x = 0 y = 2 }
+				modern_armor = { x = 0 y = 3 }
+				modern_armor = { x = 0 y = 4 }
+				bus = { x = 1 y = 0 }
+				bus = { x = 1 y = 1 }
+				recce = { x = 1 y = 2 }
+				recce = { x = 1 y = 3 }
+				recce = { x = 2 y = 0 }
+				recce = { x = 2 y = 1 }
+				militia = { x = 3 y = 0 }
+				militia = { x = 3 y = 1 }
+			}
+		support = {
+			recon = { x = 0 y = 0 }
+			engineer = { x = 0 y = 1 }
+			engineer = { x = 0 y = 2 }
+			logistics_company = { x = 0 y = 3 }
+			logistics_company = { x = 0 y = 4 }
+		}
+		}
+		set_country_flag = TFRNS_Mushroom_Army_Spawn_Pending
+		country_event = { id = TFRNS_buff.1 days = 1 }
+	}
+}
+
+TFRNS_apply_defense_mushroom_buff_if_missing = {
+	if = {
+		limit = { NOT = { TFRNS_has_any_mushroom_buff = yes } }
+		add_ideas = Custom_TFR_def_buff
+		division_template = {
+			name = "Mushroom Army"
+			is_locked = yes
+			regiments = {
+				modern_armor = { x = 0 y = 0 }
+				modern_armor = { x = 0 y = 1 }
+				modern_armor = { x = 0 y = 2 }
+				modern_armor = { x = 0 y = 3 }
+				modern_armor = { x = 0 y = 4 }
+				bus = { x = 1 y = 0 }
+				bus = { x = 1 y = 1 }
+				recce = { x = 1 y = 2 }
+				recce = { x = 1 y = 3 }
+				recce = { x = 2 y = 0 }
+				recce = { x = 2 y = 1 }
+				militia = { x = 3 y = 0 }
+				militia = { x = 3 y = 1 }
+			}
+			support = {
+				recon = { x = 0 y = 0 }
+				engineer = { x = 0 y = 1 }
+				engineer = { x = 0 y = 2 }
+				logistics_company = { x = 0 y = 3 }
+				logistics_company = { x = 0 y = 4 }
+			}
+		}
+		set_country_flag = TFRNS_Mushroom_Army_Spawn_Pending
+		country_event = { id = TFRNS_buff.1 days = 1 }
+	}
+}
+
+TFRNS_remove_mushroom_buff_if_present = {
+	clr_country_flag = TFRNS_Mushroom_Army_Spawn_Pending
+	if = {
+		limit = { TFRNS_has_any_mushroom_buff = yes }
+		remove_war_buff = yes
+	}
+}
+
+TFRNS_remove_mushroom_buff_if_no_other_campaign_owns_it = {
+	if = {
+		limit = {
+			NOT = {
+				OR = {
+					has_country_flag = TFRNS_Source_Maghreb
+					has_country_flag = TFRNS_Source_Algerian_CW
+					has_country_flag = TFRNS_Source_Egyptian_CW
+					has_country_flag = TFRNS_Source_HRL_Haftar
+					has_country_flag = TFRNS_Source_HRL_Gaddafi
+					has_country_flag = TFRNS_Source_Third_African_War
+					has_country_flag = TFRNS_Source_Final_Solution
+					has_country_flag = TFRNS_Source_Arab_Israeli
+					has_country_flag = TFRNS_Source_AFG_TAL
+					has_country_flag = TFRNS_Source_British_CW
+					has_country_flag = TFRNS_Source_Troubles
+					has_country_flag = TFRNS_Source_Spanish_CW
+					has_country_flag = TFRNS_Source_Portuguese_CW
+					has_country_flag = TFRNS_Source_French_Regionalist_War
+					has_country_flag = TFRNS_Source_Xinjiang_Insurgency
+					has_country_flag = TFRNS_Source_Sahel_War
+				}
+			}
+		}
+		TFRNS_remove_mushroom_buff_if_present = yes
+	}
+}
+
+# Releases the Maghreb War buff from the current country. The Mushroom buff is
+# only actually removed when no other campaign still claims it.
+TFRNS_release_maghreb_buff = {
+	if = {
+		limit = { has_country_flag = TFRNS_Source_Maghreb }
+		clr_country_flag = TFRNS_Source_Maghreb
+		TFRNS_remove_mushroom_buff_if_no_other_campaign_owns_it = yes
+	}
+}
+
+# Releases the Algerian Civil War buff from the current country. The Mushroom
+# buff is only actually removed when no other campaign still claims it.
+TFRNS_release_algerian_cw_buff = {
+	if = {
+		limit = { has_country_flag = TFRNS_Source_Algerian_CW }
+		clr_country_flag = TFRNS_Source_Algerian_CW
+		TFRNS_remove_mushroom_buff_if_no_other_campaign_owns_it = yes
+	}
+}
+
+# Releases the Afghanistan-Taliban War buff from the current country. The
+# Mushroom buff is only actually removed when no other campaign still claims it.
+TFRNS_release_afg_tal_buff = {
+	if = {
+		limit = { has_country_flag = TFRNS_Source_AFG_TAL }
+		clr_country_flag = TFRNS_Source_AFG_TAL
+		TFRNS_remove_mushroom_buff_if_no_other_campaign_owns_it = yes
+	}
+}

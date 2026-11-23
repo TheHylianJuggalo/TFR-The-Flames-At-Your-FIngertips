@@ -1,0 +1,33 @@
+# TFR No Surrender - Sahel War winner rules
+#
+# The Sahel War starts in mali.99: Mali sets MLI_sahel_war_flag and declares war
+# on Ivory Coast. The two camps are the Ivory Coast-led ECOMOG faction and the
+# Mali-led Sahel Security Pact.
+#
+# Unlike the other winner rules, the beneficiary here is not a fixed tag list.
+# Membership is read dynamically from the faction of IVO / MLI, so any nation
+# that joins the winning camp gets the Mushroom Army buff - and loses it again
+# if it leaves the faction. DEFAULT leaves TFR untouched.
+TFRNS_Sahel_War_Winner = {
+	name = "TFRNS_Sahel_War_Winner"
+	group = "RULE_GROUP_Western_Africa"
+	icon = GFX_decision_generic_army_support
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Sahel_War_Winner_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Sahel_War_Winner_ECOMOG
+		text = "TFRNS_Sahel_War_Winner_ECOMOG_TXT"
+		desc = "TFRNS_Sahel_War_Winner_ECOMOG_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Sahel_War_Winner_SAHEL
+		text = "TFRNS_Sahel_War_Winner_SAHEL_TXT"
+		desc = "TFRNS_Sahel_War_Winner_SAHEL_DESC"
+		allow_achievements = yes
+	}
+}

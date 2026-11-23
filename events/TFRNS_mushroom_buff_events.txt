@@ -1,0 +1,38 @@
+add_namespace = tfrns_buff
+
+country_event = {
+	id = tfrns_buff.1
+	hidden = yes
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = TFRNS_Mushroom_Army_Spawn_Pending
+	}
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					has_idea = Custom_TFR_war_buff
+					has_idea = Custom_TFR_def_buff
+				}
+			}
+			if = {
+				limit = { any_controlled_state = { always = yes } }
+				clr_country_flag = TFRNS_Mushroom_Army_Spawn_Pending
+				random_controlled_state = {
+					create_unit = {
+						division = "division_template = \"Mushroom Army\" start_experience_factor = 1 start_equipment_factor = 1"
+						owner = PREV
+						count = 20
+					}
+				}
+			}
+			else = {
+				country_event = { id = tfrns_buff.1 days = 1 }
+			}
+		}
+		else = {
+			clr_country_flag = TFRNS_Mushroom_Army_Spawn_Pending
+		}
+	}
+	option = { name = tfrns_buff.1.a }
+}

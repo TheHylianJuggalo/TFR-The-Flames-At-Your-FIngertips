@@ -1,3 +1,6 @@
 ﻿l_english:
  TFRNS_no_surrender: "The Fire Does Not Yield"
  TFRNS_no_surrender_desc: "No nation will surrender until its entire territory is occupied. The war is fought to the last."
+ TFRNS_CAR_ANG_Invasion.t: "The Central African Campaign in Angola"
+ TFRNS_CAR_ANG_Invasion.d: "The Wagner-backed government in Bangui has ordered an invasion of Angola."
+ TFRNS_CAR_ANG_Invasion.a: "Begin the campaign"

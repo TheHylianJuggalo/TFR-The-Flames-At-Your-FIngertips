@@ -1,0 +1,44 @@
+add_namespace = tfrns_congo
+
+country_event = {
+	id = tfrns_congo.1
+	hidden = yes
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			tag = BDK
+			tag = NDC
+			tag = M23
+			tag = MMK
+			tag = RCO
+		}
+	}
+	immediate = {
+		clr_country_flag = TFRNS_Congo_Mushroom_Army_Retry_Pending
+		if = {
+			limit = {
+				NOT = { has_country_flag = TFRNS_Congo_Mushroom_Army_Retry_Done }
+				OR = {
+					has_idea = Custom_TFR_war_buff
+					has_idea = Custom_TFR_def_buff
+				}
+			}
+			if = {
+				limit = { any_controlled_state = { always = yes } }
+				random_controlled_state = {
+					create_unit = {
+						division = "division_template = \"Mushroom Army\" start_experience_factor = 1 start_equipment_factor = 1"
+						owner = PREV
+						count = 20
+					}
+				}
+				set_country_flag = TFRNS_Congo_Mushroom_Army_Retry_Done
+			}
+			else = {
+				set_country_flag = TFRNS_Congo_Mushroom_Army_Retry_Pending
+				country_event = { id = tfrns_congo.1 days = 1 }
+			}
+		}
+	}
+	option = { name = TFRNS_buff.1.a }
+}

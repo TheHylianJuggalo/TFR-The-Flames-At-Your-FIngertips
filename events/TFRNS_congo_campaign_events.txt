@@ -1,0 +1,33 @@
+add_namespace = tfrns_congo_campaign
+
+country_event = {
+	id = tfrns_congo_campaign.1
+	title = TFRNS_CAR_ANG_Invasion.t
+	desc = TFRNS_CAR_ANG_Invasion.d
+	picture = GFX_news_congo_collapse
+	is_triggered_only = yes
+	trigger = {
+		tag = CAR
+		has_game_rule = { rule = CAR_and_Wagner option = CAR_Wagner }
+		has_government = authoritarian_democrat
+		ANG = { exists = yes NOT = { is_puppet_of = CAR } }
+	}
+	immediate = {
+		if = {
+			limit = {
+				has_game_rule = { rule = CAR_and_Wagner option = CAR_Wagner }
+				has_government = authoritarian_democrat
+				ANG = { exists = yes }
+				NOT = {
+					ANG = { is_puppet_of = CAR }
+				}
+			}
+			842 = { add_claim_by = CAR }
+			declare_war_on = {
+				target = ANG
+				type = annex_everything
+			}
+		}
+	}
+	option = { name = TFRNS_CAR_ANG_Invasion.a }
+}

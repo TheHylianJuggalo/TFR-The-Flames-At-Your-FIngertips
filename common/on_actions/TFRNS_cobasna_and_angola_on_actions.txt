@@ -1,0 +1,82 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = TFRNS_Cobasna_Depot_Explosion
+						option = TFRNS_Cobasna_Depot_Explosion_NO
+					}
+			}
+				set_global_flag = TRA_destroyed_cobasna
+			}
+		}
+	}
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					FROM.FROM = { state = 857 }
+					OR = {
+						FROM = { OR = { tag = UKR tag = SOV tag = TRA tag = MOL } }
+						ROOT = { OR = { tag = UKR tag = SOV tag = TRA tag = MOL } }
+					}
+					NOT = {
+						OR = {
+							has_global_flag = TRA_destroyed_cobasna
+							SOV = { controls_state = 857 }
+							TRA = { controls_state = 857 }
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = TFRNS_Cobasna_Depot_Explosion
+							option = TFRNS_Cobasna_Depot_Explosion_YES
+						}
+					}
+					TFRNS_cobasna_depot_detonate = yes
+				}
+			}
+		}
+	}
+	on_declare_war = {
+		effect = {
+			if = {
+				limit = {
+					CAR = { has_subject = BDK has_subject = ANG }
+					OR = {
+						AND = { ROOT = { tag = BDK } FROM = { tag = ANG } }
+						AND = { ROOT = { tag = ANG } FROM = { tag = BDK } }
+					}
+				}
+				BDK = { white_peace = ANG }
+			}
+		}
+	}
+	on_weekly = {
+		effect = {
+			if = {
+				limit = {
+					CAR = {
+						has_government = authoritarian_democrat
+						has_game_rule = { rule = CAR_and_Wagner option = CAR_Wagner }
+						has_war = yes
+						NOT = { has_country_flag = TFRNS_CAR_ANG_Timer_Started }
+					}
+				}
+				CAR = {
+					set_country_flag = TFRNS_CAR_ANG_Timer_Started
+					country_event = { id = tfrns_congo_campaign.1 days = 180 }
+				}
+			}
+			if = {
+				limit = {
+					CAR = { has_subject = BDK has_subject = ANG }
+				}
+				BDK = { white_peace = ANG }
+			}
+		}
+	}
+}

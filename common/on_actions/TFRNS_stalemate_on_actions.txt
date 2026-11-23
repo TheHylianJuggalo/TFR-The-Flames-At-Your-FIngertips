@@ -1,0 +1,171 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = LBA_HRL_civil_war
+						option = TFRNS_LBA_HRL_civil_war_STALEMATE
+					}
+					LBA = { has_war_with = HRL }
+				}
+				set_global_flag = TFRNS_Libyan_Stalemate_Active
+				LBA = { TFRNS_apply_libyan_stalemate_to_owned_states = yes }
+				HRL = { TFRNS_apply_libyan_stalemate_to_owned_states = yes }
+			}
+		}
+	}
+	on_declare_war = {
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						AND = { ROOT = { tag = LBA } FROM = { tag = HRL } }
+						AND = { ROOT = { tag = HRL } FROM = { tag = LBA } }
+					}
+					has_game_rule = {
+						rule = LBA_HRL_civil_war
+						option = TFRNS_LBA_HRL_civil_war_STALEMATE
+					}
+				}
+				set_global_flag = TFRNS_Libyan_Stalemate_Active
+				LBA = { TFRNS_apply_libyan_stalemate_to_owned_states = yes }
+				HRL = { TFRNS_apply_libyan_stalemate_to_owned_states = yes }
+			}
+			if = {
+				limit = {
+					has_global_flag = ALG_maghreb_war_global
+					has_game_rule = {
+						rule = TFRNS_Maghreb_War_Winner
+						option = TFRNS_Maghreb_War_Winner_STALEMATE
+					}
+					OR = {
+						AND = { ROOT = { tag = ALG } FROM = { tag = MOR } }
+						AND = { ROOT = { tag = WES } FROM = { tag = MOR } }
+					}
+				}
+				set_global_flag = TFRNS_Maghreb_Stalemate_Active
+				TFRNS_apply_maghreb_stalemate_to_war_parties = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						AND = { ROOT = { tag = RAJ } FROM = { tag = PAK } }
+						AND = { ROOT = { tag = PAK } FROM = { tag = RAJ } }
+						AND = { ROOT = { tag = HUL } FROM = { tag = RAJ } }
+					}
+					has_game_rule = {
+						rule = The_RAJ_PAK_war
+						option = The_RAJ_PAK_war_STALEMATE
+					}
+				}
+				set_global_flag = TFRNS_Indo_Pakistan_Stalemate_Active
+				RAJ = { TFRNS_apply_indo_pakistan_stalemate_to_owned_states = yes }
+				PAK = { TFRNS_apply_indo_pakistan_stalemate_to_owned_states = yes }
+				HUL = { TFRNS_apply_indo_pakistan_stalemate_to_owned_states = yes }
+				SND = { TFRNS_apply_indo_pakistan_stalemate_to_owned_states = yes }
+			}
+		}
+	}
+	on_weekly = {
+		effect = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = TFRNS_Maghreb_War_Winner
+						option = TFRNS_Maghreb_War_Winner_STALEMATE
+					}
+					country_exists = ALG
+					country_exists = MOR
+					ALG = { has_war_with = MOR }
+				}
+				set_global_flag = TFRNS_Maghreb_Stalemate_Active
+				TFRNS_apply_maghreb_stalemate_to_war_parties = yes
+			}
+			if = {
+				limit = {
+					tag = PRC
+					has_country_flag = PRC_indo_pakistan_war_ongoing
+					has_game_rule = {
+						rule = The_RAJ_PAK_war
+						option = The_RAJ_PAK_war_STALEMATE
+					}
+				}
+				set_global_flag = TFRNS_Indo_Pakistan_Stalemate_Active
+				RAJ = { TFRNS_apply_indo_pakistan_stalemate_to_owned_states = yes }
+				PAK = { TFRNS_apply_indo_pakistan_stalemate_to_owned_states = yes }
+				HUL = { TFRNS_apply_indo_pakistan_stalemate_to_owned_states = yes }
+				SND = { TFRNS_apply_indo_pakistan_stalemate_to_owned_states = yes }
+			}
+			if = {
+				limit = {
+					tag = PRC
+					has_global_flag = TFRNS_Indo_Pakistan_Stalemate_Active
+					NOT = { has_country_flag = PRC_indo_pakistan_war_ongoing }
+				}
+				TFRNS_remove_indo_pakistan_stalemate_states = yes
+				clr_global_flag = TFRNS_Indo_Pakistan_Stalemate_Active
+			}
+			if = {
+				limit = {
+					has_global_flag = TFRNS_Maghreb_Stalemate_Active
+					NOT = {
+						AND = {
+							country_exists = ALG
+							country_exists = MOR
+							ALG = { has_war_with = MOR }
+						}
+					}
+				}
+				TFRNS_remove_maghreb_stalemate_states = yes
+				clr_global_flag = TFRNS_Maghreb_Stalemate_Active
+			}
+			if = {
+				limit = {
+					tag = HRL
+					has_global_flag = TFRNS_Libyan_Stalemate_Active
+					NOT = { LBA = { has_war_with = HRL } }
+				}
+				TFRNS_remove_libyan_stalemate_states = yes
+				clr_global_flag = TFRNS_Libyan_Stalemate_Active
+			}
+		}
+	}
+	on_peace = {
+		effect = {
+			if = {
+				limit = {
+					has_global_flag = TFRNS_Libyan_Stalemate_Active
+					OR = {
+						AND = { ROOT = { tag = LBA } FROM = { tag = HRL } }
+						AND = { ROOT = { tag = HRL } FROM = { tag = LBA } }
+					}
+				}
+				TFRNS_remove_libyan_stalemate_states = yes
+				clr_global_flag = TFRNS_Libyan_Stalemate_Active
+			}
+			if = {
+				limit = {
+					has_global_flag = TFRNS_Maghreb_Stalemate_Active
+					NOT = {
+						AND = {
+							country_exists = ALG
+							country_exists = MOR
+							ALG = { has_war_with = MOR }
+						}
+					}
+				}
+				TFRNS_remove_maghreb_stalemate_states = yes
+				clr_global_flag = TFRNS_Maghreb_Stalemate_Active
+			}
+			if = {
+				limit = {
+					has_global_flag = TFRNS_Indo_Pakistan_Stalemate_Active
+					PRC = { NOT = { has_country_flag = PRC_indo_pakistan_war_ongoing } }
+				}
+				TFRNS_remove_indo_pakistan_stalemate_states = yes
+				clr_global_flag = TFRNS_Indo_Pakistan_Stalemate_Active
+			}
+		}
+	}
+}

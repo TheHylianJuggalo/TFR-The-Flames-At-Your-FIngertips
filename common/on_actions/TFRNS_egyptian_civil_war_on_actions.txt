@@ -1,0 +1,88 @@
+on_actions = {
+	on_declare_war = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_global_flag = TFRNS_Egyptian_CW_Buff_Active }
+					OR = {
+						AND = {
+							ROOT = { OR = { tag = EGY tag = MUS tag = MEK } }
+							FROM = { OR = { tag = EGY tag = MUS tag = MEK } }
+					}
+					}
+					has_game_rule = {
+						rule = TFRNS_Egyptian_Civil_War_Winner
+						option = TFRNS_Egyptian_Civil_War_Winner_EGY
+					}
+				}
+				set_global_flag = TFRNS_Egyptian_CW_Buff_Active
+				EGY = {
+					set_country_flag = TFRNS_Source_Egyptian_CW
+					TFRNS_apply_attack_mushroom_buff_if_missing = yes
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_global_flag = TFRNS_Egyptian_CW_Buff_Active }
+					OR = {
+						AND = {
+							ROOT = { OR = { tag = EGY tag = MUS tag = MEK } }
+							FROM = { OR = { tag = EGY tag = MUS tag = MEK } }
+						}
+					}
+					has_game_rule = {
+						rule = TFRNS_Egyptian_Civil_War_Winner
+						option = TFRNS_Egyptian_Civil_War_Winner_MUS
+					}
+				}
+				set_global_flag = TFRNS_Egyptian_CW_Buff_Active
+				MUS = {
+					set_country_flag = TFRNS_Source_Egyptian_CW
+					TFRNS_apply_attack_mushroom_buff_if_missing = yes
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_global_flag = TFRNS_Egyptian_CW_Buff_Active }
+					OR = {
+						AND = {
+							ROOT = { OR = { tag = EGY tag = MUS tag = MEK } }
+							FROM = { OR = { tag = EGY tag = MUS tag = MEK } }
+						}
+					}
+					has_game_rule = {
+						rule = TFRNS_Egyptian_Civil_War_Winner
+						option = TFRNS_Egyptian_Civil_War_Winner_MEK
+					}
+				}
+				set_global_flag = TFRNS_Egyptian_CW_Buff_Active
+				MEK = {
+					set_country_flag = TFRNS_Source_Egyptian_CW
+					TFRNS_apply_attack_mushroom_buff_if_missing = yes
+				}
+			}
+		}
+	}
+	on_weekly = {
+		effect = {
+			if = {
+				limit = {
+					has_global_flag = TFRNS_Egyptian_CW_Buff_Active
+					NOT = {
+						OR = {
+							EGY = { has_war_with = MUS }
+							EGY = { has_war_with = MEK }
+							MUS = { has_war_with = MEK }
+						}
+					}
+				}
+				every_country = {
+					limit = { has_country_flag = TFRNS_Source_Egyptian_CW }
+					clr_country_flag = TFRNS_Source_Egyptian_CW
+					TFRNS_remove_mushroom_buff_if_no_other_campaign_owns_it = yes
+				}
+				clr_global_flag = TFRNS_Egyptian_CW_Buff_Active
+			}
+		}
+	}
+}

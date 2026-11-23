@@ -1,0 +1,104 @@
+# TFR No Surrender - European civil war winner rules enforcement.
+#
+# The four reconciles are cheap and fully idempotent, so they are safe to run
+# from any of these hooks. on_startup and on_peace/on_declare_war run in a
+# global scope, while on_weekly runs once per country (ROOT is that country),
+# so the weekly hook is gated to the belligerents of each war.
+on_actions = {
+	on_startup = {
+		effect = {
+			TFRNS_reconcile_british_civil_war_buff = yes
+			TFRNS_reconcile_troubles_buff = yes
+			TFRNS_reconcile_spanish_civil_war_buff = yes
+			TFRNS_reconcile_portuguese_civil_war_buff = yes
+		}
+	}
+	on_declare_war = {
+		effect = {
+			# British Civil War
+			if = {
+				limit = {
+					ROOT = { OR = { tag = ENG tag = UK2 tag = SCO } }
+					FROM = { OR = { tag = ENG tag = UK2 tag = SCO } }
+				}
+				TFRNS_reconcile_british_civil_war_buff = yes
+			}
+			# Second Troubles, including the IRA's follow-up war on Ireland
+			if = {
+				limit = {
+					ROOT = { OR = { tag = NIR tag = IRA tag = IRE } }
+					FROM = { OR = { tag = NIR tag = IRA tag = IRE } }
+				}
+				TFRNS_reconcile_troubles_buff = yes
+			}
+			# Second Spanish Civil War
+			if = {
+				limit = {
+					ROOT = { OR = { tag = SPR tag = RSR tag = SNS tag = CAT tag = BSQ } }
+					FROM = { OR = { tag = SPR tag = RSR tag = SNS tag = CAT tag = BSQ } }
+				}
+				TFRNS_reconcile_spanish_civil_war_buff = yes
+			}
+			# Portuguese Civil War
+			if = {
+				limit = {
+					ROOT = { OR = { tag = POR tag = PRP tag = GOD } }
+					FROM = { OR = { tag = POR tag = PRP tag = GOD } }
+				}
+				TFRNS_reconcile_portuguese_civil_war_buff = yes
+			}
+		}
+	}
+	on_weekly = {
+		effect = {
+			if = {
+				limit = { OR = { tag = ENG tag = UK2 tag = SCO } }
+				TFRNS_reconcile_british_civil_war_buff = yes
+			}
+			if = {
+				limit = { OR = { tag = NIR tag = IRA tag = IRE } }
+				TFRNS_reconcile_troubles_buff = yes
+			}
+			if = {
+				limit = { OR = { tag = SPR tag = RSR tag = SNS tag = CAT tag = BSQ } }
+				TFRNS_reconcile_spanish_civil_war_buff = yes
+			}
+			if = {
+				limit = { OR = { tag = POR tag = PRP tag = GOD } }
+				TFRNS_reconcile_portuguese_civil_war_buff = yes
+			}
+		}
+	}
+	on_peace = {
+		effect = {
+			if = {
+				limit = {
+					ROOT = { OR = { tag = ENG tag = UK2 tag = SCO } }
+					FROM = { OR = { tag = ENG tag = UK2 tag = SCO } }
+				}
+				TFRNS_reconcile_british_civil_war_buff = yes
+			}
+			if = {
+				limit = {
+					ROOT = { OR = { tag = NIR tag = IRA tag = IRE } }
+					FROM = { OR = { tag = NIR tag = IRA tag = IRE } }
+				}
+				TFRNS_reconcile_troubles_buff = yes
+			}
+			if = {
+				limit = {
+					ROOT = { OR = { tag = SPR tag = RSR tag = SNS tag = CAT tag = BSQ } }
+					FROM = { OR = { tag = SPR tag = RSR tag = SNS tag = CAT tag = BSQ } }
+				}
+				TFRNS_reconcile_spanish_civil_war_buff = yes
+			}
+			if = {
+				limit = {
+					ROOT = { OR = { tag = POR tag = PRP tag = GOD } }
+					FROM = { OR = { tag = POR tag = PRP tag = GOD } }
+				}
+				TFRNS_reconcile_portuguese_civil_war_buff = yes
+			}
+		}
+	}
+}
