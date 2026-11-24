@@ -3544,6 +3544,34 @@ TFRNS_Dummy_Russia_Pre_Emergency_Election = {
 	}
 }
 
+# TFR No Surrender - Putin's COVID decision (russia.182)
+# Steers only the AI weights on the existing two-way choice: resign and let
+# Naryshkin call the early election, or power through and die in office.
+TFRNS_SOV_Putin_Health = {
+	name = "TFRNS_SOV_Putin_Health"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE_SOV"
+	icon = GFX_decision_generic_political_discussion
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_SOV_Putin_Health_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_SOV_Putin_Health_PASS_TORCH
+		text = "TFRNS_SOV_Putin_Health_PASS_TORCH_TXT"
+		desc = "TFRNS_SOV_Putin_Health_PASS_TORCH_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_SOV_Putin_Health_STAY_STRONG
+		text = "TFRNS_SOV_Putin_Health_STAY_STRONG_TXT"
+		desc = "TFRNS_SOV_Putin_Health_STAY_STRONG_DESC"
+		allow_achievements = yes
+	}
+}
+
 The_Move_Against_the_Fifth_Column = {#Move Against the Fifth Column 清洗第五纵队
 	name = "The_Move_Against_the_Fifth_Column"
 	required_dlc = "Waking the Tiger"

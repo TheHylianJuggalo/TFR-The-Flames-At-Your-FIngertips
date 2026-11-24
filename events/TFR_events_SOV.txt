@@ -8286,6 +8286,16 @@ country_event = {
 
     option = {
         name = russia.182.a
+        ai_chance = {
+            factor = 10
+            modifier = {
+                factor = 0
+                has_game_rule = {
+                    rule = TFRNS_SOV_Putin_Health
+                    option = TFRNS_SOV_Putin_Health_STAY_STRONG
+                }
+            }
+        }
         hidden_effect = {
             set_country_flag = SOV_putin_resigns_flag
             retire_character = SOV_nicholas_romanov
@@ -8318,6 +8328,16 @@ country_event = {
     }
     option = {
         name = russia.182.b
+        ai_chance = {
+            factor = 10
+            modifier = {
+                factor = 0
+                has_game_rule = {
+                    rule = TFRNS_SOV_Putin_Health
+                    option = TFRNS_SOV_Putin_Health_PASS_TORCH
+                }
+            }
+        }
         trigger = {
             NOT = { has_country_flag = SOV_assassination_attempt_happened_flag }
         }

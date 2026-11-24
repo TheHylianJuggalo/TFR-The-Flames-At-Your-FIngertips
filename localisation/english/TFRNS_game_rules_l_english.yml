@@ -337,6 +337,14 @@
  TFRNS_Dummy_Russia_Pre_Emergency_Election_DEFAULT_DESC: "§YOrganizational header only - no gameplay effect.§!\n\nThis marker separates the rules for Russia before Putin's death and the emergency election that follows. The default selection changes nothing."
  TFRNS_Dummy_Russia_Pre_Emergency_Election_HEADER_TXT: "§YSection Header§!"
  TFRNS_Dummy_Russia_Pre_Emergency_Election_HEADER_DESC: "§YOrganizational header only - no gameplay effect.§!\n\nSelecting this marker changes nothing. It exists only to visually group the rules for Russia before Putin's death and the emergency election that follows."
+
+ TFRNS_SOV_Putin_Health: "@SOV Putin's Health"
+ TFRNS_SOV_Putin_Health_DEFAULT_DESC: "Default TFR behaviour. In §Yrussia.182§!, AI Russia chooses freely between letting Putin resign and having him power through. If an assassination attempt already happened, only resignation is available.\n\n§gThe rule only changes AI option weights. A human Russia still sees every vanilla option.§!"
+ TFRNS_SOV_Putin_Health_PASS_TORCH_TXT: "§YPass The Torch§!"
+ TFRNS_SOV_Putin_Health_PASS_TORCH_DESC: "AI Russia always has Putin resign in §Yrussia.182§!, retire immediately and hand power to §YNaryshkin§!. Elections are banned during the interim and the early-election chain starts about 25 days later.\n\n§gA human Russia can still choose either option.§!"
+ TFRNS_SOV_Putin_Health_STAY_STRONG_TXT: "§RStay Strong for Mother Russia§!"
+ TFRNS_SOV_Putin_Health_STAY_STRONG_DESC: "AI Russia always has Putin power through in §Yrussia.182§!. He stays in power another 45-75 days, then dies in §Yrussia.185§!, costing §R0.30 stability§! and §R0.25 war support§! before the election chain starts. If an assassination attempt already happened, TFR hides the power-through option, so resignation still occurs.\n\n§gA human Russia can still choose either option.§!"
+
  TFRNS_Dummy_Russia_Post_First_War_Victory_Medvedv: "§Y==== Post First war - Victory - Medvedv ====§!"
  TFRNS_Dummy_Russia_Post_First_War_Victory_Medvedv_DEFAULT_DESC: "§YOrganizational header only - no gameplay effect.§!\n\nThis marker separates the §YPost First war - Victory - Medvedv§! Russia rules. The default selection changes nothing."
  TFRNS_Dummy_Russia_Post_First_War_Victory_Medvedv_HEADER_TXT: "§YSection Header§!"
