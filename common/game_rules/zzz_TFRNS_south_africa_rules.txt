@@ -37,31 +37,6 @@ TFRNS_SAF_Chinese_Support = {
 	}
 }
 
-TFRNS_SAF_Russian_Support = {
-	name = "TFRNS_SAF_Russian_Support"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_Southern_Africa"
-	icon = GFX_decision_generic_political_discussion
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "TFRNS_SAF_Russian_Support_DEFAULT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = TFRNS_SAF_Russian_Support_SWZ
-		text = "TFRNS_SAF_Russian_Support_SWZ_TXT"
-		desc = "TFRNS_SAF_Russian_Support_SWZ_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = TFRNS_SAF_Russian_Support_EFF
-		text = "TFRNS_SAF_Russian_Support_EFF_TXT"
-		desc = "TFRNS_SAF_Russian_Support_EFF_DESC"
-		allow_achievements = yes
-	}
-}
-
 TFRNS_SAF_Postwar_Election = {
 	name = "TFRNS_SAF_Postwar_Election"
 	required_dlc = "Waking the Tiger"

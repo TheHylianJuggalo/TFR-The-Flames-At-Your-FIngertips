@@ -2183,78 +2183,6 @@ TFRNS_Dummy_Europe_Pre_First_War = {
 		allow_achievements = yes
 	}
 }
-TFRNS_Dummy_Europe_Post_First_War_Victory = {
-	name = "TFRNS_Dummy_Europe_Post_First_War_Victory"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE"
-	icon = GFX_decision_generic_flag
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "TFRNS_Dummy_Europe_Post_First_War_Victory_DEFAULT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = TFRNS_Dummy_Europe_Post_First_War_Victory_HEADER
-		text = "TFRNS_Dummy_Europe_Post_First_War_Victory_HEADER_TXT"
-		desc = "TFRNS_Dummy_Europe_Post_First_War_Victory_HEADER_DESC"
-		allow_achievements = yes
-	}
-}
-TFRNS_Dummy_Europe_Post_First_War_Defeat_Medvedv = {
-	name = "TFRNS_Dummy_Europe_Post_First_War_Defeat_Medvedv"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE"
-	icon = GFX_decision_generic_flag
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "TFRNS_Dummy_Europe_Post_First_War_Defeat_Medvedv_DEFAULT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = TFRNS_Dummy_Europe_Post_First_War_Defeat_Medvedv_HEADER
-		text = "TFRNS_Dummy_Europe_Post_First_War_Defeat_Medvedv_HEADER_TXT"
-		desc = "TFRNS_Dummy_Europe_Post_First_War_Defeat_Medvedv_HEADER_DESC"
-		allow_achievements = yes
-	}
-}
-TFRNS_Dummy_Europe_Post_First_War_Defeat_CPRF = {
-	name = "TFRNS_Dummy_Europe_Post_First_War_Defeat_CPRF"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE"
-	icon = GFX_decision_generic_flag
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "TFRNS_Dummy_Europe_Post_First_War_Defeat_CPRF_DEFAULT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = TFRNS_Dummy_Europe_Post_First_War_Defeat_CPRF_HEADER
-		text = "TFRNS_Dummy_Europe_Post_First_War_Defeat_CPRF_HEADER_TXT"
-		desc = "TFRNS_Dummy_Europe_Post_First_War_Defeat_CPRF_HEADER_DESC"
-		allow_achievements = yes
-	}
-}
-TFRNS_Dummy_Europe_Post_First_War_Defeat_LDPR = {
-	name = "TFRNS_Dummy_Europe_Post_First_War_Defeat_LDPR"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE"
-	icon = GFX_decision_generic_flag
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "TFRNS_Dummy_Europe_Post_First_War_Defeat_LDPR_DEFAULT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = TFRNS_Dummy_Europe_Post_First_War_Defeat_LDPR_HEADER
-		text = "TFRNS_Dummy_Europe_Post_First_War_Defeat_LDPR_HEADER_TXT"
-		desc = "TFRNS_Dummy_Europe_Post_First_War_Defeat_LDPR_HEADER_DESC"
-		allow_achievements = yes
-	}
-}
 
 The_NATO_Leader = {#NATO Leadership 北约话事人
 	name = "The_NATO_Leader"
@@ -2501,6 +2429,97 @@ The_Military_Overthrows_New_Popular_Front = {#Military Overthrows New Popuar Fro
 	}
 }
 
+GER_ai_behavior = {#Federal Republic of Germany 2021 Election 德意志联邦共和国2021年大选
+	name = "GER_ai_behavior"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = CDU_AI_BEHAVIOR
+		text = "CDU_AI_BEHAVIOR_TXT"
+		desc = "CDU_AI_BEHAVIOR_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = FDP_AI_BEHAVIOR
+		text = "FDP_AI_BEHAVIOR_TXT"
+		desc = "FDP_AI_BEHAVIOR_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = AFD_AI_BEHAVIOR
+		text = "AFD_AI_BEHAVIOR_TXT"
+		desc = "AFD_AI_BEHAVIOR_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = GREENS_AI_BEHAVIOR
+		text = "GREENS_AI_BEHAVIOR_TXT"
+		desc = "GREENS_AI_BEHAVIOR_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SPD_AI_BEHAVIOR
+		text = "SPD_AI_BEHAVIOR_TXT"
+		desc = "SPD_AI_BEHAVIOR_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = LEFT_AI_BEHAVIOR
+		text = "LEFT_AI_BEHAVIOR_TXT"
+		desc = "LEFT_AI_BEHAVIOR_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+
+The_GER_extremist_soldiers = {#Extremist Soldiers 极端派士兵
+	name = "The_GER_extremist_soldiers"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_GER_extremist_soldiers_1
+		text = "The_GER_extremist_soldiers_1_TXT"
+		desc = "The_GER_extremist_soldiers_1_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_GER_extremist_soldiers_2
+		text = "The_GER_extremist_soldiers_2_TXT"
+		desc = "The_GER_extremist_soldiers_2_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+
+TFRNS_Dummy_Europe_Post_First_War_Victory = {
+	name = "TFRNS_Dummy_Europe_Post_First_War_Victory"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	icon = GFX_decision_generic_flag
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Dummy_Europe_Post_First_War_Victory_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Dummy_Europe_Post_First_War_Victory_HEADER
+		text = "TFRNS_Dummy_Europe_Post_First_War_Victory_HEADER_TXT"
+		desc = "TFRNS_Dummy_Europe_Post_First_War_Victory_HEADER_DESC"
+		allow_achievements = yes
+	}
+}
+
 The_Sixth_Republic_Election = {#First election of the 6th Republic 第六共和国首次大选
 	name = "The_Sixth_Republic_Election"
 	required_dlc = "Waking the Tiger"
@@ -2575,624 +2594,6 @@ The_Seventh_Republic_Election = {#First election of the 7th Republic 第七共�
 		name = The_Seventh_Republic_Election_3
 		text = "The_Seventh_Republic_Election_3_TXT"
 		desc = "The_Seventh_Republic_Election_3_TXT_DESC"
-		allow_achievements = yes
-	}
-}
-
-The_French_Socialist_Republic_Path = {#French Socialist Republic Path 法兰西社会主义共和国路线
-	name = "The_French_Socialist_Republic_Path"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "The_French_Socialist_Republic_Path_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_French_Socialist_Republic_Path_1
-		text = "The_French_Socialist_Republic_Path_1_TXT"
-		desc = "The_French_Socialist_Republic_Path_1_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_French_Socialist_Republic_Path_2
-		text = "The_French_Socialist_Republic_Path_2_TXT"
-		desc = "The_French_Socialist_Republic_Path_2_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_French_Socialist_Republic_Path_3
-		text = "The_French_Socialist_Republic_Path_3_TXT"
-		desc = "The_French_Socialist_Republic_Path_3_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_French_Socialist_Republic_Path_melenchon
-		text = "The_French_Socialist_Republic_Path_melenchon_TXT"
-		desc = "The_French_Socialist_Republic_Path_melenchon_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_French_Socialist_Republic_Path_Didier_Daeninckx
-		text = "The_French_Socialist_Republic_Path_Didier_Daeninckx_TXT"
-		desc = "The_French_Socialist_Republic_Path_Didier_Daeninckx_TXT_DESC"
-		allow_achievements = yes
-	}
-}
-
-The_Government_of_National_Defense_Path = {#Government of National Defense Path 国防政府路线
-	name = "The_Government_of_National_Defense_Path"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "The_Government_of_National_Defense_Path_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Government_of_National_Defense_Path_Democratic
-		text = "The_Government_of_National_Defense_Path_Democratic_TXT"
-		desc = "The_Government_of_National_Defense_Path_Democratic_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Government_of_National_Defense_Path_Military
-		text = "The_Government_of_National_Defense_Path_Military_TXT"
-		desc = "The_Government_of_National_Defense_Path_Military_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Government_of_National_Defense_Path_Monarchist
-		text = "The_Government_of_National_Defense_Path_Monarchist_TXT"
-		desc = "The_Government_of_National_Defense_Path_Monarchist_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Government_of_National_Defense_Path_Fascist
-		text = "The_Government_of_National_Defense_Path_Fascist_TXT"
-		desc = "The_Government_of_National_Defense_Path_Fascist_TXT_DESC"
-		allow_achievements = yes
-	}
-}
-
-The_Government_of_National_Defense_Democratic = {#Freedom, Conservatism, Patriotism 自由，保守，爱国
-	name = "The_Government_of_National_Defense_Democratic"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "The_Government_of_National_Defense_Democratic_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Government_of_National_Defense_Democratic_Democratic_Movement
-		text = "The_Government_of_National_Defense_Democratic_Democratic_Movement_TXT"
-		desc = "The_Government_of_National_Defense_Democratic_Democratic_Movement_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Government_of_National_Defense_Democratic_Republicain
-		text = "The_Government_of_National_Defense_Democratic_Republicain_TXT"
-		desc = "The_Government_of_National_Defense_Democratic_Republicain_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Government_of_National_Defense_Democratic_National_Conservative
-		text = "The_Government_of_National_Defense_Democratic_National_Conservative_TXT"
-		desc = "The_Government_of_National_Defense_Democratic_National_Conservative_TXT_DESC"
-		allow_achievements = yes
-	}
-}
-
-The_Government_of_National_Defense_Military = {#Permanent State of Emergency 永久紧急状态
-	name = "The_Government_of_National_Defense_Military"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "The_Government_of_National_Defense_Military_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Government_of_National_Defense_Military_Villiers
-		text = "The_Government_of_National_Defense_Military_Villiers_TXT"
-		desc = "The_Government_of_National_Defense_Military_Villiers_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Government_of_National_Defense_Military_Madoux
-		text = "The_Government_of_National_Defense_Military_Madoux_TXT"
-		desc = "The_Government_of_National_Defense_Military_Madoux_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Government_of_National_Defense_Military_Lecointre
-		text = "The_Government_of_National_Defense_Military_Lecointre_TXT"
-		desc = "The_Government_of_National_Defense_Military_Lecointre_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Government_of_National_Defense_Military_Bosser
-		text = "The_Government_of_National_Defense_Military_Bosser_TXT"
-		desc = "The_Government_of_National_Defense_Military_Bosser_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Government_of_National_Defense_Military_Chesnais
-		text = "The_Government_of_National_Defense_Military_Chesnais_TXT"
-		desc = "The_Government_of_National_Defense_Military_Chesnais_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Government_of_National_Defense_Military_Lafayette
-		text = "The_Government_of_National_Defense_Military_Lafayette_TXT"
-		desc = "The_Government_of_National_Defense_Military_Lafayette_TXT_DESC"
-		allow_achievements = yes
-	}
-}
-
-The_Government_of_National_Defense_Fascist = {#National Revival 民族复兴
-	name = "The_Government_of_National_Defense_Fascist"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "The_Government_of_National_Defense_Fascist_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Government_of_National_Defense_Fascist_Benedetti
-		text = "The_Government_of_National_Defense_Fascist_Benedetti_TXT"
-		desc = "The_Government_of_National_Defense_Fascist_Benedetti_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Government_of_National_Defense_Fascist_Christophe
-		text = "The_Government_of_National_Defense_Fascist_Christophe_TXT"
-		desc = "The_Government_of_National_Defense_Fascist_Christophe_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Government_of_National_Defense_Fascist_Bardella
-		text = "The_Government_of_National_Defense_Fascist_Bardella_TXT"
-		desc = "The_Government_of_National_Defense_Fascist_Bardella_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Government_of_National_Defense_Fascist_Camus
-		text = "The_Government_of_National_Defense_Fascist_Camus_TXT"
-		desc = "The_Government_of_National_Defense_Fascist_Camus_TXT_DESC"
-		allow_achievements = yes
-	}
-}
-
-GER_ai_behavior = {#Federal Republic of Germany 2021 Election 德意志联邦共和国2021年大选
-	name = "GER_ai_behavior"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "RULE_OPTION_DEFAULT_AI_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = CDU_AI_BEHAVIOR
-		text = "CDU_AI_BEHAVIOR_TXT"
-		desc = "CDU_AI_BEHAVIOR_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = FDP_AI_BEHAVIOR
-		text = "FDP_AI_BEHAVIOR_TXT"
-		desc = "FDP_AI_BEHAVIOR_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = AFD_AI_BEHAVIOR
-		text = "AFD_AI_BEHAVIOR_TXT"
-		desc = "AFD_AI_BEHAVIOR_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = GREENS_AI_BEHAVIOR
-		text = "GREENS_AI_BEHAVIOR_TXT"
-		desc = "GREENS_AI_BEHAVIOR_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = SPD_AI_BEHAVIOR
-		text = "SPD_AI_BEHAVIOR_TXT"
-		desc = "SPD_AI_BEHAVIOR_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = LEFT_AI_BEHAVIOR
-		text = "LEFT_AI_BEHAVIOR_TXT"
-		desc = "LEFT_AI_BEHAVIOR_TXT_DESC"
-		allow_achievements = yes
-	}
-}
-
-The_GER_extremist_soldiers = {#Extremist Soldiers 极端派士兵
-	name = "The_GER_extremist_soldiers"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "RULE_OPTION_DEFAULT_AI_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_GER_extremist_soldiers_1
-		text = "The_GER_extremist_soldiers_1_TXT"
-		desc = "The_GER_extremist_soldiers_1_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_GER_extremist_soldiers_2
-		text = "The_GER_extremist_soldiers_2_TXT"
-		desc = "The_GER_extremist_soldiers_2_TXT_DESC"
-		allow_achievements = yes
-	}
-}
-
-The_GER_Radelsfuhrer_Mask = {#Mask 面具
-	name = "The_GER_Radelsfuhrer_Mask"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "The_GER_Radelsfuhrer_Mask_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_GER_Radelsfuhrer_Mask_1
-		text = "The_GER_Radelsfuhrer_Mask_1_TXT"
-		desc = "The_GER_Radelsfuhrer_Mask_1_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_GER_Radelsfuhrer_Mask_2
-		text = "The_GER_Radelsfuhrer_Mask_2_TXT"
-		desc = "The_GER_Radelsfuhrer_Mask_2_TXT_DESC"
-		allow_achievements = yes
-	}
-}
-
-The_GER_Militarism_and_Monarchism = {#What defines Germany as a nation? 何为德国之本？
-	name = "The_GER_Militarism_and_Monarchism"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "The_GER_Militarism_and_Monarchism_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_GER_Militarism_and_Monarchism_Militarism
-		text = "The_GER_Militarism_and_Monarchism_Militarism_TXT"
-		desc = "The_GER_Militarism_and_Monarchism_Militarism_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_GER_Militarism_and_Monarchism_Monarchism
-		text = "The_GER_Militarism_and_Monarchism_Monarchism_TXT"
-		desc = "The_GER_Militarism_and_Monarchism_Monarchism_TXT_DESC"
-		allow_achievements = yes
-	}
-}
-
-The_GER_Battle_for_Future = {#Battle for Future 为未来而战
-	name = "The_GER_Battle_for_Future"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "The_GER_Battle_for_Future_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_GER_Battle_for_Future_NPD
-		text = "The_GER_Battle_for_Future_NPD_TXT"
-		desc = "The_GER_Battle_for_Future_NPD_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_GER_Battle_for_Future_Third_Way
-		text = "The_GER_Battle_for_Future_Third_Way_TXT"
-		desc = "The_GER_Battle_for_Future_Third_Way_TXT_DESC"
-		allow_achievements = yes
-	}
-}
-
-The_GER_What_We_Truly_Think = {#What We Truly Think 我们的真正所想
-	name = "The_GER_What_We_Truly_Think"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "The_GER_What_We_Truly_Think_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_GER_What_We_Truly_Think_Sieg_Hail
-		text = "The_GER_What_We_Truly_Think_Sieg_Hail_TXT"
-		desc = "The_GER_What_We_Truly_Think_Sieg_Hail_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_GER_What_We_Truly_Think_Window_Dressing
-		text = "The_GER_What_We_Truly_Think_Window_Dressing_TXT"
-		desc = "The_GER_What_We_Truly_Think_Window_Dressing_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_GER_What_We_Truly_Think_Assemble_Reichsrat
-		text = "The_GER_What_We_Truly_Think_Assemble_Reichsrat_TXT"
-		desc = "The_GER_What_We_Truly_Think_Assemble_Reichsrat_TXT_DESC"
-		allow_achievements = yes
-	}
-}
-
-The_GER_Genuine_Conspiracy_Theories = {#Genuine Conspiracy Theories 真实阴谋论
-	name = "The_GER_Genuine_Conspiracy_Theories"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "The_GER_Genuine_Conspiracy_Theories_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_GER_Genuine_Conspiracy_Theories_Just_a_conspiracy_theory
-		text = "The_GER_Genuine_Conspiracy_Theories_Just_a_conspiracy_theory_TXT"
-		desc = "The_GER_Genuine_Conspiracy_Theories_Just_a_conspiracy_theory_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_GER_Genuine_Conspiracy_Theories_Gunther_Fehlinger
-		text = "The_GER_Genuine_Conspiracy_Theories_Gunther_Fehlinger_TXT"
-		desc = "The_GER_Genuine_Conspiracy_Theories_Gunther_Fehlinger_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_GER_Genuine_Conspiracy_Theories_Klaus_Schwab
-		text = "The_GER_Genuine_Conspiracy_Theories_Klaus_Schwab_TXT"
-		desc = "The_GER_Genuine_Conspiracy_Theories_Klaus_Schwab_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_GER_Genuine_Conspiracy_Theories_Corporatocracy
-		text = "The_GER_Genuine_Conspiracy_Theories_Corporatocracy_TXT"
-		desc = "The_GER_Genuine_Conspiracy_Theories_Corporatocracy_TXT_DESC"
-		allow_achievements = yes
-	}
-}
-
-The_GER_Catharsis = {#Ugly Old World 丑陋旧世界
-	name = "The_GER_Catharsis"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "The_GER_Catharsis_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_GER_Catharsis_Win
-		text = "The_GER_Catharsis_Win_TXT"
-		desc = "The_GER_Catharsis_Win_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_GER_Catharsis_Tame
-		text = "The_GER_Catharsis_Tame_TXT"
-		desc = "The_GER_Catharsis_Tame_TXT_DESC"
-		allow_achievements = yes
-	}
-}
-
-The_GER_Gunther_Fehlinger_World = {#Democracy's Long Whip 民主长鞭
-	name = "The_GER_Gunther_Fehlinger_World"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "The_GER_Gunther_Fehlinger_World_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_GER_Gunther_Fehlinger_World_Africa
-		text = "The_GER_Gunther_Fehlinger_World_Africa_TXT"
-		desc = "The_GER_Gunther_Fehlinger_World_Africa_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_GER_Gunther_Fehlinger_World_FUCK_China
-		text = "The_GER_Gunther_Fehlinger_World_FUCK_China_TXT"
-		desc = "The_GER_Gunther_Fehlinger_World_FUCK_China_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_GER_Gunther_Fehlinger_World_Suck_Japan
-		text = "The_GER_Gunther_Fehlinger_World_Suck_Japan_TXT"
-		desc = "The_GER_Gunther_Fehlinger_World_Suck_Japan_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_GER_Gunther_Fehlinger_World_Peace
-		text = "The_GER_Gunther_Fehlinger_World_Peace_TXT"
-		desc = "The_GER_Gunther_Fehlinger_World_Peace_TXT_DESC"
-		allow_achievements = yes
-	}
-}
-
-The_GER_Socialist_Revolution = {# Future of Socialist Revolution 社会主义革命未来
-	name = "The_GER_Socialist_Revolution"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "The_GER_Socialist_Revolution_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_GER_Socialist_Revolution_DDR_restoration
-		text = "The_GER_Socialist_Revolution_DDR_restoration_TXT"
-		desc = "The_GER_Socialist_Revolution_DDR_restoration_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_GER_Socialist_Revolution_Socialist_Federation
-		text = "The_GER_Socialist_Revolution_Socialist_Federation_TXT"
-		desc = "The_GER_Socialist_Revolution_Socialist_Federation_TXT_DESC"
-		allow_achievements = yes
-	}
-}
-
-The_GER_Socialist_Diplomacy = {# Diplomacy of Socialist Revolution 社会主义外交政策
-	name = "The_GER_Socialist_Diplomacy"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "The_GER_Socialist_Diplomacy_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_GER_Socialist_Diplomacy_Eurointern_Expansion
-		text = "The_GER_Socialist_Diplomacy_Eurointern_Expansion_TXT"
-		desc = "The_GER_Socialist_Diplomacy_Eurointern_Expansion_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_GER_Socialist_Diplomacy_buff_NVA
-		text = "The_GER_Socialist_Diplomacy_buff_NVA_TXT"
-		desc = "The_GER_Socialist_Diplomacy_buff_NVA_TXT_DESC"
-		allow_achievements = yes
-	}
-}
-
-The_GER_Socialist_Election = {# Election of Socialist Revolution 社会主义选举
-	name = "The_GER_Socialist_Election"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "The_GER_Socialist_Election_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_GER_Socialist_Election_PDS
-		text = "The_GER_Socialist_Election_PDS_TXT"
-		desc = "The_GER_Socialist_Election_PDS_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_GER_Socialist_Election_SAPD
-		text = "The_GER_Socialist_Election_SAPD_TXT"
-		desc = "The_GER_Socialist_Election_SAPD_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_GER_Socialist_Election_USPD
-		text = "The_GER_Socialist_Election_USPD_TXT"
-		desc = "The_GER_Socialist_Election_USPD_TXT_DESC"
-		allow_achievements = yes
-	}
-}
-
-The_Italy_Turn_Right = {#Italy Turn Right 意大利右转
-	name = "The_Italy_Turn_Right"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "The_Italy_Turn_Right_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Italy_Turn_Right_CasaPound
-		text = "The_Italy_Turn_Right_CasaPound_TXT"
-		desc = "The_Italy_Turn_Right_CasaPound_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Italy_Turn_Right_Forza_Nuova
-		text = "The_Italy_Turn_Right_Forza_Nuova_TXT"
-		desc = "The_Italy_Turn_Right_Forza_Nuova_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Italy_Turn_Right_Latinists
-		text = "The_Italy_Turn_Right_Latinists_TXT"
-		desc = "The_Italy_Turn_Right_Latinists_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Italy_Turn_Right_Accelerationists
-		text = "The_Italy_Turn_Right_Accelerationists_TXT"
-		desc = "The_Italy_Turn_Right_Accelerationists_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Italy_Turn_Right_nazi_maoism
-		text = "The_Italy_Turn_Right_nazi_maoism_TXT"
-		desc = "The_Italy_Turn_Right_nazi_maoism_TXT_DESC"
-		allow_achievements = yes
-	}
-}
-
-The_Italy_Turn_Left = {#Italy Turn Left 意大利左转
-	name = "The_Italy_Turn_Left"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "The_Italy_Turn_Left_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Italy_Turn_Left_Socialists
-		text = "The_Italy_Turn_Left_Socialists_TXT"
-		desc = "The_Italy_Turn_Left_Socialists_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Italy_Turn_Left_Communists
-		text = "The_Italy_Turn_Left_Communists_TXT"
-		desc = "The_Italy_Turn_Left_Communists_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Italy_Turn_Left_Maoists
-		text = "The_Italy_Turn_Left_Maoists_TXT"
-		desc = "The_Italy_Turn_Left_Maoists_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Italy_Turn_Left_nazi_maoism
-		text = "The_Italy_Turn_Left_nazi_maoism_TXT"
-		desc = "The_Italy_Turn_Left_nazi_maoism_TXT_DESC"
 		allow_achievements = yes
 	}
 }
@@ -3448,6 +2849,609 @@ The_2023_Turkish_Elections = {#2023 Turkish Elections 土耳其2023年大选
 	}
 }
 
+TFRNS_Dummy_Europe_Post_First_War_Defeat_Medvedv = {
+	name = "TFRNS_Dummy_Europe_Post_First_War_Defeat_Medvedv"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	icon = GFX_decision_generic_flag
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Dummy_Europe_Post_First_War_Defeat_Medvedv_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Dummy_Europe_Post_First_War_Defeat_Medvedv_HEADER
+		text = "TFRNS_Dummy_Europe_Post_First_War_Defeat_Medvedv_HEADER_TXT"
+		desc = "TFRNS_Dummy_Europe_Post_First_War_Defeat_Medvedv_HEADER_DESC"
+		allow_achievements = yes
+	}
+}
+
+The_GER_Genuine_Conspiracy_Theories = {#Genuine Conspiracy Theories 真实阴谋论
+	name = "The_GER_Genuine_Conspiracy_Theories"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "The_GER_Genuine_Conspiracy_Theories_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_GER_Genuine_Conspiracy_Theories_Just_a_conspiracy_theory
+		text = "The_GER_Genuine_Conspiracy_Theories_Just_a_conspiracy_theory_TXT"
+		desc = "The_GER_Genuine_Conspiracy_Theories_Just_a_conspiracy_theory_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_GER_Genuine_Conspiracy_Theories_Gunther_Fehlinger
+		text = "The_GER_Genuine_Conspiracy_Theories_Gunther_Fehlinger_TXT"
+		desc = "The_GER_Genuine_Conspiracy_Theories_Gunther_Fehlinger_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_GER_Genuine_Conspiracy_Theories_Klaus_Schwab
+		text = "The_GER_Genuine_Conspiracy_Theories_Klaus_Schwab_TXT"
+		desc = "The_GER_Genuine_Conspiracy_Theories_Klaus_Schwab_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_GER_Genuine_Conspiracy_Theories_Corporatocracy
+		text = "The_GER_Genuine_Conspiracy_Theories_Corporatocracy_TXT"
+		desc = "The_GER_Genuine_Conspiracy_Theories_Corporatocracy_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+
+The_GER_Catharsis = {#Ugly Old World 丑陋旧世界
+	name = "The_GER_Catharsis"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "The_GER_Catharsis_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_GER_Catharsis_Win
+		text = "The_GER_Catharsis_Win_TXT"
+		desc = "The_GER_Catharsis_Win_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_GER_Catharsis_Tame
+		text = "The_GER_Catharsis_Tame_TXT"
+		desc = "The_GER_Catharsis_Tame_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+
+The_GER_Gunther_Fehlinger_World = {#Democracy's Long Whip 民主长鞭
+	name = "The_GER_Gunther_Fehlinger_World"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "The_GER_Gunther_Fehlinger_World_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_GER_Gunther_Fehlinger_World_Africa
+		text = "The_GER_Gunther_Fehlinger_World_Africa_TXT"
+		desc = "The_GER_Gunther_Fehlinger_World_Africa_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_GER_Gunther_Fehlinger_World_FUCK_China
+		text = "The_GER_Gunther_Fehlinger_World_FUCK_China_TXT"
+		desc = "The_GER_Gunther_Fehlinger_World_FUCK_China_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_GER_Gunther_Fehlinger_World_Suck_Japan
+		text = "The_GER_Gunther_Fehlinger_World_Suck_Japan_TXT"
+		desc = "The_GER_Gunther_Fehlinger_World_Suck_Japan_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_GER_Gunther_Fehlinger_World_Peace
+		text = "The_GER_Gunther_Fehlinger_World_Peace_TXT"
+		desc = "The_GER_Gunther_Fehlinger_World_Peace_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+
+TFRNS_Dummy_Europe_Post_First_War_Defeat_CPRF = {
+	name = "TFRNS_Dummy_Europe_Post_First_War_Defeat_CPRF"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	icon = GFX_decision_generic_flag
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Dummy_Europe_Post_First_War_Defeat_CPRF_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Dummy_Europe_Post_First_War_Defeat_CPRF_HEADER
+		text = "TFRNS_Dummy_Europe_Post_First_War_Defeat_CPRF_HEADER_TXT"
+		desc = "TFRNS_Dummy_Europe_Post_First_War_Defeat_CPRF_HEADER_DESC"
+		allow_achievements = yes
+	}
+}
+
+The_Government_of_National_Defense_Path = {#Government of National Defense Path 国防政府路线
+	name = "The_Government_of_National_Defense_Path"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "The_Government_of_National_Defense_Path_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Government_of_National_Defense_Path_Democratic
+		text = "The_Government_of_National_Defense_Path_Democratic_TXT"
+		desc = "The_Government_of_National_Defense_Path_Democratic_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Government_of_National_Defense_Path_Military
+		text = "The_Government_of_National_Defense_Path_Military_TXT"
+		desc = "The_Government_of_National_Defense_Path_Military_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Government_of_National_Defense_Path_Monarchist
+		text = "The_Government_of_National_Defense_Path_Monarchist_TXT"
+		desc = "The_Government_of_National_Defense_Path_Monarchist_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Government_of_National_Defense_Path_Fascist
+		text = "The_Government_of_National_Defense_Path_Fascist_TXT"
+		desc = "The_Government_of_National_Defense_Path_Fascist_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+
+The_Government_of_National_Defense_Democratic = {#Freedom, Conservatism, Patriotism 自由，保守，爱国
+	name = "The_Government_of_National_Defense_Democratic"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "The_Government_of_National_Defense_Democratic_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Government_of_National_Defense_Democratic_Democratic_Movement
+		text = "The_Government_of_National_Defense_Democratic_Democratic_Movement_TXT"
+		desc = "The_Government_of_National_Defense_Democratic_Democratic_Movement_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Government_of_National_Defense_Democratic_Republicain
+		text = "The_Government_of_National_Defense_Democratic_Republicain_TXT"
+		desc = "The_Government_of_National_Defense_Democratic_Republicain_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Government_of_National_Defense_Democratic_National_Conservative
+		text = "The_Government_of_National_Defense_Democratic_National_Conservative_TXT"
+		desc = "The_Government_of_National_Defense_Democratic_National_Conservative_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+
+The_Government_of_National_Defense_Military = {#Permanent State of Emergency 永久紧急状态
+	name = "The_Government_of_National_Defense_Military"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "The_Government_of_National_Defense_Military_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Government_of_National_Defense_Military_Villiers
+		text = "The_Government_of_National_Defense_Military_Villiers_TXT"
+		desc = "The_Government_of_National_Defense_Military_Villiers_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Government_of_National_Defense_Military_Madoux
+		text = "The_Government_of_National_Defense_Military_Madoux_TXT"
+		desc = "The_Government_of_National_Defense_Military_Madoux_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Government_of_National_Defense_Military_Lecointre
+		text = "The_Government_of_National_Defense_Military_Lecointre_TXT"
+		desc = "The_Government_of_National_Defense_Military_Lecointre_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Government_of_National_Defense_Military_Bosser
+		text = "The_Government_of_National_Defense_Military_Bosser_TXT"
+		desc = "The_Government_of_National_Defense_Military_Bosser_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Government_of_National_Defense_Military_Chesnais
+		text = "The_Government_of_National_Defense_Military_Chesnais_TXT"
+		desc = "The_Government_of_National_Defense_Military_Chesnais_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Government_of_National_Defense_Military_Lafayette
+		text = "The_Government_of_National_Defense_Military_Lafayette_TXT"
+		desc = "The_Government_of_National_Defense_Military_Lafayette_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+
+The_Government_of_National_Defense_Fascist = {#National Revival 民族复兴
+	name = "The_Government_of_National_Defense_Fascist"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "The_Government_of_National_Defense_Fascist_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Government_of_National_Defense_Fascist_Benedetti
+		text = "The_Government_of_National_Defense_Fascist_Benedetti_TXT"
+		desc = "The_Government_of_National_Defense_Fascist_Benedetti_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Government_of_National_Defense_Fascist_Christophe
+		text = "The_Government_of_National_Defense_Fascist_Christophe_TXT"
+		desc = "The_Government_of_National_Defense_Fascist_Christophe_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Government_of_National_Defense_Fascist_Bardella
+		text = "The_Government_of_National_Defense_Fascist_Bardella_TXT"
+		desc = "The_Government_of_National_Defense_Fascist_Bardella_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Government_of_National_Defense_Fascist_Camus
+		text = "The_Government_of_National_Defense_Fascist_Camus_TXT"
+		desc = "The_Government_of_National_Defense_Fascist_Camus_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+
+The_GER_Radelsfuhrer_Mask = {#Mask 面具
+	name = "The_GER_Radelsfuhrer_Mask"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "The_GER_Radelsfuhrer_Mask_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_GER_Radelsfuhrer_Mask_1
+		text = "The_GER_Radelsfuhrer_Mask_1_TXT"
+		desc = "The_GER_Radelsfuhrer_Mask_1_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_GER_Radelsfuhrer_Mask_2
+		text = "The_GER_Radelsfuhrer_Mask_2_TXT"
+		desc = "The_GER_Radelsfuhrer_Mask_2_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+
+The_GER_Militarism_and_Monarchism = {#What defines Germany as a nation? 何为德国之本？
+	name = "The_GER_Militarism_and_Monarchism"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "The_GER_Militarism_and_Monarchism_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_GER_Militarism_and_Monarchism_Militarism
+		text = "The_GER_Militarism_and_Monarchism_Militarism_TXT"
+		desc = "The_GER_Militarism_and_Monarchism_Militarism_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_GER_Militarism_and_Monarchism_Monarchism
+		text = "The_GER_Militarism_and_Monarchism_Monarchism_TXT"
+		desc = "The_GER_Militarism_and_Monarchism_Monarchism_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+
+The_GER_Battle_for_Future = {#Battle for Future 为未来而战
+	name = "The_GER_Battle_for_Future"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "The_GER_Battle_for_Future_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_GER_Battle_for_Future_NPD
+		text = "The_GER_Battle_for_Future_NPD_TXT"
+		desc = "The_GER_Battle_for_Future_NPD_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_GER_Battle_for_Future_Third_Way
+		text = "The_GER_Battle_for_Future_Third_Way_TXT"
+		desc = "The_GER_Battle_for_Future_Third_Way_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+
+The_GER_What_We_Truly_Think = {#What We Truly Think 我们的真正所想
+	name = "The_GER_What_We_Truly_Think"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "The_GER_What_We_Truly_Think_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_GER_What_We_Truly_Think_Sieg_Hail
+		text = "The_GER_What_We_Truly_Think_Sieg_Hail_TXT"
+		desc = "The_GER_What_We_Truly_Think_Sieg_Hail_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_GER_What_We_Truly_Think_Window_Dressing
+		text = "The_GER_What_We_Truly_Think_Window_Dressing_TXT"
+		desc = "The_GER_What_We_Truly_Think_Window_Dressing_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_GER_What_We_Truly_Think_Assemble_Reichsrat
+		text = "The_GER_What_We_Truly_Think_Assemble_Reichsrat_TXT"
+		desc = "The_GER_What_We_Truly_Think_Assemble_Reichsrat_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+
+The_Italy_Turn_Right = {#Italy Turn Right 意大利右转
+	name = "The_Italy_Turn_Right"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "The_Italy_Turn_Right_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Italy_Turn_Right_CasaPound
+		text = "The_Italy_Turn_Right_CasaPound_TXT"
+		desc = "The_Italy_Turn_Right_CasaPound_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Italy_Turn_Right_Forza_Nuova
+		text = "The_Italy_Turn_Right_Forza_Nuova_TXT"
+		desc = "The_Italy_Turn_Right_Forza_Nuova_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Italy_Turn_Right_Latinists
+		text = "The_Italy_Turn_Right_Latinists_TXT"
+		desc = "The_Italy_Turn_Right_Latinists_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Italy_Turn_Right_Accelerationists
+		text = "The_Italy_Turn_Right_Accelerationists_TXT"
+		desc = "The_Italy_Turn_Right_Accelerationists_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Italy_Turn_Right_nazi_maoism
+		text = "The_Italy_Turn_Right_nazi_maoism_TXT"
+		desc = "The_Italy_Turn_Right_nazi_maoism_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+
+TFRNS_Dummy_Europe_Post_First_War_Defeat_LDPR = {
+	name = "TFRNS_Dummy_Europe_Post_First_War_Defeat_LDPR"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	icon = GFX_decision_generic_flag
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Dummy_Europe_Post_First_War_Defeat_LDPR_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Dummy_Europe_Post_First_War_Defeat_LDPR_HEADER
+		text = "TFRNS_Dummy_Europe_Post_First_War_Defeat_LDPR_HEADER_TXT"
+		desc = "TFRNS_Dummy_Europe_Post_First_War_Defeat_LDPR_HEADER_DESC"
+		allow_achievements = yes
+	}
+}
+
+The_French_Socialist_Republic_Path = {#French Socialist Republic Path 法兰西社会主义共和国路线
+	name = "The_French_Socialist_Republic_Path"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "The_French_Socialist_Republic_Path_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_French_Socialist_Republic_Path_1
+		text = "The_French_Socialist_Republic_Path_1_TXT"
+		desc = "The_French_Socialist_Republic_Path_1_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_French_Socialist_Republic_Path_2
+		text = "The_French_Socialist_Republic_Path_2_TXT"
+		desc = "The_French_Socialist_Republic_Path_2_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_French_Socialist_Republic_Path_3
+		text = "The_French_Socialist_Republic_Path_3_TXT"
+		desc = "The_French_Socialist_Republic_Path_3_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_French_Socialist_Republic_Path_melenchon
+		text = "The_French_Socialist_Republic_Path_melenchon_TXT"
+		desc = "The_French_Socialist_Republic_Path_melenchon_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_French_Socialist_Republic_Path_Didier_Daeninckx
+		text = "The_French_Socialist_Republic_Path_Didier_Daeninckx_TXT"
+		desc = "The_French_Socialist_Republic_Path_Didier_Daeninckx_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+
+The_GER_Socialist_Revolution = {# Future of Socialist Revolution 社会主义革命未来
+	name = "The_GER_Socialist_Revolution"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "The_GER_Socialist_Revolution_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_GER_Socialist_Revolution_DDR_restoration
+		text = "The_GER_Socialist_Revolution_DDR_restoration_TXT"
+		desc = "The_GER_Socialist_Revolution_DDR_restoration_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_GER_Socialist_Revolution_Socialist_Federation
+		text = "The_GER_Socialist_Revolution_Socialist_Federation_TXT"
+		desc = "The_GER_Socialist_Revolution_Socialist_Federation_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+
+The_GER_Socialist_Diplomacy = {# Diplomacy of Socialist Revolution 社会主义外交政策
+	name = "The_GER_Socialist_Diplomacy"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "The_GER_Socialist_Diplomacy_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_GER_Socialist_Diplomacy_Eurointern_Expansion
+		text = "The_GER_Socialist_Diplomacy_Eurointern_Expansion_TXT"
+		desc = "The_GER_Socialist_Diplomacy_Eurointern_Expansion_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_GER_Socialist_Diplomacy_buff_NVA
+		text = "The_GER_Socialist_Diplomacy_buff_NVA_TXT"
+		desc = "The_GER_Socialist_Diplomacy_buff_NVA_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+
+The_GER_Socialist_Election = {# Election of Socialist Revolution 社会主义选举
+	name = "The_GER_Socialist_Election"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "The_GER_Socialist_Election_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_GER_Socialist_Election_PDS
+		text = "The_GER_Socialist_Election_PDS_TXT"
+		desc = "The_GER_Socialist_Election_PDS_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_GER_Socialist_Election_SAPD
+		text = "The_GER_Socialist_Election_SAPD_TXT"
+		desc = "The_GER_Socialist_Election_SAPD_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_GER_Socialist_Election_USPD
+		text = "The_GER_Socialist_Election_USPD_TXT"
+		desc = "The_GER_Socialist_Election_USPD_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+
+The_Italy_Turn_Left = {#Italy Turn Left 意大利左转
+	name = "The_Italy_Turn_Left"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "The_Italy_Turn_Left_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Italy_Turn_Left_Socialists
+		text = "The_Italy_Turn_Left_Socialists_TXT"
+		desc = "The_Italy_Turn_Left_Socialists_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Italy_Turn_Left_Communists
+		text = "The_Italy_Turn_Left_Communists_TXT"
+		desc = "The_Italy_Turn_Left_Communists_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Italy_Turn_Left_Maoists
+		text = "The_Italy_Turn_Left_Maoists_TXT"
+		desc = "The_Italy_Turn_Left_Maoists_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Italy_Turn_Left_nazi_maoism
+		text = "The_Italy_Turn_Left_nazi_maoism_TXT"
+		desc = "The_Italy_Turn_Left_nazi_maoism_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+
 NATO_ai_behavior = {#European War Outcome 欧陆战争结局
 	name = "NATO_AI_BEHAVIOR"
 	required_dlc = "Waking the Tiger"
@@ -3539,114 +3543,6 @@ TFRNS_Dummy_Russia_Pre_Emergency_Election = {
 		allow_achievements = yes
 	}
 }
-TFRNS_Dummy_Russia_Post_First_War_Victory_Medvedv = {
-	name = "TFRNS_Dummy_Russia_Post_First_War_Victory_Medvedv"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE_SOV"
-	icon = GFX_decision_generic_flag
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "TFRNS_Dummy_Russia_Post_First_War_Victory_Medvedv_DEFAULT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = TFRNS_Dummy_Russia_Post_First_War_Victory_Medvedv_HEADER
-		text = "TFRNS_Dummy_Russia_Post_First_War_Victory_Medvedv_HEADER_TXT"
-		desc = "TFRNS_Dummy_Russia_Post_First_War_Victory_Medvedv_HEADER_DESC"
-		allow_achievements = yes
-	}
-}
-TFRNS_Dummy_Russia_Post_First_War_Victory_CPRF = {
-	name = "TFRNS_Dummy_Russia_Post_First_War_Victory_CPRF"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE_SOV"
-	icon = GFX_decision_generic_flag
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "TFRNS_Dummy_Russia_Post_First_War_Victory_CPRF_DEFAULT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = TFRNS_Dummy_Russia_Post_First_War_Victory_CPRF_HEADER
-		text = "TFRNS_Dummy_Russia_Post_First_War_Victory_CPRF_HEADER_TXT"
-		desc = "TFRNS_Dummy_Russia_Post_First_War_Victory_CPRF_HEADER_DESC"
-		allow_achievements = yes
-	}
-}
-TFRNS_Dummy_Russia_Post_First_War_Victory_LDPR = {
-	name = "TFRNS_Dummy_Russia_Post_First_War_Victory_LDPR"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE_SOV"
-	icon = GFX_decision_generic_flag
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "TFRNS_Dummy_Russia_Post_First_War_Victory_LDPR_DEFAULT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = TFRNS_Dummy_Russia_Post_First_War_Victory_LDPR_HEADER
-		text = "TFRNS_Dummy_Russia_Post_First_War_Victory_LDPR_HEADER_TXT"
-		desc = "TFRNS_Dummy_Russia_Post_First_War_Victory_LDPR_HEADER_DESC"
-		allow_achievements = yes
-	}
-}
-TFRNS_Dummy_Russia_Post_First_War_Defeat_Navalny = {
-	name = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Navalny"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE_SOV"
-	icon = GFX_decision_generic_flag
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Navalny_DEFAULT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = TFRNS_Dummy_Russia_Post_First_War_Defeat_Navalny_HEADER
-		text = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Navalny_HEADER_TXT"
-		desc = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Navalny_HEADER_DESC"
-		allow_achievements = yes
-	}
-}
-TFRNS_Dummy_Russia_Post_First_War_Defeat_Dugin = {
-	name = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Dugin"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE_SOV"
-	icon = GFX_decision_generic_flag
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Dugin_DEFAULT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = TFRNS_Dummy_Russia_Post_First_War_Defeat_Dugin_HEADER
-		text = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Dugin_HEADER_TXT"
-		desc = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Dugin_HEADER_DESC"
-		allow_achievements = yes
-	}
-}
-TFRNS_Dummy_Russia_Post_First_War_Defeat_Wagner = {
-	name = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Wagner"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE_SOV"
-	icon = GFX_decision_generic_flag
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Wagner_DEFAULT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = TFRNS_Dummy_Russia_Post_First_War_Defeat_Wagner_HEADER
-		text = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Wagner_HEADER_TXT"
-		desc = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Wagner_HEADER_DESC"
-		allow_achievements = yes
-	}
-}
 
 The_Move_Against_the_Fifth_Column = {#Move Against the Fifth Column 清洗第五纵队
 	name = "The_Move_Against_the_Fifth_Column"
@@ -3731,6 +3627,228 @@ SOV_ai_behavior = {#Russian Federation Early Election 俄罗斯联邦提前大�
 		name = LDPR
 		text = "RULE_OPTION_LDPR"
 		desc = "RULE_OPTION_LDPR_DESC"
+		allow_achievements = yes
+	}
+}
+
+TFRNS_Dummy_Russia_Post_First_War_Victory_Medvedv = {
+	name = "TFRNS_Dummy_Russia_Post_First_War_Victory_Medvedv"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE_SOV"
+	icon = GFX_decision_generic_flag
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Dummy_Russia_Post_First_War_Victory_Medvedv_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Dummy_Russia_Post_First_War_Victory_Medvedv_HEADER
+		text = "TFRNS_Dummy_Russia_Post_First_War_Victory_Medvedv_HEADER_TXT"
+		desc = "TFRNS_Dummy_Russia_Post_First_War_Victory_Medvedv_HEADER_DESC"
+		allow_achievements = yes
+	}
+}
+
+UR_Duality = {
+	name = "UR_Duality"
+	group = "RULE_GROUP_EUROPE_SOV"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "UR_Duality_TXT"
+	}
+	option = {
+		name = UR_Duality_Reform
+		text = "UR_Duality_Reform_TXT"
+		desc = "UR_Duality_Reform_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = UR_Duality_Hardliner
+		text = "UR_Duality_Hardliner_TXT"
+		desc = "UR_Duality_Hardliner_DESC"
+		allow_achievements = yes
+	}
+}
+
+Reformist_UR_Elections = {
+	name = "Reformist_UR_Elections"
+	group = "RULE_GROUP_EUROPE_SOV"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "Reformist_UR_Elections_TXT"
+	}
+	option = {
+		name = Lukashenko_UR
+		text = "Lukashenko_UR_TXT"
+		desc = "Lukashenko_UR_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Platoshkin
+		text = "Platoshkin_TXT"
+		desc = "Platoshkin_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Prilepin
+		text = "Prilepin_TXT"
+		desc = "Platoshkin_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Konovalov
+		text = "Konovalov_TXT"
+		desc = "Konovalov_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Grudinin
+		text = "Grudinin_TXT"
+		desc = "Grudinin_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Delyagin
+		text = "Delyagin_TXT"
+		desc = "Delyagin_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Davankov
+		text = "Davankov_TXT"
+		desc = "Davankov_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Patrushev
+		text = "Patrushev_TXT"
+		desc = "Patrushev_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Sobyanin
+		text = "Sobyanin_TXT"
+		desc = "Sobyanin_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Mishustin
+		text = "Mishustin_TXT"
+		desc = "Mishustin_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Belousov
+		text = "Belousov_TXT"
+		desc = "Belousov_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Volodin
+		text = "Volodin_TXT"
+		desc = "Volodin_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Shoygu
+		text = "Shoygu_TXT"
+		desc = "Shoygu_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Naryshkin
+		text = "Naryshkin_TXT"
+		desc = "Naryshkin_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Alikhanov
+		text = "Alikhanov_TXT"
+		desc = "Alikhanov_DESC"
+		allow_achievements = yes
+	}
+}
+
+Medvedev_Successor = {
+	name = "Medvedev_Successor"
+	group = "RULE_GROUP_EUROPE_SOV"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "Medvedev_Successor_TXT"
+	}
+	option = {
+		name = Medvedev_Stays
+		text = "Medvedev_Stays_TXT"
+		desc = "Medvedev_Stays_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Lukashenko_Successor
+		text = "Lukashenko_Successor_TXT"
+		desc = "Lukashenko_Successor_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Surkov
+		text = "Surkov_TXT"
+		desc = "Surkov_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Nadezhdin
+		text = "Nadezhdin_TXT"
+		desc = "Nadezhdin_DESC"
+		allow_achievements = yes
+	}
+}
+
+Operation_Heir = {
+	name = "Operation_Heir"
+	group = "RULE_GROUP_EUROPE_SOV"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "Operation_Heir_TXT"
+	}
+	option = {
+		name = Besedina
+		text = "Besedina_TXT"
+		desc = "Besedina_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Kisiev
+		text = "Kisiev_TXT"
+		desc = "Kisiev_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Katz
+		text = "Katz_TXT"
+		desc = "Katz_DESC"
+		allow_achievements = yes
+	}
+}
+
+TFRNS_Dummy_Russia_Post_First_War_Victory_CPRF = {
+	name = "TFRNS_Dummy_Russia_Post_First_War_Victory_CPRF"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE_SOV"
+	icon = GFX_decision_generic_flag
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Dummy_Russia_Post_First_War_Victory_CPRF_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Dummy_Russia_Post_First_War_Victory_CPRF_HEADER
+		text = "TFRNS_Dummy_Russia_Post_First_War_Victory_CPRF_HEADER_TXT"
+		desc = "TFRNS_Dummy_Russia_Post_First_War_Victory_CPRF_HEADER_DESC"
 		allow_achievements = yes
 	}
 }
@@ -3956,186 +4074,21 @@ The_Red_Navalny = {#Red Navalny 红色纳瓦利内
 	}
 }
 
-UR_Duality = {
-	name = "UR_Duality"
+TFRNS_Dummy_Russia_Post_First_War_Victory_LDPR = {
+	name = "TFRNS_Dummy_Russia_Post_First_War_Victory_LDPR"
+	required_dlc = "Waking the Tiger"
 	group = "RULE_GROUP_EUROPE_SOV"
+	icon = GFX_decision_generic_flag
 	default = {
 		name = DEFAULT
 		text = "RULE_OPTION_DEFAULT"
-		desc = "UR_Duality_TXT"
-	}
-	option = {
-		name = UR_Duality_Reform
-		text = "UR_Duality_Reform_TXT"
-		desc = "UR_Duality_Reform_DESC"
+		desc = "TFRNS_Dummy_Russia_Post_First_War_Victory_LDPR_DEFAULT_DESC"
 		allow_achievements = yes
 	}
 	option = {
-		name = UR_Duality_Hardliner
-		text = "UR_Duality_Hardliner_TXT"
-		desc = "UR_Duality_Hardliner_DESC"
-		allow_achievements = yes
-	}
-}
-
-Reformist_UR_Elections = {
-	name = "Reformist_UR_Elections"
-	group = "RULE_GROUP_EUROPE_SOV"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "Reformist_UR_Elections_TXT"
-	}
-	option = {
-		name = Lukashenko_UR
-		text = "Lukashenko_UR_TXT"
-		desc = "Lukashenko_UR_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = Platoshkin
-		text = "Platoshkin_TXT"
-		desc = "Platoshkin_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = Prilepin
-		text = "Prilepin_TXT"
-		desc = "Platoshkin_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = Konovalov
-		text = "Konovalov_TXT"
-		desc = "Konovalov_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = Grudinin
-		text = "Grudinin_TXT"
-		desc = "Grudinin_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = Delyagin
-		text = "Delyagin_TXT"
-		desc = "Delyagin_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = Davankov
-		text = "Davankov_TXT"
-		desc = "Davankov_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = Patrushev
-		text = "Patrushev_TXT"
-		desc = "Patrushev_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = Sobyanin
-		text = "Sobyanin_TXT"
-		desc = "Sobyanin_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = Mishustin
-		text = "Mishustin_TXT"
-		desc = "Mishustin_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = Belousov
-		text = "Belousov_TXT"
-		desc = "Belousov_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = Volodin
-		text = "Volodin_TXT"
-		desc = "Volodin_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = Shoygu
-		text = "Shoygu_TXT"
-		desc = "Shoygu_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = Naryshkin
-		text = "Naryshkin_TXT"
-		desc = "Naryshkin_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = Alikhanov
-		text = "Alikhanov_TXT"
-		desc = "Alikhanov_DESC"
-		allow_achievements = yes
-	}
-}
-
-Medvedev_Successor = {
-	name = "Medvedev_Successor"
-	group = "RULE_GROUP_EUROPE_SOV"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "Medvedev_Successor_TXT"
-	}
-	option = {
-		name = Medvedev_Stays
-		text = "Medvedev_Stays_TXT"
-		desc = "Medvedev_Stays_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = Lukashenko_Successor
-		text = "Lukashenko_Successor_TXT"
-		desc = "Lukashenko_Successor_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = Surkov
-		text = "Surkov_TXT"
-		desc = "Surkov_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = Nadezhdin
-		text = "Nadezhdin_TXT"
-		desc = "Nadezhdin_DESC"
-		allow_achievements = yes
-	}
-}
-
-Operation_Heir = {
-	name = "Operation_Heir"
-	group = "RULE_GROUP_EUROPE_SOV"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "Operation_Heir_TXT"
-	}
-	option = {
-		name = Besedina
-		text = "Besedina_TXT"
-		desc = "Besedina_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = Kisiev
-		text = "Kisiev_TXT"
-		desc = "Kisiev_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = Katz
-		text = "Katz_TXT"
-		desc = "Katz_DESC"
+		name = TFRNS_Dummy_Russia_Post_First_War_Victory_LDPR_HEADER
+		text = "TFRNS_Dummy_Russia_Post_First_War_Victory_LDPR_HEADER_TXT"
+		desc = "TFRNS_Dummy_Russia_Post_First_War_Victory_LDPR_HEADER_DESC"
 		allow_achievements = yes
 	}
 }
@@ -4330,6 +4283,25 @@ Council_LDPR_Elections = {
 	}
 }
 
+TFRNS_Dummy_Russia_Post_First_War_Defeat_Navalny = {
+	name = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Navalny"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE_SOV"
+	icon = GFX_decision_generic_flag
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Navalny_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Dummy_Russia_Post_First_War_Defeat_Navalny_HEADER
+		text = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Navalny_HEADER_TXT"
+		desc = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Navalny_HEADER_DESC"
+		allow_achievements = yes
+	}
+}
+
 The_Dugin_or_Navalny = {#Dugin or Navalny 杜金或纳瓦利内
 	name = "The_Dugin_or_Navalny"
 	required_dlc = "Waking the Tiger"
@@ -4349,6 +4321,54 @@ The_Dugin_or_Navalny = {#Dugin or Navalny 杜金或纳瓦利内
 		name = The_Dugin_or_Navalny_2
 		text = "The_Dugin_or_Navalny_2_TXT"
 		desc = "The_Dugin_or_Navalny_2_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+
+The_Navalny_against_Navalny = {#Navalny against Navalny 纳瓦利内反对纳瓦利内
+	name = "The_Navalny_against_Navalny"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE_SOV"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "The_Navalny_against_Navalny_TXT_DESC"
+	}
+	option = {
+		name = The_Navalny_against_Navalny_1991
+		text = "The_Navalny_against_Navalny_1991_TXT"
+		desc = "The_Navalny_against_Navalny_1991_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Navalny_against_Navalny_1993
+		text = "The_Navalny_against_Navalny_1993_TXT"
+		desc = "The_Navalny_against_Navalny_1993_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Navalny_against_Navalny_We_People
+		text = "The_Navalny_against_Navalny_We_People_TXT"
+		desc = "The_Navalny_against_Navalny_We_People_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+
+TFRNS_Dummy_Russia_Post_First_War_Defeat_Dugin = {
+	name = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Dugin"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE_SOV"
+	icon = GFX_decision_generic_flag
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Dugin_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Dummy_Russia_Post_First_War_Defeat_Dugin_HEADER
+		text = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Dugin_HEADER_TXT"
+		desc = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Dugin_HEADER_DESC"
 		allow_achievements = yes
 	}
 }
@@ -4382,31 +4402,38 @@ The_Dugin_Left_or_Right = {#Dugin Left or Right 左右杜金
 	}
 }
 
-The_Navalny_against_Navalny = {#Navalny against Navalny 纳瓦利内反对纳瓦利内
-	name = "The_Navalny_against_Navalny"
+TFRNS_Dummy_Russia_Post_First_War_Defeat_Wagner = {
+	name = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Wagner"
 	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE_SOV"
+	icon = GFX_decision_generic_flag
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Wagner_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Dummy_Russia_Post_First_War_Defeat_Wagner_HEADER
+		text = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Wagner_HEADER_TXT"
+		desc = "TFRNS_Dummy_Russia_Post_First_War_Defeat_Wagner_HEADER_DESC"
+		allow_achievements = yes
+	}
+}
+
+prigozhin_content = {
+	name = "prigozhin_content"
 	group = "RULE_GROUP_EUROPE_SOV"
 	default = {
 		name = DEFAULT
 		text = "RULE_OPTION_DEFAULT"
-		desc = "The_Navalny_against_Navalny_TXT_DESC"
-	}
-	option = {
-		name = The_Navalny_against_Navalny_1991
-		text = "The_Navalny_against_Navalny_1991_TXT"
-		desc = "The_Navalny_against_Navalny_1991_TXT_DESC"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
 		allow_achievements = yes
 	}
 	option = {
-		name = The_Navalny_against_Navalny_1993
-		text = "The_Navalny_against_Navalny_1993_TXT"
-		desc = "The_Navalny_against_Navalny_1993_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Navalny_against_Navalny_We_People
-		text = "The_Navalny_against_Navalny_We_People_TXT"
-		desc = "The_Navalny_against_Navalny_We_People_TXT_DESC"
+		name = PRIGOZHIN_ENABLED
+		text = "RULE_OPTION_PRIGOZHIN_ENABLED"
+		desc = "RULE_OPTION_PRIGOZHIN_ENABLED_DESC"
 		allow_achievements = yes
 	}
 }
@@ -6158,23 +6185,6 @@ russia_flag_change = {
 		name = FLAG_CHANGE_ENABLED
 		text = "RULE_OPTION_FLAG_CHANGE_ENABLED"
 		desc = "RULE_OPTION_FLAG_CHANGE_ENABLED_DESC"
-		allow_achievements = yes
-	}
-}
-
-prigozhin_content = {
-	name = "prigozhin_content"
-	group = "RULE_GROUP_SPECIAL_SETTINGS"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "RULE_OPTION_DEFAULT_AI_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = PRIGOZHIN_ENABLED
-		text = "RULE_OPTION_PRIGOZHIN_ENABLED"
-		desc = "RULE_OPTION_PRIGOZHIN_ENABLED_DESC"
 		allow_achievements = yes
 	}
 }
