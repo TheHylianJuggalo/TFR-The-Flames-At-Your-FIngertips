@@ -25450,13 +25450,6 @@ country_event = {
                 has_government = communist
                 factor = 10
             }
-            modifier = {
-                factor = 0
-                has_game_rule = {
-                    rule = TFRNS_SAF_Russian_Support
-                    option = TFRNS_SAF_Russian_Support_EFF
-                }
-            }
         }
         set_country_flag = SOV_supported_SWZ
         add_opinion_modifier = {
@@ -25492,13 +25485,6 @@ country_event = {
             modifier = {
                 has_government = libertarian_socialist
                 factor = 10
-            }
-            modifier = {
-                factor = 0
-                has_game_rule = {
-                    rule = TFRNS_SAF_Russian_Support
-                    option = TFRNS_SAF_Russian_Support_SWZ
-                }
             }
         }
         set_country_flag = SOV_supported_EFF

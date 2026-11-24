@@ -2,9 +2,8 @@
 #
 # These rules only steer choices that already exist in TFR:
 #   * china.117 lets the PRC support EFF, SWZ, or SAF.
-#   * russia.529 lets the USSR support SWZ or EFF.
 #   * saf.5 lets a victorious SAF choose a market-liberal or social-liberal government.
-# The gates are ai_chance-only, so a human PRC/USSR/SAF still sees every vanilla option.
+# The gates are ai_chance-only, so a human PRC/SAF still sees every vanilla option.
 
 TFRNS_SAF_Chinese_Support = {
 	name = "TFRNS_SAF_Chinese_Support"

@@ -190,13 +190,6 @@
  TFRNS_SAF_Chinese_Support_SAF_TXT: "§OSupport the Cape Emergency Government§!"
  TFRNS_SAF_Chinese_Support_SAF_DESC: "@SAF AI China takes TFR's pro-government option in §Ychina.117§!: influence goes to the Cape Emergency Government, 1000 infantry equipment is transferred, and Chinese volunteer/support weighting favours §YSAF§!.\n\n§gA human China can still choose another side.§!"
 
- TFRNS_SAF_Russian_Support: "Russian Support - South African Civil War"
- TFRNS_SAF_Russian_Support_DEFAULT_DESC: "Default TFR behaviour. AI Russia keeps TFR's normal §Yrussia.529§! weighting between the ANC government and the Economic Freedom Fighters, including its ideology modifier.\n\n§gA human Russia can always choose either option.§!"
- TFRNS_SAF_Russian_Support_SWZ_TXT: "§YSupport the ANC Government§!"
- TFRNS_SAF_Russian_Support_SWZ_DESC: "@SOV AI Russia takes TFR's pro-ANC option in §Yrussia.529§!. It sets §YSOV_supported_SWZ§!, unlocks the Russian advisor and ADS decisions, and steers support toward §YSWZ§!.\n\n§gA human Russia can still choose the EFF.§!"
- TFRNS_SAF_Russian_Support_EFF_TXT: "§DSupport the EFF§!"
- TFRNS_SAF_Russian_Support_EFF_DESC: "@SOV AI Russia takes TFR's pro-EFF option in §Yrussia.529§!. It sets §YSOV_supported_EFF§!, unlocks the Russian advisor and ADS decisions, and steers support toward §YEFF§!.\n\n§gA human Russia can still choose the ANC government.§!"
-
  TFRNS_SAF_Postwar_Election: "SAF Postwar Election"
  TFRNS_SAF_Postwar_Election_DEFAULT_DESC: "Default TFR behaviour. After a Cape Emergency Government victory, TFR's §Ysaf.5§! postwar election is left to normal event selection.\n\n§gA human SAF can always choose either option.§!"
  TFRNS_SAF_Postwar_Election_MARKET_TXT: "§YMarket Liberal Government§!"
