@@ -2501,103 +2501,6 @@ The_GER_extremist_soldiers = {#Extremist Soldiers 极端派士兵
 	}
 }
 
-TFRNS_Dummy_Europe_Post_First_War_Victory = {
-	name = "TFRNS_Dummy_Europe_Post_First_War_Victory"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE"
-	icon = GFX_decision_generic_flag
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "TFRNS_Dummy_Europe_Post_First_War_Victory_DEFAULT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = TFRNS_Dummy_Europe_Post_First_War_Victory_HEADER
-		text = "TFRNS_Dummy_Europe_Post_First_War_Victory_HEADER_TXT"
-		desc = "TFRNS_Dummy_Europe_Post_First_War_Victory_HEADER_DESC"
-		allow_achievements = yes
-	}
-}
-
-The_Sixth_Republic_Election = {#First election of the 6th Republic 第六共和国首次大选
-	name = "The_Sixth_Republic_Election"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "The_Sixth_Republic_Election_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Sixth_Republic_Election_1
-		text = "The_Sixth_Republic_Election_1_TXT"
-		desc = "The_Sixth_Republic_Election_1_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Sixth_Republic_Election_2
-		text = "The_Sixth_Republic_Election_2_TXT"
-		desc = "The_Sixth_Republic_Election_2_TXT_DESC"
-		allow_achievements = yes
-	}
-}
-
-The_Mel_Constitution_Crossroads = {#Mélenchon's Constitution Crossroads 梅朗雄宪法存与废
-	name = "The_Mel_Constitution_Crossroads"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "The_Mel_Constitution_Crossroads_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Mel_Constitution_Crossroads_1
-		text = "The_Mel_Constitution_Crossroads_1_TXT"
-		desc = "The_Mel_Constitution_Crossroads_1_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Mel_Constitution_Crossroads_2
-		text = "The_Mel_Constitution_Crossroads_2_TXT"
-		desc = "The_Mel_Constitution_Crossroads_2_TXT_DESC"
-		allow_achievements = yes
-	}
-}
-
-The_Seventh_Republic_Election = {#First election of the 7th Republic 第七共和国首次大选
-	name = "The_Seventh_Republic_Election"
-	required_dlc = "Waking the Tiger"
-	group = "RULE_GROUP_EUROPE"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "The_Seventh_Republic_Election_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Seventh_Republic_Election_1
-		text = "The_Seventh_Republic_Election_1_TXT"
-		desc = "The_Seventh_Republic_Election_1_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Seventh_Republic_Election_2
-		text = "The_Seventh_Republic_Election_2_TXT"
-		desc = "The_Seventh_Republic_Election_2_TXT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = The_Seventh_Republic_Election_3
-		text = "The_Seventh_Republic_Election_3_TXT"
-		desc = "The_Seventh_Republic_Election_3_TXT_DESC"
-		allow_achievements = yes
-	}
-}
-
 SER_KOS_war = {#Serbia-Kosovo War 塞尔维亚-科索沃战争
 	name = "SER_KOS_war"
 	required_dlc = "Waking the Tiger"
@@ -2845,6 +2748,103 @@ The_2023_Turkish_Elections = {#2023 Turkish Elections 土耳其2023年大选
 		name = The_2023_Turkish_Elections_Kemal_Win
 		text = "The_2023_Turkish_Elections_Kemal_Win_TXT"
 		desc = "The_2023_Turkish_Elections_Kemal_Win_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+
+TFRNS_Dummy_Europe_Post_First_War_Victory = {
+	name = "TFRNS_Dummy_Europe_Post_First_War_Victory"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	icon = GFX_decision_generic_flag
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "TFRNS_Dummy_Europe_Post_First_War_Victory_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TFRNS_Dummy_Europe_Post_First_War_Victory_HEADER
+		text = "TFRNS_Dummy_Europe_Post_First_War_Victory_HEADER_TXT"
+		desc = "TFRNS_Dummy_Europe_Post_First_War_Victory_HEADER_DESC"
+		allow_achievements = yes
+	}
+}
+
+The_Sixth_Republic_Election = {#First election of the 6th Republic 第六共和国首次大选
+	name = "The_Sixth_Republic_Election"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "The_Sixth_Republic_Election_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Sixth_Republic_Election_1
+		text = "The_Sixth_Republic_Election_1_TXT"
+		desc = "The_Sixth_Republic_Election_1_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Sixth_Republic_Election_2
+		text = "The_Sixth_Republic_Election_2_TXT"
+		desc = "The_Sixth_Republic_Election_2_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+
+The_Mel_Constitution_Crossroads = {#Mélenchon's Constitution Crossroads 梅朗雄宪法存与废
+	name = "The_Mel_Constitution_Crossroads"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "The_Mel_Constitution_Crossroads_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Mel_Constitution_Crossroads_1
+		text = "The_Mel_Constitution_Crossroads_1_TXT"
+		desc = "The_Mel_Constitution_Crossroads_1_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Mel_Constitution_Crossroads_2
+		text = "The_Mel_Constitution_Crossroads_2_TXT"
+		desc = "The_Mel_Constitution_Crossroads_2_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+
+The_Seventh_Republic_Election = {#First election of the 7th Republic 第七共和国首次大选
+	name = "The_Seventh_Republic_Election"
+	required_dlc = "Waking the Tiger"
+	group = "RULE_GROUP_EUROPE"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "The_Seventh_Republic_Election_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Seventh_Republic_Election_1
+		text = "The_Seventh_Republic_Election_1_TXT"
+		desc = "The_Seventh_Republic_Election_1_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Seventh_Republic_Election_2
+		text = "The_Seventh_Republic_Election_2_TXT"
+		desc = "The_Seventh_Republic_Election_2_TXT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Seventh_Republic_Election_3
+		text = "The_Seventh_Republic_Election_3_TXT"
+		desc = "The_Seventh_Republic_Election_3_TXT_DESC"
 		allow_achievements = yes
 	}
 }
