@@ -2429,6 +2429,53 @@ The_Military_Overthrows_New_Popular_Front = {#Military Overthrows New Popuar Fro
 	}
 }
 
+EU_Parliament_election = {
+	name = "EU_Parliament_elections"
+	group = "RULE_GROUP_EUROPE"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "EU_Parliament_elections_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = The_Left_EU
+		text = "The_Left_EU_TXT"
+		desc = "The_Left_EU_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Social_Democrats_EU
+		text = "Social_Democrats_EU_TXT"
+		desc = "Social_Democrats_EU_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Greens_EFA_EU
+		text = "Greens_EFA_EU_TXT"
+		desc = "Greens_EFA_EU_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Renew_Europe_EU
+		text = "Renew_Europe_EU_TXT"
+		desc = "Renew_Europe_EU_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = EPP_EU
+		text = "EPP_EU_TXT"
+		desc = "EPP_EU_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = ECR_EU
+		text = "ECR_EU_TXT"
+		desc = "ECR_EU_DESC"
+		allow_achievements = yes
+	}
+}
+
 GER_ai_behavior = {#Federal Republic of Germany 2021 Election 德意志联邦共和国2021年大选
 	name = "GER_ai_behavior"
 	required_dlc = "Waking the Tiger"
@@ -2497,6 +2544,29 @@ The_GER_extremist_soldiers = {#Extremist Soldiers 极端派士兵
 		name = The_GER_extremist_soldiers_2
 		text = "The_GER_extremist_soldiers_2_TXT"
 		desc = "The_GER_extremist_soldiers_2_TXT_DESC"
+		allow_achievements = yes
+	}
+}
+
+Italy_Elections = {
+	name = "Italy_Elections"
+	group = "RULE_GROUP_EUROPE"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Democratic_Party_ITA
+		text = "Democratic_Party_ITA_TXT"
+		desc = "Democratic_Party_ITA_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = Brothers_of_Italy
+		text = "Brothers_of_Italy_TXT"
+		desc = "Brothers_of_Italy_DESC"
 		allow_achievements = yes
 	}
 }

@@ -408,10 +408,10 @@ BLR_20_election_3_TXT_DESC: "The opposition protests win out, but Lukashenko cal
  TFRNS_Myanmar_Civil_War_Winner_PDF_DESC: "The §YPeople's War§! state modifier is stripped from Burmese-core states as soon as the civil war starts. Every anti-junta faction that rises in the coup - §YPDF§!, §YMND§!, §YKNU§!, §YCNF§! and §YKLA§! - receives the §YMushroom Army§! attack buff."
 
  # --- Localization for pcmaster's Integration rule options (missing upstream) ---
- Alikhanov_DESC: "Elect £GFX_TFR_game_rule_flag_SOV_fascist Anton Alikhanov as new President of Russia."
- Alikhanov_TXT: "£GFX_TFR_game_rule_flag_SOV_fascist Anton Alikhanov"
+ Alikhanov_DESC: "Elect £GFX_TFR_game_rule_flag_SOV_fascist  Anton Alikhanov as new President of Russia."
+ Alikhanov_TXT: "£GFX_TFR_game_rule_flag_SOV_fascist  Anton Alikhanov"
  Bakov_DESC: "Anton Bakov is appointed Prime Minister."
- Bakov_TXT: "£GFX_TFR_game_rule_flag_SOV_dem_monarchy Sergey Bakov"
+ Bakov_TXT: "£GFX_TFR_game_rule_flag_SOV_dem_monarchy  Anton Bakov"
  Belousov_DESC: "Elect @SOV Andrei Belousov as new President of Russia."
  Belousov_TXT: "@SOV Andrei Belousov"
  Besedina_DESC: "Daria Besedina is the chosen heir."
@@ -454,6 +454,7 @@ BLR_20_election_3_TXT_DESC: "The opposition protests win out, but Lukashenko cal
  Patrushev_TXT: "@SOV Dmitry Patrushev"
  Platoshkin_DESC: "Elect @SOV Nikolay Platoshkin as new President of Russia."
  Platoshkin_TXT: "@SOV Nikolay Platoshkin"
+ Prilepin_DESC: "Elect @SOV Zakhar Prilepin as new President of Russia."
  Prilepin_TXT: "@SOV Zakhar Prilepin"
  Pushilin_DESC: "Denis Pushilin is elected to the National Council."
  Pushilin_TXT: "£GFX_TFR_game_rule_flag_SOV_pushilin Denis Pushilin"

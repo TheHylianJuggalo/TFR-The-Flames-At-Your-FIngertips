@@ -2679,6 +2679,49 @@ spriteType = {
     legacy_lazy_load = no
 }
 
+#new ones
+spriteType = {
+    name = "GFX_Elly_Schlein"
+    texturefile = "gfx/leaders/ITA/Elly Schlein.png"
+    legacy_lazy_load = no
+}
+
+spriteType = {
+    name = "GFX_Giorgia_Meloni"
+    texturefile = "gfx/leaders/ITA/Giorgia Meloni.png"
+    legacy_lazy_load = no
+}
+spriteType = {
+    name = "GFX_Walter_Baier"
+    texturefile = "gfx/leaders/BRS/Walter_Baier.dds"
+    legacy_lazy_load = no
+}
+spriteType = {
+    name = "GFX_Nicolas_Schmit"
+    texturefile = "gfx/leaders/BRS/Nicolas_Schmit.dds"
+    legacy_lazy_load = no
+}
+spriteType = {
+    name = "GFX_Bas_Eickhout"
+    texturefile = "gfx/leaders/BRS/Bas_Eickhout.dds"
+    legacy_lazy_load = no
+}
+spriteType = {
+    name = "GFX_Sandro_Gozi"
+    texturefile = "gfx/leaders/BRS/Sandro_Gozi.dds"
+    legacy_lazy_load = no
+}
+spriteType = {
+    name = "GFX_Ursula_Von_Der_Leyen"
+    texturefile = "gfx/leaders/BRS/Ursula_Leyen.dds"
+    legacy_lazy_load = no
+}
+spriteType = {
+    name = "GFX_Mateusz_Morawiecki"
+    texturefile = "gfx/leaders/BRS/Mateusz_Morawiecki.dds"
+    legacy_lazy_load = no
+}
+
 
 
 
