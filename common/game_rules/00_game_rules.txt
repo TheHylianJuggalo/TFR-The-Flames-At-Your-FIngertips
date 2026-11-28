@@ -6304,6 +6304,23 @@ april_fools_content = {
 	}
 }
 
+firstEW_Instant_Capitulation = {
+	name = "1EW_Instant_Capitulation"
+	group = "RULE_GROUP_FAYF_CUSTOM_SETTINGS"
+	default = {
+		name =  DEFAULT
+		text = "1EW_Instant_Capitulation_TXT"
+		desc = "1EW_Instant_Capitulation_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = 1EW_Instant_Capitulation_disabled
+		text = "1EW_Instant_Capitulation_disabled_TXT"
+		desc = "1EW_Instant_Capitulation_disabled_DESC"
+		allow_achievements = yes
+	}
+}
+
 ###  ### #   # ###  ## ###  ##  #  #     ### ### #   # ###  #    ##  ### ###  ## 
 #  #  #  #   #  #  #    #  #  # ## #      #  #   ## ## #  # #   #  #  #  #   #   
 #  #  #   # #   #   #   #  #  # # ##      #  ##  # # # ###  #   ####  #  ##   #  
